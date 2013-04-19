@@ -1,0 +1,55 @@
+{
+  "id": "evt_1BmtDsfxTNdueR",
+  "created": 1359408003,
+  "livemode": false,
+  "type": "charge.succeeded",
+  "data": {
+    "object": {
+      "fee_details": [
+        {
+          "type": "stripe_fee",
+          "amount": 1770,
+          "application": null,
+          "currency": "usd",
+          "description": "Stripe processing fees"
+        }
+      ],
+      "card": {
+        "type": "Visa",
+        "address_state": "MA",
+        "cvc_check": null,
+        "address_country": "US",
+        "address_line1": "285 Littleton Road #10",
+        "address_zip_check": "pass",
+        "fingerprint": "qhjxpr7DiCdFYTlH",
+        "object": "card",
+        "exp_month": 1,
+        "address_line2": "",
+        "address_line1_check": "pass",
+        "exp_year": 2013,
+        "country": "US",
+        "address_city": "Westford",
+        "name": "Matt Pokress",
+        "last4": "4242",
+        "address_zip": "01886"
+      },
+      "amount_refunded": 0,
+      "amount": 60000,
+      "invoice": null,
+      "currency": "usd",
+      "dispute": null,
+      "object": "charge",
+      "created": 1359408003,
+      "paid": true,
+      "livemode": false,
+      "refunded": false,
+      "fee": 1770,
+      "failure_message": null,
+      "customer": "cus_abc123",
+      "id": "ch_abc123",
+      "description": "mpokress@gmail.com"
+    }
+  },
+  "object": "event",
+  "pending_webhooks": 0
+}

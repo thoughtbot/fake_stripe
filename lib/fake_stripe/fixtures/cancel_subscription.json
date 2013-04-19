@@ -1,0 +1,25 @@
+{
+  "plan": {
+    "interval_count": 1,
+    "amount": 100,
+    "interval": "month",
+    "trial_period_days": null,
+    "object": "plan",
+    "livemode": false,
+    "name": "Monthly Donation",
+    "id": "donation_1",
+    "currency": "usd"
+  },
+  "status": "active",
+  "trial_end": null,
+  "start": 1358789850,
+  "customer": "cus_196jLbDuP1iwqH",
+  "cancel_at_period_end": false,
+  "canceled_at": null,
+  "object": "subscription",
+  "current_period_start": 1358789850,
+  "quantity": 5,
+  "current_period_end": 1361468250,
+  "ended_at": null,
+  "trial_start": null
+}

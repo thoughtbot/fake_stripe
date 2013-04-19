@@ -1,0 +1,31 @@
+{
+  "delinquent": false,
+  "email": null,
+  "account_balance": 0,
+  "object": "customer",
+  "created": 1357831380,
+  "livemode": false,
+  "discount": null,
+  "active_card": {
+    "cvc_check": "pass",
+    "fingerprint": "qhjxpr7DiCdFYTlH",
+    "type": "Visa",
+    "address_line2": null,
+    "address_zip_check": null,
+    "address_city": null,
+    "exp_month": 6,
+    "last4": "4242",
+    "address_line1_check": null,
+    "address_zip": null,
+    "exp_year": 2013,
+    "object": "card",
+    "country": "US",
+    "address_state": null,
+    "name": null,
+    "address_country": null,
+    "address_line1": null
+  },
+  "subscription": null,
+  "id": "cus_14x4FzAhf3lW9V",
+  "description": null
+}

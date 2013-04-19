@@ -1,0 +1,45 @@
+{
+  "id": "ch_1HLqBx9AyixBof",
+  "object": "charge",
+  "created": 1360691193,
+  "livemode": false,
+  "paid": true,
+  "amount": 1000,
+  "currency": "usd",
+  "refunded": false,
+  "fee": 59,
+  "fee_details": [
+    {
+      "amount": 59,
+      "currency": "usd",
+      "type": "stripe_fee",
+      "description": "Stripe processing fees",
+      "application": null
+    }
+  ],
+  "card": {
+    "object": "card",
+    "last4": "4242",
+    "type": "Visa",
+    "exp_month": 11,
+    "exp_year": 2014,
+    "fingerprint": "qhjxpr7DiCdFYTlH",
+    "country": "US",
+    "name": "john doe",
+    "address_line1": null,
+    "address_line2": null,
+    "address_city": null,
+    "address_state": null,
+    "address_zip": null,
+    "address_country": null,
+    "cvc_check": "pass",
+    "address_line1_check": null,
+    "address_zip_check": null
+  },
+  "failure_message": null,
+  "amount_refunded": 0,
+  "customer": null,
+  "invoice": null,
+  "description": "Polygonian licensing",
+  "dispute": null
+}
