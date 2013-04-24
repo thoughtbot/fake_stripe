@@ -3,6 +3,8 @@ require 'fake_stripe/api_server'
 require 'fake_stripe/js_server'
 
 module FakeStripe
+  VALID_CARD_NUMBER = '4242424242424242'
+
   def self.fail_all_requests
     @@errors = true
   end
