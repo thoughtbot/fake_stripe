@@ -1,17 +1,13 @@
 require 'sinatra/base'
 
 module FakeStripe
-  class ApiServer < Sinatra::Base
+  class StubApp < Sinatra::Base
     post '/v1/customers' do
-      if FakeStripe.error_response?
-        json_response 402, 'customers_card_error'
-      else
-        json_response 200, 'customers'
-      end
+      json_response 200, 'list_customers'
     end
 
     get '/v1/customers/:id' do
-      json_response 200, 'customer'
+      json_response 200, 'retrieve_customer'
     end
 
     post '/v1/customers/:customer_id/subscription' do
@@ -23,22 +19,22 @@ module FakeStripe
     end
 
     get '/v1/events/:id' do
-      json_response 200, 'charge_succeeded'
+      json_response 200, 'retrieve_event'
     end
 
     post '/v1/charges' do
       FakeStripe.charge_count += 1
-      json_response 201, 'charge_response'
+      json_response 201, 'create_charge'
     end
 
     private
 
     def json_response(response_code, file_name)
+      file_path = File.join(FakeStripe.fixture_path, "#{file_name}.json")
+
       content_type :json
       status response_code
-      File.open(File.dirname(__FILE__) + '/fixtures/' + file_name + '.json', 'rb').read
+      File.open(file_path, 'rb').read
     end
   end
 end
-
-
