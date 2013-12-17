@@ -27,6 +27,7 @@ module FakeStripe
     end
 
     post '/v1/charges' do
+      FakeStripe.charge_count += 1
       json_response 201, 'charge_response'
     end
 
