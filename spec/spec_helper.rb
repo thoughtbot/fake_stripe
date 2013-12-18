@@ -14,6 +14,7 @@ RSpec.configure do |config|
 
   config.before :each do
     FakeStripe.reset!
+    stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::ApiServer)
   end
 
   config.order = 'random'

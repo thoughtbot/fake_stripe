@@ -5,6 +5,14 @@ require 'fake_stripe/js_server'
 module FakeStripe
   VALID_CARD_NUMBER = '4242424242424242'
 
+  def self.charge_count
+    @@charge_count
+  end
+
+  def self.charge_count=(charge_count)
+    @@charge_count = charge_count
+  end
+
   def self.fail_all_requests
     @@errors = true
   end
@@ -14,6 +22,7 @@ module FakeStripe
   end
 
   def self.reset!
+    @@charge_count = 0
     @@errors = false
   end
 
