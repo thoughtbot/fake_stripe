@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = 'fake_stripe'
   s.version     = FakeStripe::VERSION
   s.authors     = ['Harlow Ward']
-  s.email       = ['harlow@thoughtbot.com']
+  s.email       = ['harlow@thoughtbot.com', 'caleb@thoughtbot.com', 'mason@thoughtbot.com', 'damian@thoughtbot.com']
   s.homepage    = 'https://github.com/thoughtbot/fake_stripe'
   s.summary     = 'A fake Stripe server.'
   s.description = 'An implementation of the Stripe credit card processing service to run during your integration tests.'
