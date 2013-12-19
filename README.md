@@ -46,7 +46,7 @@ When the test suite runs `fake_stripe` will override the address for
 
 ### In Tests
 
-Require the library in your spec support:
+Require the `fake_stripe` library in your Specs:
 
 ```ruby
 # spec/support/fake_stripe.rb
