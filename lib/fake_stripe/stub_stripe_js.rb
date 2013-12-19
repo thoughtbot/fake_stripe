@@ -3,11 +3,13 @@ require 'capybara/server'
 require 'sinatra/base'
 
 module FakeStripe
-  class JsServer < Sinatra::Base
+  class StubStripeJS < Sinatra::Base
     get '/v1/' do
+      file_path = File.join(File.dirname(__FILE__), '/assets/v1.js')
+
       content_type 'text/javascript'
       status 200
-      File.open(File.dirname(__FILE__) + '/assets/v1.js', 'rb').read
+      File.open(file_path, 'rb').read
     end
 
     def self.boot
