@@ -12,10 +12,12 @@ Ruby library and returns JSON that the Stripe library can parse.
 
 Add the `fake_stripe` Gem to the `:test` group in your Gemfile:
 
-    # Gemfile
-    group :test do
-      gem 'fake_stripe'
-    end
+```ruby
+# Gemfile
+group :test do
+  gem 'fake_stripe'
+end
+```
 
 Remember to run `bundle install`.
 
@@ -23,17 +25,21 @@ Remember to run `bundle install`.
 
 Set the `STRIPE_JS_HOST` constant in an initializer:
 
-    # config/initilialzers/stripe.rb
-    Stripe.api_key = ENV['STRIPE_API_KEY']
+```ruby
+# config/initilialzers/stripe.rb
+Stripe.api_key = ENV['STRIPE_API_KEY']
 
-    unless defined? STRIPE_JS_HOST
-      STRIPE_JS_HOST = 'https://js.stripe.com'
-    end
+unless defined? STRIPE_JS_HOST
+  STRIPE_JS_HOST = 'https://js.stripe.com'
+end
+```
 
 Include the Stripe JavaScript in your application template:
 
-    # app/views/layouts/application.html.erb
-    <%= javascript_include_tag "#{STRIPE_JS_HOST}/v1/" %>
+```rhtml
+# app/views/layouts/application.html.erb
+<%= javascript_include_tag "#{STRIPE_JS_HOST}/v1/" %>
+```
 
 When the test suite runs `fake_stripe` will override the address for
 `STRIPE_JS_HOST` and serve up a local version of [Stripe.js](https://stripe.com/docs/stripe.js).
@@ -42,14 +48,16 @@ When the test suite runs `fake_stripe` will override the address for
 
 Require the library in your spec support:
 
-    # spec/support/fake_stripe.rb
-    require 'fake_stripe'
+```ruby
+# spec/support/fake_stripe.rb
+require 'fake_stripe'
 
-    RSpec.configure do |config|
-      config.before(:each) do
-        FakeStripe.stub_stripe
-      end
-    end
+RSpec.configure do |config|
+  config.before(:each) do
+    FakeStripe.stub_stripe
+  end
+end
+```
 
 ## Contributing
 
