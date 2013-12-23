@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'A fake Stripe server.'
   s.description = 'An implementation of the Stripe credit card processing service to run during your integration tests.'
 
-  s.files = Dir["{lib}/**/*"] + ['CONTRIBUTING.md', 'MIT-LICENSE', 'Rakefile', 'README.md']
+  s.files = Dir["{lib}/**/*"] + ['CONTRIBUTING.md', 'LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'capybara'
   s.add_dependency 'sinatra'
