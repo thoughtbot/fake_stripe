@@ -23,8 +23,9 @@ module FakeStripe
     end
 
     post '/v1/charges' do
-      FakeStripe.charge_count += 1
-      json_response 201, fixture('create_charge')
+      charge = successful_charge
+      FakeStripe.charges << charge
+      json_response 201, charge.to_json
     end
 
     private
@@ -38,6 +39,55 @@ module FakeStripe
       content_type :json
       status response_code
       response_body
+    end
+
+    def successful_charge
+      {
+        amount: params[:amount].to_i,
+        card: {
+          id: params[:card],
+          address_city: nil,
+          address_country: nil,
+          address_line1: nil,
+          address_line1_check: nil,
+          address_line2: nil,
+          address_state: nil,
+          address_zip: nil,
+          address_zip_check: nil,
+          country: "US",
+          cvc_check: "pass",
+          exp_month: 11,
+          exp_year: 2014,
+          fingerprint: "qhjxpr7DiCdFYTlH",
+          last4: "4242",
+          name: "john doe",
+          object: "card",
+          type: "Visa"
+        },
+        amount_refunded: 0,
+        created: 1360691193,
+        currency: "usd",
+        customer: nil,
+        description: "Polygonian licensing",
+        dispute: nil,
+        failure_message: nil,
+        fee: 59,
+        fee_details: [
+          {
+            amount: 59,
+            application: nil,
+            currency: "usd",
+            description: "Stripe processing fees",
+            type: "stripe_fee"
+          }
+        ],
+        id: "ch_1HLqBx9AyixBof",
+        invoice: nil,
+        livemode: false,
+        object: "charge",
+        paid: true,
+        refunded: false
+      }
     end
   end
 end

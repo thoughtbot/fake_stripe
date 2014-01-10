@@ -2,22 +2,27 @@ require 'fake_stripe/configuration'
 require 'fake_stripe/initializers/webmock'
 require 'fake_stripe/stub_app'
 require 'fake_stripe/stub_stripe_js'
+require 'fake_stripe/exceptions'
+
+if defined?(RSpec)
+  require 'fake_stripe/rspec'
+end
 
 module FakeStripe
   extend Configuration
 
   VALID_CARD_NUMBER = '4242424242424242'
 
-  def self.charge_count
-    @@charge_count
+  def self.charges
+    @@charges
   end
 
-  def self.charge_count=(charge_count)
-    @@charge_count = charge_count
+  def self.charges=(charges)
+    @@charges = charges
   end
 
   def self.reset
-    @@charge_count = 0
+    @@charges = []
   end
 
   def self.stub_stripe
