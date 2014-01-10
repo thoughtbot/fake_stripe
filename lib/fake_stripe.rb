@@ -14,25 +14,18 @@ module FakeStripe
   VALID_CARD_NUMBER = '4242424242424242'
   CUSTOMER_ID = "cus_196jLbDuP1iwqH"
 
-  def self.charges
-    @@charges
-  end
-
-  def self.charges=(charges)
-    @@charges = charges
+  class << self
+    attr_accessor :charges
+    attr_accessor :customer_cards
   end
 
   def self.cards
-    @@cards
-  end
-
-  def self.cards=(cards)
-    @@cards = cards
+    customer_cards.values
   end
 
   def self.reset
-    @@charges = []
-    @@cards = []
+    self.charges = []
+    self.customer_cards = {}
   end
 
   def self.stub_stripe

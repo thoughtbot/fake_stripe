@@ -23,9 +23,22 @@ module FakeStripe
     end
 
     post '/v1/charges' do
-      charge = successful_charge
-      FakeStripe.charges << charge
-      json_response 201, charge.to_json
+      if customer_owns_card?
+        add_successful_charge
+      else
+        unknown_card_error
+      end
+    end
+
+    get '/v1/customers/:customer_id/cards' do
+      json_response 200, cards_response.to_json
+    end
+
+    post '/v1/customers/:customer_id/cards' do
+      id = next_card_id
+      card = new_card(id)
+      FakeStripe.customer_cards[id] = card
+      json_response 201, card.to_json
     end
 
     private
@@ -114,6 +127,54 @@ module FakeStripe
         url: "/v1/customers/#{CUSTOMER_ID}/cards",
         data: FakeStripe.cards
       }
+    end
+
+    def next_card_id
+      "card_#{FakeStripe.cards.size}"
+    end
+
+    def new_card(id)
+      {
+        id: id,
+        customer: CUSTOMER_ID,
+        address_city: nil,
+        address_country: nil,
+        address_line1: nil,
+        address_line1_check: nil,
+        address_line2: nil,
+        address_state: nil,
+        address_zip: nil,
+        address_zip_check: nil,
+        country: "US",
+        cvc_check: "pass",
+        exp_month: 11,
+        exp_year: 2015,
+        fingerprint: "sHKpS2lYHtT5ZU5L",
+        last4: "4242",
+        name: nil,
+        object: "card",
+        type: "Visa"
+      }
+    end
+
+    def customer_owns_card?
+      params[:customer].nil? || FakeStripe.customer_cards.has_key?(params[:card])
+    end
+
+    def add_successful_charge
+      charge = successful_charge
+      FakeStripe.charges << charge
+      json_response 201, charge.to_json
+    end
+
+    def unknown_card_error
+      json_response(404, {
+        error: {
+          type: "invalid_request_error",
+          message: "Customer #{params[:customer]} does not have card with ID #{params[:card]}",
+          param: "card"
+        }
+      }.to_json)
     end
   end
 end

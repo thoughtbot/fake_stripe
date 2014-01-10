@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FakeStripe::StubApp, 'POST /v1/charges' do
+describe FakeStripe::StubApp do
   let(:customer) { Stripe::Customer.retrieve('anything') }
 
   context 'charges' do
@@ -22,6 +22,21 @@ describe FakeStripe::StubApp, 'POST /v1/charges' do
 
       expect(FakeStripe).not_to have_charged(500)
     end
+
+    it 'charges customers with existing cards' do
+      card = customer.cards.create(card: 'a token')
+      Stripe::Charge.create(amount: 100, currency: 'usd', customer: customer.id, card: card.id)
+
+      expect(FakeStripe).to have_charged(100).to_card(card.id)
+    end
+
+    it "raises an exception when charging a card that doesn't belong to a customer" do
+      expect do
+        Stripe::Charge.create(amount: 500, currency: 'usd', card: 'a card', customer: customer.id)
+      end.to raise_exception(Stripe::InvalidRequestError)
+
+      expect(FakeStripe).not_to have_charged(500)
+    end
   end
 
   context 'cards' do
@@ -30,22 +45,24 @@ describe FakeStripe::StubApp, 'POST /v1/charges' do
       customer.cards.create(card: 'a second token')
 
       expect(cards.count).to eq(2)
-      expect(cards.first.id).not_to eq(cards.second.id)
+      expect(cards.first.id).not_to eq(cards.last.id)
     end
 
     it 'resets cards between runs' do
-      pending
       customer.cards.create(card: 'a token')
-      FakeStripe.reset!
+      FakeStripe.reset
 
       expect(cards.count).to eq(0)
     end
 
     it 'assigns ids to cards beginning with "card_"' do
-      pending
       customer.cards.create(card: 'a token')
 
       expect(cards.first.id).to start_with("card_")
+    end
+
+    def cards
+      customer.cards.all.data
     end
   end
 end
