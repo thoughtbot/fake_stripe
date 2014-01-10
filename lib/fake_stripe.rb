@@ -1,8 +1,9 @@
 require 'fake_stripe/configuration'
+require 'fake_stripe/exceptions'
 require 'fake_stripe/initializers/webmock'
+require 'fake_stripe/models'
 require 'fake_stripe/stub_app'
 require 'fake_stripe/stub_stripe_js'
-require 'fake_stripe/exceptions'
 
 if defined?(RSpec)
   require 'fake_stripe/rspec'
@@ -21,6 +22,10 @@ module FakeStripe
 
   def self.cards
     customer_cards.values
+  end
+
+  def self.card_ids
+    customer_cards.keys
   end
 
   def self.reset

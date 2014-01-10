@@ -23,10 +23,13 @@ module FakeStripe
     end
 
     post '/v1/charges' do
-      if customer_owns_card?
-        add_successful_charge
+      charge = Charge.new(FakeStripe.card_ids, params)
+
+      if charge.valid?
+        FakeStripe.charges << charge.response
+        json_response(201, charge.response.to_json)
       else
-        unknown_card_error
+        json_response(404, charge.error.to_json)
       end
     end
 
@@ -52,55 +55,6 @@ module FakeStripe
       content_type :json
       status response_code
       response_body
-    end
-
-    def successful_charge
-      {
-        amount: params[:amount].to_i,
-        customer: CUSTOMER_ID,
-        card: {
-          id: params[:card],
-          address_city: nil,
-          address_country: nil,
-          address_line1: nil,
-          address_line1_check: nil,
-          address_line2: nil,
-          address_state: nil,
-          address_zip: nil,
-          address_zip_check: nil,
-          country: "US",
-          cvc_check: "pass",
-          exp_month: 11,
-          exp_year: 2014,
-          fingerprint: "qhjxpr7DiCdFYTlH",
-          last4: "4242",
-          name: "john doe",
-          object: "card",
-          type: "Visa"
-        },
-        amount_refunded: 0,
-        created: 1360691193,
-        currency: "usd",
-        description: "Polygonian licensing",
-        dispute: nil,
-        failure_message: nil,
-        fee: 59,
-        fee_details: [
-          {
-            amount: 59,
-            application: nil,
-            currency: "usd",
-            description: "Stripe processing fees",
-            type: "stripe_fee"
-          }
-        ],
-        id: "ch_1HLqBx9AyixBof",
-        invoice: nil,
-        livemode: false,
-        object: "charge",
-        paid: true,
-        refunded: false
-      }
     end
 
     def customer_response
@@ -155,26 +109,6 @@ module FakeStripe
         object: "card",
         type: "Visa"
       }
-    end
-
-    def customer_owns_card?
-      params[:customer].nil? || FakeStripe.customer_cards.has_key?(params[:card])
-    end
-
-    def add_successful_charge
-      charge = successful_charge
-      FakeStripe.charges << charge
-      json_response 201, charge.to_json
-    end
-
-    def unknown_card_error
-      json_response(404, {
-        error: {
-          type: "invalid_request_error",
-          message: "Customer #{params[:customer]} does not have card with ID #{params[:card]}",
-          param: "card"
-        }
-      }.to_json)
     end
   end
 end
