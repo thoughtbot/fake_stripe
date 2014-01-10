@@ -7,7 +7,7 @@ module FakeStripe
     end
 
     get '/v1/customers/:id' do
-      json_response 200, fixture('retrieve_customer')
+      json_response 200, customer_response.to_json
     end
 
     post '/v1/customers/:customer_id/subscription' do
@@ -44,6 +44,7 @@ module FakeStripe
     def successful_charge
       {
         amount: params[:amount].to_i,
+        customer: CUSTOMER_ID,
         card: {
           id: params[:card],
           address_city: nil,
@@ -67,7 +68,6 @@ module FakeStripe
         amount_refunded: 0,
         created: 1360691193,
         currency: "usd",
-        customer: nil,
         description: "Polygonian licensing",
         dispute: nil,
         failure_message: nil,
@@ -87,6 +87,32 @@ module FakeStripe
         object: "charge",
         paid: true,
         refunded: false
+      }
+    end
+
+    def customer_response
+      {
+        active_card: FakeStripe.cards.first,
+        cards: cards_response,
+        account_balance: 0,
+        created: 1358789849,
+        delinquent: false,
+        description: nil,
+        discount: nil,
+        email: nil,
+        id: CUSTOMER_ID,
+        livemode: false,
+        object: "customer",
+        subscription: nil
+      }
+    end
+
+    def cards_response
+      {
+        object: "list",
+        count: FakeStripe.cards.size,
+        url: "/v1/customers/#{CUSTOMER_ID}/cards",
+        data: FakeStripe.cards
       }
     end
   end

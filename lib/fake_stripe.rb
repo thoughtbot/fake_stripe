@@ -12,6 +12,7 @@ module FakeStripe
   extend Configuration
 
   VALID_CARD_NUMBER = '4242424242424242'
+  CUSTOMER_ID = "cus_196jLbDuP1iwqH"
 
   def self.charges
     @@charges
@@ -21,8 +22,17 @@ module FakeStripe
     @@charges = charges
   end
 
+  def self.cards
+    @@cards
+  end
+
+  def self.cards=(cards)
+    @@cards = cards
+  end
+
   def self.reset
     @@charges = []
+    @@cards = []
   end
 
   def self.stub_stripe
