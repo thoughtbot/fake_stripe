@@ -1,0 +1,13 @@
+{
+  "charge": "ch_103ewb2eZvKYlo2CjopvmZyM",
+  "amount": 1000,
+  "created": 1394732152,
+  "status": "lost",
+  "livemode": false,
+  "currency": "usd",
+  "object": "dispute",
+  "reason": "general",
+  "balance_transaction": "txn_103cQg2eZvKYlo2CYKVlR2nh",
+  "evidence_due_by": 1396396799,
+  "evidence": null
+}

@@ -1,0 +1,49 @@
+{
+  "object": "list",
+  "url": "/v1/plans",
+  "count": 3,
+  "data": [
+    {
+    "interval": "month",
+    "name": "New plan name123",
+    "created": 1386247539,
+    "amount": 2000,
+    "currency": "usd",
+    "id": "gold21323",
+    "object": "plan",
+    "livemode": false,
+    "interval_count": 1,
+    "trial_period_days": null,
+    "metadata": {
+    }
+  },
+  {
+    "interval": "month",
+    "name": "New plan name124",
+    "created": 1386247540,
+    "amount": 2000,
+    "currency": "usd",
+    "id": "gold21324",
+    "object": "plan",
+    "livemode": false,
+    "interval_count": 1,
+    "trial_period_days": null,
+    "metadata": {
+    }
+  },
+    {
+    "interval": "month",
+    "name": "New plan name125",
+    "created": 1386247541,
+    "amount": 2000,
+    "currency": "usd",
+    "id": "gold21325",
+    "object": "plan",
+    "livemode": false,
+    "interval_count": 1,
+    "trial_period_days": null,
+    "metadata": {
+    }
+  }
+  ]
+}

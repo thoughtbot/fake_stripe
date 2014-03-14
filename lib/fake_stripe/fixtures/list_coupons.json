@@ -1,0 +1,58 @@
+{
+  "object": "list",
+  "url": "/v1/coupons",
+  "count": 3,
+  "data": [
+    {
+    "id": "25OFF",
+    "created": 1391687276,
+    "percent_off": 25,
+    "amount_off": null,
+    "currency": "usd",
+    "object": "coupon",
+    "livemode": false,
+    "duration": "repeating",
+    "redeem_by": null,
+    "max_redemptions": null,
+    "times_redeemed": 0,
+    "duration_in_months": 3,
+    "valid": true,
+    "metadata": {
+    }
+  },
+  {
+    "id": "30OFF",
+    "created": 1391687277,
+    "percent_off": 30,
+    "amount_off": null,
+    "currency": "usd",
+    "object": "coupon",
+    "livemode": false,
+    "duration": "repeating",
+    "redeem_by": null,
+    "max_redemptions": null,
+    "times_redeemed": 0,
+    "duration_in_months": 3,
+    "valid": true,
+    "metadata": {
+    }
+  },
+    {
+    "id": "35OFF",
+    "created": 1391687278,
+    "percent_off": 35,
+    "amount_off": null,
+    "currency": "usd",
+    "object": "coupon",
+    "livemode": false,
+    "duration": "repeating",
+    "redeem_by": null,
+    "max_redemptions": null,
+    "times_redeemed": 0,
+    "duration_in_months": 3,
+    "valid": true,
+    "metadata": {
+    }
+  }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "rp_103WyK2eZvKYlo2CXgqlepdQ",
+  "object": "recipient",
+  "created": 1392893343,
+  "livemode": false,
+  "type": "individual",
+  "description": "Recipient for test@example.com",
+  "email": null,
+  "name": "John Doe",
+  "verified": false,
+  "metadata": {
+  },
+  "active_account": {
+    "object": "bank_account",
+    "id": "ba_103WyK2eZvKYlo2CRbxre4Eb",
+    "bank_name": "BANK OF AMERICA, N.A.",
+    "last4": "6789",
+    "country": "US",
+    "currency": "usd",
+    "validated": false,
+    "verified": false,
+    "fingerprint": "j1CvuuIQNXSIdZuK",
+    "disabled": false
+  }
+}

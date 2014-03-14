@@ -1,0 +1,82 @@
+{
+  "object": "list",
+  "url": "v1/recipients",
+  "count": 3,
+  "data": [
+    {
+    "id": "rp_103WyK2eZvKYlo2CXgqlepdQ",
+    "object": "recipient",
+    "created": 1392893343,
+    "livemode": false,
+    "type": "individual",
+    "description": null,
+    "email": null,
+    "name": "John Doe",
+    "verified": false,
+    "metadata": {
+    },
+    "active_account": {
+      "object": "bank_account",
+      "id": "ba_103WyK2eZvKYlo2CRbxre4Eb",
+      "bank_name": "BANK OF AMERICA, N.A.",
+      "last4": "6789",
+      "country": "US",
+      "currency": "usd",
+      "validated": false,
+      "verified": false,
+      "fingerprint": "j1CvuuIQNXSIdZuK",
+      "disabled": false
+    }
+  },
+  {
+    "id": "rp_103WyK2eZvKYlo2CXgqlepdR",
+    "object": "recipient",
+    "created": 1392893344,
+    "livemode": false,
+    "type": "individual",
+    "description": null,
+    "email": null,
+    "name": "John Doe",
+    "verified": false,
+    "metadata": {
+    },
+    "active_account": {
+      "object": "bank_account",
+      "id": "ba_103WyK2eZvKYlo2CRbxre4Ec",
+      "bank_name": "BANK OF AMERICA, N.A.",
+      "last4": "6789",
+      "country": "US",
+      "currency": "usd",
+      "validated": false,
+      "verified": false,
+      "fingerprint": "j1CvuuIQNXSIdZuL",
+      "disabled": false
+    }
+  },
+  {
+    "id": "rp_103WyK2eZvKYlo2CXgqlepdS",
+    "object": "recipient",
+    "created": 1392893345,
+    "livemode": false,
+    "type": "individual",
+    "description": null,
+    "email": null,
+    "name": "John Doe",
+    "verified": false,
+    "metadata": {
+    },
+    "active_account": {
+      "object": "bank_account",
+      "id": "ba_103WyK2eZvKYlo2CRbxre4Ed",
+      "bank_name": "BANK OF AMERICA, N.A.",
+      "last4": "6789",
+      "country": "US",
+      "currency": "usd",
+      "validated": false,
+      "verified": false,
+      "fingerprint": "j1CvuuIQNXSIdZuM",
+      "disabled": false
+    }
+  }
+  ]
+}

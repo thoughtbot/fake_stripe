@@ -1,0 +1,26 @@
+{
+  "id": "tok_103eog2eZvKYlo2CE8etNomD",
+  "livemode": false,
+  "created": 1394702572,
+  "used": false,
+  "object": "token",
+  "type": "card",
+  "card": {
+    "id": "card_103eog2eZvKYlo2CoLfqGwa4",
+    "object": "card",
+    "last4": "4242",
+    "type": "Visa",
+    "exp_month": 8,
+    "exp_year": 2015,
+    "fingerprint": "Xt5EWLLDS7FJjR1c",
+    "customer": null,
+    "country": "US",
+    "name": null,
+    "address_line1": null,
+    "address_line2": null,
+    "address_city": null,
+    "address_state": null,
+    "address_zip": null,
+    "address_country": null
+  }
+}

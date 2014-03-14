@@ -1,0 +1,23 @@
+{
+  "id": "txn_103cQg2eZvKYlo2CYKVlR2nh",
+  "object": "balance_transaction",
+  "source": "ch_103cQg2eZvKYlo2CdLNiUG5P",
+  "amount": 100,
+  "currency": "usd",
+  "net": 41,
+  "type": "charge",
+  "created": 1394152014,
+  "available_on": 1394755200,
+  "status": "pending",
+  "fee": 59,
+  "fee_details": [
+    {
+      "amount": 45,
+      "currency": "usd",
+      "type": "stripe_fee",
+      "description": "Stripe processing fees",
+      "application": null
+    }
+  ],
+  "description": null
+}

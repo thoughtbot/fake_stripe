@@ -16,8 +16,17 @@ module FakeStripe
     @@charge_count = charge_count
   end
 
+  def self.refund_count
+    @@refund_count
+  end
+
+  def self.refund_count=(refund_count)
+    @@refund_count = refund_count
+  end
+
   def self.reset
     @@charge_count = 0
+    @@refund_count = 0
   end
 
   def self.stub_stripe

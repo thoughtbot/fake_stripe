@@ -1,31 +1,157 @@
 {
-  "delinquent": false,
-  "email": null,
-  "account_balance": 0,
-  "object": "customer",
-  "created": 1357831380,
-  "livemode": false,
-  "discount": null,
-  "active_card": {
-    "cvc_check": "pass",
-    "fingerprint": "qhjxpr7DiCdFYTlH",
-    "type": "Visa",
-    "address_line2": null,
-    "address_zip_check": null,
-    "address_city": null,
-    "exp_month": 6,
-    "last4": "4242",
-    "address_line1_check": null,
-    "address_zip": null,
-    "exp_year": 2013,
-    "object": "card",
-    "country": "US",
-    "address_state": null,
-    "name": null,
-    "address_country": null,
-    "address_line1": null
+  "object": "list",
+  "url": "v1/customers",
+  "count": 3,
+  "data": [
+    {
+    "object": "customer",
+    "created": 1394731627,
+    "id": "cus_3ewUPsNuSVb5hE",
+    "livemode": false,
+    "description": null,
+    "email": null,
+    "delinquent": false,
+    "metadata": {
+    },
+    "subscriptions": {
+      "object": "list",
+      "count": 0,
+      "url": "/v1/customers/cus_3ewUPsNuSVb5hE/subscriptions",
+      "data": [
+      ]
+    },
+    "discount": null,
+    "account_balance": 0,
+    "currency": "usd",
+    "cards": {
+      "object": "list",
+      "count": 1,
+      "url": "/v1/customers/cus_3ewUPsNuSVb5hE/cards",
+      "data": [
+        {
+          "id": "card_103ewU2eZvKYlo2CVToIWv6Q",
+          "object": "card",
+          "last4": "4242",
+          "type": "Visa",
+          "exp_month": 10,
+          "exp_year": 2016,
+          "fingerprint": "Xt5EWLLDS7FJjR1c",
+          "customer": "cus_3ewUPsNuSVb5hE",
+          "country": "US",
+          "name": "person1@example.com",
+          "address_line1": null,
+          "address_line2": null,
+          "address_city": null,
+          "address_state": null,
+          "address_zip": null,
+          "address_country": null,
+          "cvc_check": "pass",
+          "address_line1_check": null,
+          "address_zip_check": null
+        }
+      ]
+    },
+    "default_card": "card_103ewU2eZvKYlo2CVToIWv6Q"
   },
-  "subscription": null,
-  "id": "cus_14x4FzAhf3lW9V",
-  "description": null
+  {
+    "object": "customer",
+    "created": 1394731628,
+    "id": "cus_3ewUPsNuSVb5hF",
+    "livemode": false,
+    "description": null,
+    "email": null,
+    "delinquent": false,
+    "metadata": {
+    },
+    "subscriptions": {
+      "object": "list",
+      "count": 0,
+      "url": "/v1/customers/cus_3ewUPsNuSVb5hF/subscriptions",
+      "data": [
+      ]
+    },
+    "discount": null,
+    "account_balance": 0,
+    "currency": "usd",
+    "cards": {
+      "object": "list",
+      "count": 1,
+      "url": "/v1/customers/cus_3ewUPsNuSVb5hF/cards",
+      "data": [
+        {
+          "id": "card_103ewU2eZvKYlo2CVToIWv6R",
+          "object": "card",
+          "last4": "4242",
+          "type": "Visa",
+          "exp_month": 10,
+          "exp_year": 2016,
+          "fingerprint": "Xt5EWLLDS7FJjR1d",
+          "customer": "cus_3ewUPsNuSVb5hF",
+          "country": "US",
+          "name": "person2@example.com",
+          "address_line1": null,
+          "address_line2": null,
+          "address_city": null,
+          "address_state": null,
+          "address_zip": null,
+          "address_country": null,
+          "cvc_check": "pass",
+          "address_line1_check": null,
+          "address_zip_check": null
+        }
+      ]
+    },
+    "default_card": "card_103ewU2eZvKYlo2CVToIWv6R"
+  },
+  {
+    "object": "customer",
+    "created": 1394731629,
+    "id": "cus_3ewUPsNuSVb5hG",
+    "livemode": false,
+    "description": null,
+    "email": null,
+    "delinquent": false,
+    "metadata": {
+    },
+    "subscriptions": {
+      "object": "list",
+      "count": 0,
+      "url": "/v1/customers/cus_3ewUPsNuSVb5hG/subscriptions",
+      "data": [
+      ]
+    },
+    "discount": null,
+    "account_balance": 0,
+    "currency": "usd",
+    "cards": {
+      "object": "list",
+      "count": 1,
+      "url": "/v1/customers/cus_3ewUPsNuSVb5hG/cards",
+      "data": [
+        {
+          "id": "card_103ewU2eZvKYlo2CVToIWv6S",
+          "object": "card",
+          "last4": "4242",
+          "type": "Visa",
+          "exp_month": 10,
+          "exp_year": 2016,
+          "fingerprint": "Xt5EWLLDS7FJjR1e",
+          "customer": "cus_3ewUPsNuSVb5hG",
+          "country": "US",
+          "name": "person3@example.com",
+          "address_line1": null,
+          "address_line2": null,
+          "address_city": null,
+          "address_state": null,
+          "address_zip": null,
+          "address_country": null,
+          "cvc_check": "pass",
+          "address_line1_check": null,
+          "address_zip_check": null
+        }
+      ]
+    },
+    "default_card": "card_103ewU2eZvKYlo2CVToIWv6S"
+  }
+  ]
 }

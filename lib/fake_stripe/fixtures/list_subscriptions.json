@@ -1,0 +1,100 @@
+{
+  "object": "list",
+  "url": "/v1/customers/cu_103ewU2eZvKYlo2CUREXSezP/subscriptions",
+  "count": 3,
+  "data": [
+    {
+    "id": "sub_3ewdhCIki3FxWt",
+    "plan": {
+      "interval": "month",
+      "name": "New plan name123",
+      "created": 1386247539,
+      "amount": 2000,
+      "currency": "usd",
+      "id": "gold21323",
+      "object": "plan",
+      "livemode": false,
+      "interval_count": 1,
+      "trial_period_days": null,
+      "metadata": {
+      }
+    },
+    "object": "subscription",
+    "start": 1394732152,
+    "status": "active",
+    "customer": "cus_3ewUPsNuSVb5hE",
+    "cancel_at_period_end": false,
+    "current_period_start": 1394732152,
+    "current_period_end": 1397410552,
+    "ended_at": null,
+    "trial_start": null,
+    "trial_end": null,
+    "canceled_at": null,
+    "quantity": 1,
+    "application_fee_percent": null,
+    "discount": null
+  },
+  {
+    "id": "sub_3ewdhCIki3FxWu",
+    "plan": {
+      "interval": "month",
+      "name": "New plan name124",
+      "created": 1386247540,
+      "amount": 2000,
+      "currency": "usd",
+      "id": "gold21324",
+      "object": "plan",
+      "livemode": false,
+      "interval_count": 1,
+      "trial_period_days": null,
+      "metadata": {
+      }
+    },
+    "object": "subscription",
+    "start": 1394732153,
+    "status": "active",
+    "customer": "cus_3ewUPsNuSVb5hE",
+    "cancel_at_period_end": false,
+    "current_period_start": 1394732153,
+    "current_period_end": 1397410553,
+    "ended_at": null,
+    "trial_start": null,
+    "trial_end": null,
+    "canceled_at": null,
+    "quantity": 1,
+    "application_fee_percent": null,
+    "discount": null
+  },
+    {
+    "id": "sub_3ewdhCIki3FxWv",
+    "plan": {
+      "interval": "month",
+      "name": "New plan name125",
+      "created": 1386247541,
+      "amount": 2000,
+      "currency": "usd",
+      "id": "gold21323",
+      "object": "plan",
+      "livemode": false,
+      "interval_count": 1,
+      "trial_period_days": null,
+      "metadata": {
+      }
+    },
+    "object": "subscription",
+    "start": 1394732154,
+    "status": "active",
+    "customer": "cus_3ewUPsNuSVb5hE",
+    "cancel_at_period_end": false,
+    "current_period_start": 1394732154,
+    "current_period_end": 1397410554,
+    "ended_at": null,
+    "trial_start": null,
+    "trial_end": null,
+    "canceled_at": null,
+    "quantity": 1,
+    "application_fee_percent": null,
+    "discount": null
+  }
+  ]
+}

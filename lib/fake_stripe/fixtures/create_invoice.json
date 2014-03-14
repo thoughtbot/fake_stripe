@@ -1,0 +1,52 @@
+{
+  "date": 1394731307,
+  "id": "in_103ewP2eZvKYlo2CFLLwIX7a",
+  "period_start": 1394731307,
+  "period_end": 1394731307,
+  "lines": {
+    "data": [
+      {
+        "id": "ii_103UAn2eZvKYlo2CkLmj7ne9",
+        "object": "line_item",
+        "type": "invoiceitem",
+        "livemode": false,
+        "amount": 0,
+        "currency": "usd",
+        "proration": false,
+        "period": {
+          "start": 1392247767,
+          "end": 1392247767
+        },
+        "quantity": null,
+        "plan": null,
+        "description": null,
+        "metadata": {
+        }
+      }
+    ],
+    "count": 1,
+    "object": "list",
+    "url": "/v1/invoices/in_103ewP2eZvKYlo2CFLLwIX7a/lines"
+  },
+  "subtotal": 0,
+  "total": 0,
+  "customer": "cus_3ewUPsNuSVb5hE",
+  "object": "invoice",
+  "attempted": true,
+  "closed": true,
+  "paid": true,
+  "livemode": false,
+  "attempt_count": 0,
+  "amount_due": 0,
+  "currency": "usd",
+  "starting_balance": 0,
+  "ending_balance": null,
+  "next_payment_attempt": null,
+  "charge": null,
+  "discount": null,
+  "application_fee": null,
+  "subscription": "sub_3ewPpEGKafMelq",
+  "metadata": {
+  },
+  "description": null
+}
