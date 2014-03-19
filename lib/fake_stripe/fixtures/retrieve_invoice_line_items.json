@@ -1,0 +1,61 @@
+{
+  "object": "list",
+  "url": "/v1/invoices/in_103ewP2eZvKYlo2CFLLwIX7a/lines",
+  "count": 3,
+  "data": [
+    {
+    "id": "ii_103UAn2eZvKYlo2CkLmj7ne9",
+    "object": "line_item",
+    "type": "invoiceitem",
+    "livemode": false,
+    "amount": 100,
+    "currency": "usd",
+    "proration": false,
+    "period": {
+      "start": 1392247767,
+      "end": 1392247767
+    },
+    "quantity": null,
+    "plan": null,
+    "description": null,
+    "metadata": {
+    }
+  },
+  {
+    "id": "ii_103UAn2eZvKYlo2CkLmj7ne0",
+    "object": "line_item",
+    "type": "invoiceitem",
+    "livemode": false,
+    "amount": 200,
+    "currency": "usd",
+    "proration": false,
+    "period": {
+      "start": 1392247768,
+      "end": 1392247768
+    },
+    "quantity": null,
+    "plan": null,
+    "description": null,
+    "metadata": {
+    }
+  },
+  {
+    "id": "ii_103UAn2eZvKYlo2CkLmj7ne1",
+    "object": "line_item",
+    "type": "invoiceitem",
+    "livemode": false,
+    "amount": 300,
+    "currency": "usd",
+    "proration": false,
+    "period": {
+      "start": 1392247769,
+      "end": 1392247769
+    },
+    "quantity": null,
+    "plan": null,
+    "description": null,
+    "metadata": {
+    }
+  }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "object": "list",
+  "url": "/v1/balance/history",
+  "count": 3,
+  "data": [
+    {
+    "id": "txn_103cQg2eZvKYlo2CYKVlR2nh",
+    "object": "balance_transaction",
+    "source": "ch_103cQg2eZvKYlo2CdLNiUG5P",
+    "amount": 100,
+    "currency": "usd",
+    "net": 41,
+    "type": "charge",
+    "created": 1394152014,
+    "available_on": 1394755200,
+    "status": "pending",
+    "fee": 59,
+    "fee_details": [
+      {
+        "amount": 45,
+        "currency": "usd",
+        "type": "stripe_fee",
+        "description": "Stripe processing fees",
+        "application": null
+      }
+    ],
+    "description": null
+  },
+  {
+    "id": "txn_103cQg2eZvKYlo2CYKVlR2ni",
+    "object": "balance_transaction",
+    "source": "ch_103cQg2eZvKYlo2CdLNiUG5Q",
+    "amount": 100,
+    "currency": "usd",
+    "net": 41,
+    "type": "charge",
+    "created": 1394152015,
+    "available_on": 1394755201,
+    "status": "pending",
+    "fee": 59,
+    "fee_details": [
+      {
+        "amount": 45,
+        "currency": "usd",
+        "type": "stripe_fee",
+        "description": "Stripe processing fees",
+        "application": null
+      }
+    ],
+    "description": null
+  },
+  {
+    "id": "txn_103cQg2eZvKYlo2CYKVlR2nj",
+    "object": "balance_transaction",
+    "source": "ch_103cQg2eZvKYlo2CdLNiUG5R",
+    "amount": 100,
+    "currency": "usd",
+    "net": 41,
+    "type": "charge",
+    "created": 1394152016,
+    "available_on": 1394755202,
+    "status": "pending",
+    "fee": 59,
+    "fee_details": [
+      {
+        "amount": 45,
+        "currency": "usd",
+        "type": "stripe_fee",
+        "description": "Stripe processing fees",
+        "application": null
+      }
+    ],
+    "description": null
+  }
+  ]
+}

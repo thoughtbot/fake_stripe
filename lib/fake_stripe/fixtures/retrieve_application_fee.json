@@ -1,0 +1,17 @@
+{
+  "id": "fee_3ewdpQuL9AggWF",
+  "object": "application_fee",
+  "created": 1394732153,
+  "livemode": false,
+  "amount": 100,
+  "currency": "usd",
+  "refunded": false,
+  "amount_refunded": 0,
+  "refunds": [
+
+  ],
+  "balance_transaction": "txn_103cQg2eZvKYlo2CYKVlR2nh",
+  "account": "acct_1032D82eZvKYlo2C",
+  "application": "ca_3ewdjwfoVd3Ccrb69CJKNS0tZJ6D4eQm",
+  "charge": "ch_103ewb2eZvKYlo2CjopvmZyM"
+}

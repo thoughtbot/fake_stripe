@@ -1,0 +1,63 @@
+{
+  "date": 1394731307,
+  "period_start": 1394731307,
+  "period_end": 1394731307,
+  "lines": {
+    "object": "list",
+    "count": 1,
+    "url": "/v1/invoices/upcoming/lines?customer=cus_3ewUPsNuSVb5hE",
+    "data": [
+      {
+        "id": "sub_3ewPpEGKafMelq",
+        "object": "line_item",
+        "type": "subscription",
+        "livemode": false,
+        "amount": 0,
+        "currency": "usd",
+        "proration": false,
+        "period": {
+          "start": 1394731307,
+          "end": 1395163307
+        },
+        "quantity": 1,
+        "plan": {
+          "interval": "month",
+          "name": "PricingPlan 311",
+          "created": 1394731304,
+          "amount": 311,
+          "currency": "usd",
+          "id": "TestMode4",
+          "object": "plan",
+          "livemode": false,
+          "interval_count": 1,
+          "trial_period_days": 5,
+          "metadata": {
+          }
+        },
+        "description": null,
+        "metadata": null
+      }
+    ]
+  },
+  "subtotal": 0,
+  "total": 0,
+  "customer": "cus_3ewUPsNuSVb5hE",
+  "object": "invoice",
+  "attempted": true,
+  "closed": true,
+  "paid": true,
+  "livemode": false,
+  "attempt_count": 0,
+  "amount_due": 0,
+  "currency": "usd",
+  "starting_balance": 0,
+  "ending_balance": null,
+  "next_payment_attempt": null,
+  "charge": null,
+  "discount": null,
+  "application_fee": null,
+  "subscription": "sub_3ewPpEGKafMelq",
+  "metadata": {
+  },
+  "description": null
+}

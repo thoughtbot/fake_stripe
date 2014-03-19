@@ -1,0 +1,52 @@
+{
+  "object": "list",
+  "url": "/v1/invoiceitems",
+  "count": 3,
+  "data": [
+    {
+    "object": "invoiceitem",
+    "id": "ii_103UAn2eZvKYlo2CkLmj7ne9",
+    "date": 1392247767,
+    "amount": 0,
+    "livemode": false,
+    "proration": false,
+    "currency": "usd",
+    "customer": "cus_3ewUPsNuSVb5hE",
+    "description": null,
+    "metadata": {
+    },
+    "invoice": "in_103UAp2eZvKYlo2C6xOPMzPj",
+    "subscription": null
+  },
+  {
+    "object": "invoiceitem",
+    "id": "ii_103UAn2eZvKYlo2CkLmj7ne0",
+    "date": 1392247768,
+    "amount": 0,
+    "livemode": false,
+    "proration": false,
+    "currency": "usd",
+    "customer": "cus_3ewUPsNuSVb5hF",
+    "description": null,
+    "metadata": {
+    },
+    "invoice": "in_103UAp2eZvKYlo2C6xOPMzPk",
+    "subscription": null
+  },
+  {
+    "object": "invoiceitem",
+    "id": "ii_103UAn2eZvKYlo2CkLmj7ne1",
+    "date": 1392247769,
+    "amount": 0,
+    "livemode": false,
+    "proration": false,
+    "currency": "usd",
+    "customer": "cus_3ewUPsNuSVb5hG",
+    "description": null,
+    "metadata": {
+    },
+    "invoice": "in_103UAp2eZvKYlo2C6xOPMzPl",
+    "subscription": null
+  }
+  ]
+}

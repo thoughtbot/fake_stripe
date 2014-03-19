@@ -1,0 +1,16 @@
+{
+  "pending": [
+    {
+      "amount": 16210182,
+      "currency": "usd"
+    }
+  ],
+  "available": [
+    {
+      "amount": 0,
+      "currency": "usd"
+    }
+  ],
+  "livemode": false,
+  "object": "balance"
+}

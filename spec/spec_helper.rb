@@ -2,6 +2,7 @@ require 'fake_stripe'
 require 'pry'
 require 'rspec'
 require 'stripe'
+require 'rack/test'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|

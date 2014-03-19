@@ -1,0 +1,14 @@
+{
+  "interval": "month",
+  "name": "New plan name",
+  "created": 1386247539,
+  "amount": 2000,
+  "currency": "usd",
+  "id": "gold21323",
+  "object": "plan",
+  "livemode": false,
+  "interval_count": 1,
+  "trial_period_days": null,
+  "metadata": {
+  }
+}
