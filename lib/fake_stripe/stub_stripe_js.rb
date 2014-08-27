@@ -9,7 +9,16 @@ module FakeStripe
 
       content_type 'text/javascript'
       status 200
-      File.open(file_path, 'rb').read
+      IO.read(file_path)
+    end
+
+    get '/v2/' do
+      file_path = File.join(File.dirname(__FILE__), '/assets/v2.js')
+      mock_file_path = File.join(File.dirname(__FILE__), '/assets/v2-mock.js')
+
+      content_type 'text/javascript'
+      status 200
+      IO.read(file_path) + IO.read(mock_file_path)
     end
 
     def self.boot
