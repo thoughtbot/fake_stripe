@@ -20,7 +20,7 @@
   "card": {
     "object": "card",
     "last4": "4242",
-    "type": "Visa",
+    "brand": "Visa",
     "exp_month": 11,
     "exp_year": 2014,
     "fingerprint": "qhjxpr7DiCdFYTlH",

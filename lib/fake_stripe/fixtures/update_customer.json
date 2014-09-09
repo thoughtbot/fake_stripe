@@ -28,7 +28,7 @@
         "id": "card_103ewU2eZvKYlo2CVToIWv6Q",
         "object": "card",
         "last4": "4242",
-        "type": "Visa",
+        "brand": "Visa",
         "exp_month": 10,
         "exp_year": 2016,
         "fingerprint": "Xt5EWLLDS7FJjR1c",
