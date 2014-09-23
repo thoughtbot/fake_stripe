@@ -32,6 +32,7 @@ module FakeStripe
 
     # Customers
     post '/v1/customers' do
+      FakeStripe.customer_count += 1
       json_response 200, fixture('create_customer')
     end
 

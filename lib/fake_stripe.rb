@@ -24,8 +24,17 @@ module FakeStripe
     @@refund_count = refund_count
   end
 
+  def self.customer_count
+    @@customer_count
+  end
+
+  def self.customer_count=(customer_count)
+    @@customer_count = customer_count
+  end
+
   def self.reset
     @@charge_count = 0
+    @@customer_count = 0
     @@refund_count = 0
   end
 

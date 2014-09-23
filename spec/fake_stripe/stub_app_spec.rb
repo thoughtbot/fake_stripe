@@ -28,4 +28,12 @@ describe FakeStripe::StubApp do
       end.to change(FakeStripe, :refund_count).by(1)
     end
   end
+
+  describe "POST /v1/customers" do
+    it "increments the customer counter" do
+      expect do
+        Stripe::Customer.create
+      end.to change(FakeStripe, :customer_count).by(1)
+    end
+  end
 end
