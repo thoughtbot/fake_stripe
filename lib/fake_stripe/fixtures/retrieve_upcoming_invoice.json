@@ -5,7 +5,7 @@
   "lines": {
     "object": "list",
     "count": 1,
-    "url": "/v1/invoices/upcoming/lines?customer=cus_3ewUPsNuSVb5hE",
+    "url": "/v1/invoices/upcoming/lines?customer=abcdefghijklmnop",
     "data": [
       {
         "id": "sub_3ewPpEGKafMelq",
@@ -41,7 +41,7 @@
   },
   "subtotal": 0,
   "total": 0,
-  "customer": "cus_3ewUPsNuSVb5hE",
+  "customer": "abcdefghijklmnop",
   "object": "invoice",
   "attempted": true,
   "closed": true,

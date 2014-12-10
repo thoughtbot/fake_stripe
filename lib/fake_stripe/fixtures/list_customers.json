@@ -6,7 +6,7 @@
     {
     "object": "customer",
     "created": 1394731627,
-    "id": "cus_3ewUPsNuSVb5hE",
+    "id": "abcdefghijklmnop",
     "livemode": false,
     "description": null,
     "email": null,
@@ -16,7 +16,7 @@
     "subscriptions": {
       "object": "list",
       "count": 0,
-      "url": "/v1/customers/cus_3ewUPsNuSVb5hE/subscriptions",
+      "url": "/v1/customers/abcdefghijklmnop/subscriptions",
       "data": [
       ]
     },
@@ -26,17 +26,17 @@
     "cards": {
       "object": "list",
       "count": 1,
-      "url": "/v1/customers/cus_3ewUPsNuSVb5hE/cards",
+      "url": "/v1/customers/abcdefghijklmnop/cards",
       "data": [
         {
-          "id": "card_103ewU2eZvKYlo2CVToIWv6Q",
+          "id": "card_1234567890ABCDEFghijklmn",
           "object": "card",
           "last4": "4242",
           "brand": "Visa",
           "exp_month": 10,
           "exp_year": 2016,
-          "fingerprint": "Xt5EWLLDS7FJjR1c",
-          "customer": "cus_3ewUPsNuSVb5hE",
+          "fingerprint": "ZYXWVUTSRQPONMLK",
+          "customer": "abcdefghijklmnop",
           "country": "US",
           "name": "person1@example.com",
           "address_line1": null,
@@ -51,7 +51,7 @@
         }
       ]
     },
-    "default_card": "card_103ewU2eZvKYlo2CVToIWv6Q"
+    "default_card": "card_1234567890ABCDEFghijklmn"
   },
   {
     "object": "customer",
