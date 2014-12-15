@@ -41,7 +41,7 @@ module FakeStripe
   def self.stub_stripe
     Stripe.api_key = 'FAKE_STRIPE_API_KEY'
     FakeStripe.reset
-    stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::StubApp)
+    stub_request(:any, /#{Stripe.api_base}/).to_rack(FakeStripe::StubApp)
   end
 end
 

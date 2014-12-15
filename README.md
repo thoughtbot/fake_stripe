@@ -34,19 +34,19 @@ unless defined? STRIPE_JS_HOST
 end
 ```
 
-Include the Stripe JavaScript in your application template:
+Include the Stripe JavaScript in your application layout:
 
 ```rhtml
 # app/views/layouts/application.html.erb
-<%= javascript_include_tag "#{STRIPE_JS_HOST}/v1/" %>
+<%= javascript_include_tag "#{STRIPE_JS_HOST}/v2/" %>
 ```
 
 When the test suite runs `fake_stripe` will override the address for
-`STRIPE_JS_HOST` and serve up a local version of [Stripe.js](https://stripe.com/docs/stripe.js).
+`STRIPE_JS_HOST` and serve up the stubbed version of [Stripe.js](https://stripe.com/docs/stripe.js).
 
 ### In Tests
 
-Require the library in your spec support:
+Stub all requests to the library in spec support:
 
 ```ruby
 # spec/support/fake_stripe.rb
