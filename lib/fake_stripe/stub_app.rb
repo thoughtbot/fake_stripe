@@ -54,6 +54,7 @@ module FakeStripe
 
     # Cards
     post '/v1/customers/:customer_id/cards' do
+      FakeStripe.card_count += 1
       json_response 200, fixture('create_card')
     end
 
@@ -75,6 +76,7 @@ module FakeStripe
 
     # Subscriptions
     post '/v1/customers/:customer_id/subscriptions' do
+      FakeStripe.subscription_count += 1
       json_response 200, fixture('create_subscription')
     end
 
@@ -96,6 +98,7 @@ module FakeStripe
 
     # Plans
     post '/v1/plans' do
+      FakeStripe.plan_count += 1
       json_response 200, fixture('create_plan')
     end
 
@@ -117,6 +120,7 @@ module FakeStripe
 
     # Coupons
     post '/v1/coupons' do
+      FakeStripe.coupon_count += 1
       json_response 200, fixture('create_coupon')
     end
 
@@ -151,6 +155,7 @@ module FakeStripe
     end
 
     post '/v1/invoices' do
+      FakeStripe.invoice_count += 1
       json_response 200, fixture('create_invoice')
     end
 
@@ -172,6 +177,7 @@ module FakeStripe
 
     # Invoice Items
     post '/v1/invoiceitems' do
+      FakeStripe.invoiceitem_count += 1
       json_response 200, fixture('create_invoiceitem')
     end
 
@@ -202,6 +208,7 @@ module FakeStripe
 
     # Transfers
     post '/v1/transfers' do
+      FakeStripe.transfer_count += 1
       json_response 200, fixture('create_transfer')
     end
 
@@ -223,6 +230,7 @@ module FakeStripe
 
     # Recipients
     post '/v1/recipients' do
+      FakeStripe.recipient_count += 1
       json_response 200, fixture('create_recipient')
     end
 
@@ -284,6 +292,7 @@ module FakeStripe
 
     # Tokens
     post '/v1/tokens' do
+      FakeStripe.token_count += 1
       json_response 200, fixture('create_token')
     end
 
