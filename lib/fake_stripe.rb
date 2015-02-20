@@ -7,116 +7,23 @@ module FakeStripe
   extend Configuration
 
   VALID_CARD_NUMBER = '4242424242424242'
+  STRIPE_OBJECTS = %w{card charge coupon customer invoice invoiceitem plan
+    recipient refund subscription token transfer}.freeze
 
-  def self.card_count
-    @card_count
-  end
+  STRIPE_OBJECTS.each do |object|
+    define_singleton_method "#{object}_count" do
+      instance_variable_get("@#{object}_count")
+    end
 
-  def self.card_count=(card_count)
-    @card_count = card_count
-  end
-
-  def self.charge_count
-    @charge_count
-  end
-
-  def self.charge_count=(charge_count)
-    @charge_count = charge_count
-  end
-
-  def self.coupon_count
-    @coupon_count
-  end
-
-  def self.coupon_count=(coupon_count)
-    @coupon_count = coupon_count
-  end
-
-  def self.customer_count
-    @customer_count
-  end
-
-  def self.customer_count=(customer_count)
-    @customer_count = customer_count
-  end
-
-  def self.invoice_count
-    @invoice_count
-  end
-
-  def self.invoice_count=(invoice_count)
-    @invoice_count = invoice_count
-  end
-
-  def self.invoiceitem_count
-    @invoiceitem_count
-  end
-
-  def self.invoiceitem_count=(invoiceitem_count)
-    @invoiceitem_count = invoiceitem_count
-  end
-
-  def self.plan_count
-    @plan_count
-  end
-
-  def self.plan_count=(plan_count)
-    @plan_count = plan_count
-  end
-
-  def self.recipient_count
-    @recipient_count
-  end
-
-  def self.recipient_count=(recipient_count)
-    @recipient_count = recipient_count
-  end
-
-  def self.refund_count
-    @refund_count
-  end
-
-  def self.refund_count=(refund_count)
-    @refund_count = refund_count
-  end
-
-  def self.subscription_count
-    @subscription_count
-  end
-
-  def self.subscription_count=(subscription_count)
-    @subscription_count = subscription_count
-  end
-
-  def self.token_count
-    @token_count
-  end
-
-  def self.token_count=(token_count)
-    @token_count = token_count
-  end
-
-  def self.transfer_count
-    @transfer_count
-  end
-
-  def self.transfer_count=(transfer_count)
-    @transfer_count = transfer_count
+    define_singleton_method "#{object}_count=" do |count|
+      instance_variable_set("@#{object}_count", count)
+    end
   end
 
   def self.reset
-    @card_count = 0
-    @charge_count = 0
-    @coupon_count = 0
-    @customer_count = 0
-    @invoice_count = 0
-    @invoiceitem_count = 0
-    @plan_count = 0
-    @recipient_count = 0
-    @refund_count = 0
-    @subscription_count = 0
-    @token_count = 0
-    @transfer_count = 0
+    STRIPE_OBJECTS.each do |object|
+      instance_variable_set("@#{object}_count", 0)
+    end
   end
 
   def self.stub_stripe
