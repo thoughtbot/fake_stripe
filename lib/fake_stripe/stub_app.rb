@@ -297,7 +297,7 @@ module FakeStripe
     # Tokens
     post '/v1/tokens' do
       FakeStripe.token_count += 1
-      json_response 200, fixture('create_token')
+      json_response 200, fixture(token_fixture_name)
     end
 
     get '/v1/tokens/:token_id' do
@@ -315,6 +315,14 @@ module FakeStripe
       content_type :json
       status response_code
       response_body
+    end
+
+    def token_fixture_name
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        "create_bank_account_token"
+      else
+        "create_card_token"
+      end
     end
   end
 end

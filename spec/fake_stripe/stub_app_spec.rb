@@ -114,10 +114,32 @@ describe FakeStripe::StubApp do
   end
 
   describe "POST /v1/tokens" do
-    it "increments the token counter" do
-      expect do
-        Stripe::Token.create
-      end.to change(FakeStripe, :token_count).by(1)
+    context "when bank account is provided" do
+      it "increments the token counter" do
+        expect do
+          Stripe::Token.create(bank_account: "bank_account")
+        end.to change(FakeStripe, :token_count).by(1)
+      end
+
+      it "returns a bank account token" do
+        result = Stripe::Token.create(bank_account: "bank_account")
+
+        expect(result.type).to eq FakeStripe::BANK_ACCOUNT_OBJECT_TYPE
+      end
+    end
+
+    context "when bank account is not provided" do
+      it "increments the token counter" do
+        expect do
+          Stripe::Token.create
+        end.to change(FakeStripe, :token_count).by(1)
+      end
+
+      it "returns a card token" do
+        result = Stripe::Token.create
+
+        expect(result.type).to eq FakeStripe::CARD_OBJECT_TYPE
+      end
     end
   end
 end

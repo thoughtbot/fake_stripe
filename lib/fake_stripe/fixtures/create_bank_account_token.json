@@ -1,0 +1,20 @@
+{
+  "id": "btok_708phkA019nh7S",
+  "livemode": false,
+  "created": 1442519980,
+  "used": false,
+  "object": "token",
+  "type": "bank_account",
+  "bank_account": {
+    "object": "bank_account",
+    "id": "ba_16m8Xg2eZvKYlo2CXbwc60ZX",
+    "last4": "6789",
+    "country": "US",
+    "currency": "usd",
+    "status": "new",
+    "fingerprint": "1JWtPxqbdX5Gamtc",
+    "routing_number": "110000000",
+    "bank_name": "STRIPE TEST BANK"
+  },
+  "client_ip": null
+}

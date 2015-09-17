@@ -9,6 +9,9 @@ module FakeStripe
   VALID_CARD_NUMBER = '4242424242424242'
   STRIPE_OBJECTS = %w{card charge coupon customer invoice invoiceitem plan
     recipient refund subscription token transfer}.freeze
+  CARD_OBJECT_TYPE = "card"
+  BANK_ACCOUNT_OBJECT_TYPE = "bank_account"
+
 
   STRIPE_OBJECTS.each do |object|
     define_singleton_method "#{object}_count" do
