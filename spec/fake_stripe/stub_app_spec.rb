@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe FakeStripe::StubApp do
+  describe "POST /v1/accounts" do
+    it "returns an account response" do
+      result = Stripe::Account.create
+
+      expect(result.object).to eq("account")
+    end
+  end
+
   describe 'POST /v1/charges' do
     it 'returns a fake charge response' do
       result = Stripe::Charge.create

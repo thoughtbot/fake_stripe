@@ -1,0 +1,108 @@
+{
+  "id": "acct_1032D82eZvKYlo2C",
+  "email": "bob@example.com",
+  "statement_descriptor": null,
+  "display_name": "Stripe.com",
+  "timezone": "US/Pacific",
+  "details_submitted": false,
+  "charges_enabled": false,
+  "transfers_enabled": false,
+  "currencies_supported": [
+    "usd",
+    "aed",
+    "afn",
+    "..."
+  ],
+  "default_currency": "usd",
+  "country": "US",
+  "object": "account",
+  "business_name": "Stripe.com",
+  "business_url": null,
+  "support_phone": null,
+  "business_logo": null,
+  "managed": false,
+  "product_description": null,
+  "debit_negative_balances": true,
+  "bank_accounts": {
+    "object": "list",
+    "total_count": 0,
+    "has_more": false,
+    "url": "/v1/accounts/acct_1032D82eZvKYlo2C/bank_accounts",
+    "data": [
+
+    ]
+  },
+  "external_accounts": {
+    "object": "list",
+    "total_count": 0,
+    "has_more": false,
+    "url": "/v1/accounts/acct_1032D82eZvKYlo2C/external_accounts",
+    "data": [
+
+    ]
+  },
+  "verification": {
+    "fields_needed": [
+      "bank_account",
+      "business_url",
+      "product_description",
+      "support_phone",
+      "tos_acceptance.date",
+      "tos_acceptance.ip"
+    ],
+    "due_by": null,
+    "disabled_reason": "fields_needed"
+  },
+  "transfer_schedule": {
+    "delay_days": 7,
+    "interval": "daily"
+  },
+  "decline_charge_on": {
+    "cvc_failure": false,
+    "avs_failure": false
+  },
+  "tos_acceptance": {
+    "ip": null,
+    "date": null,
+    "user_agent": null
+  },
+  "legal_entity": {
+    "type": null,
+    "business_name": null,
+    "address": {
+      "line1": null,
+      "line2": null,
+      "city": null,
+      "state": null,
+      "postal_code": null,
+      "country": "US"
+    },
+    "first_name": null,
+    "last_name": null,
+    "personal_address": {
+      "line1": null,
+      "line2": null,
+      "city": null,
+      "state": null,
+      "postal_code": null,
+      "country": null
+    },
+    "dob": {
+      "day": null,
+      "month": null,
+      "year": null
+    },
+    "additional_owners": null,
+    "verification": {
+      "status": "unverified",
+      "document": null,
+      "details": null
+    },
+    "personal_id_number_provided": false,
+    "ssn_last_4_provided": false
+  },
+  "keys": {
+    "secret": "sk_test_sZNZe3vkCcTaOHv5fcZKzqdj",
+    "publishable": "pk_test_ahej4zmobxbm5NAH3tD3fCjM"
+  }
+}

@@ -268,6 +268,10 @@ module FakeStripe
       json_response 200, fixture('retrieve_account')
     end
 
+    post "/v1/accounts" do
+      json_response 201, fixture("create_account")
+    end
+
     # Balance
     get '/v1/balance' do
       json_response 200, fixture('retrieve_balance')
