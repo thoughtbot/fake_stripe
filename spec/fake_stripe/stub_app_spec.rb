@@ -1,6 +1,22 @@
 require 'spec_helper'
 
 describe FakeStripe::StubApp do
+  describe "GET /v1/accounts/:account_id" do
+    it "returns an account response" do
+      result = Stripe::Account.retrieve("stripe-account-id")
+
+      expect(result.object).to eq("account")
+    end
+  end
+
+  describe "GET /v1/account" do
+    it "returns an account response" do
+      result = Stripe::Account.retrieve
+
+      expect(result.object).to eq("account")
+    end
+  end
+
   describe "POST /v1/accounts" do
     it "returns an account response" do
       result = Stripe::Account.create

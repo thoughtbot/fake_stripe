@@ -15,5 +15,25 @@
   ],
   "default_currency": "usd",
   "country": "US",
-  "object": "account"
+  "object": "account",
+  "bank_accounts": {
+    "object": "list",
+    "total_count": 1,
+    "has_more": false,
+    "url": "/v1/accounts/acct_1032D82eZvKYlo2C/external_accounts",
+    "data": [{
+      "id":"ba_16ndClBdETbGCbQrGski5zps",
+      "object":"bank_account",
+      "last4":"1234",
+      "country":"US",
+      "currency":"usd",
+      "status":"new",
+      "fingerprint":"axCsvGRahxD6fvu0",
+      "routing_number":"110000000",
+      "bank_name":"STRIPE TEST BANK",
+      "account":"acct_28ndDlB5ETbGCaQr",
+      "default_for_currency":true,
+      "metadata":{}
+    }]
+  }
 }
