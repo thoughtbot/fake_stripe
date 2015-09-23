@@ -17,6 +17,17 @@ describe FakeStripe::StubApp do
     end
   end
 
+  describe "POST /v1/accounts/:account_id" do
+    it "returns an account response" do
+      account = Stripe::Account.new(id: "account-id")
+      account.email = "jennifer@example.com"
+
+      result = account.save
+
+      expect(result.object).to eq("account")
+    end
+  end
+
   describe "POST /v1/accounts" do
     it "returns an account response" do
       result = Stripe::Account.create
