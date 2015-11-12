@@ -1,12 +1,15 @@
 {
   "id": "acct_1032D82eZvKYlo2C",
+  "object": "account",
   "email": "site@stripe.com",
-  "statement_descriptor": null,
   "display_name": null,
-  "timezone": "Etc/UTC",
   "details_submitted": false,
+  "business_logo": null,
+  "business_name": null,
+  "business_url": null,
   "charge_enabled": false,
-  "transfer_enabled": false,
+  "debit_negative_balances": false,
+  "decline_charge_on": {"avs_failure": false, "cvc_failure": false},
   "currencies_supported": [
     "usd",
     "aed",
@@ -35,5 +38,78 @@
       "default_for_currency":true,
       "metadata":{}
     }]
+  },
+  "external_accounts": {
+    "object": "list",
+    "data": [
+      {
+        "id":"ba_16ndClBdETbGCbQrGski5zps",
+        "object": "bank_account",
+        "account":"acct_28ndDlB5ETbGCaQr",
+        "bank_name": "STRIPE TEST BANK",
+        "country": "US",
+        "currency": "usd",
+        "default_for_currency": true,
+        "fingerprint":"axCsvGRahxD6fvu0",
+        "last4": "1234",
+        "metadata": {},
+        "routing_number": "110000000",
+        "status": "new"
+      }
+    ],
+    "has_more": false,
+    "total_count": 1,
+    "url": "/v1/accounts/acct_16vteKH0GjZwV0ke/external_accounts"
+  },
+  "legal_entity": {
+    "additional_owners": null,
+    "address": {
+      "city": "San Francisco",
+      "country": "US",
+      "line1": "1 Market St",
+      "line2": null,
+      "postal_code": "94105",
+      "state": "CA"
+    },
+    "business_name": null,
+    "dob": {"day": 1, "month": 1, "year": 1980},
+    "first_name": "John",
+    "last_name": "Doe",
+    "personal_address": {
+      "city": null,
+      "country": null,
+      "line1": null,
+      "line2": null,
+      "postal_code": null,
+      "state": null
+    },
+    "personal_id_number_provided": false,
+    "ssn_last_4_provided": true,
+    "type": "individual",
+    "verification": {
+      "details": null,
+      "details_code": null,
+      "document": null,
+      "status": "unverified"
+    }
+  },
+  "managed": true,
+  "metadata": {},
+  "product_description": null,
+  "statement_descriptor": null,
+  "support_phone": null,
+  "timezone": "Etc/UTC",
+  "tos_acceptance": {
+    "date": 1444846011,
+    "ip": "162.222.102.30",
+    "user_agent": null
+  },
+  "transfer_schedule": {"delay_days": 2, "interval": "daily"},
+  "transfers_enabled": true,
+  "verification": {
+    "disabled_reason": null,
+    "due_by": null,
+    "fields_needed": [],
+    "contacted": false
   }
 }
