@@ -23,29 +23,31 @@
   "managed": false,
   "product_description": null,
   "debit_negative_balances": true,
-  "bank_accounts": {
+  "external_accounts": {
     "object": "list",
-    "total_count": 1,
+    "data": [
+      {
+        "id":"ba_16ndClBdETbGCbQrGski5zps",
+        "object": "bank_account",
+        "account":"acct_39ndDlB5ETbGCsWt",
+        "bank_name": "STRIPE TEST BANK",
+        "country": "US",
+        "currency": "usd",
+        "default_for_currency": true,
+        "fingerprint":"axCsvGRahxD6fvu0",
+        "last4": "1234",
+        "metadata": {},
+        "routing_number": "110000000",
+        "status": "new"
+      }
+    ],
     "has_more": false,
-    "url": "/v1/accounts/acct_1032D82eZvKYlo2C/external_accounts",
-    "data": [{
-      "id":"ba_16ndClBdETbGCbQrGski5xad",
-      "object":"bank_account",
-      "last4":"2345",
-      "country":"US",
-      "currency":"usd",
-      "status":"new",
-      "fingerprint":"axCsvGRahxD6fvu0",
-      "routing_number":"110000000",
-      "bank_name":"STRIPE TEST BANK",
-      "account":"acct_39ndDlB5ETbGCsWt",
-      "default_for_currency":true,
-      "metadata":{}
-    }]
+    "total_count": 1,
+    "url": "/v1/accounts/acct_1032D82eZvKYlo2C/external_accounts"
   },
   "verification": {
     "fields_needed": [
-      "bank_account",
+      "external_account",
       "business_url",
       "product_description",
       "support_phone",
