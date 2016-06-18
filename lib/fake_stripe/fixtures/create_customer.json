@@ -8,6 +8,38 @@
   "delinquent": false,
   "metadata": {
   },
+  "sources": {
+    "object": "list",
+    "data": [
+      {
+        "id": "card_1234567890ABCDEFghijklmn",
+        "object": "card",
+        "address_city": null,
+        "address_country": null,
+        "address_line1": null,
+        "address_line1_check": null,
+        "address_line2": null,
+        "address_state": null,
+        "address_zip": null,
+        "address_zip_check": null,
+        "brand": "Visa",
+        "country": "US",
+        "customer": "abcdefghijklmnop",
+        "cvc_check": "pass",
+        "dynamic_last4": null,
+        "exp_month": 10,
+        "exp_year": 2016,
+        "funding": "credit",
+        "last4": "4242",
+        "metadata": {},
+        "name": null,
+        "tokenization_method": null
+      }
+    ],
+    "has_more": false,
+    "total_count": 1,
+    "url": "/v1/customers/abcdefghijklmnop/subscriptions"
+  },
   "subscriptions": {
     "object": "list",
     "count": 0,
