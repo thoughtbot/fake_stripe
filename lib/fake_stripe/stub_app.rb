@@ -74,6 +74,10 @@ module FakeStripe
       json_response 200, fixture('list_cards')
     end
 
+    get '/v1/customers/:customer_id/sources/:id' do
+      json_response 200, fixture('retrieve_card')
+    end
+
     # Subscriptions
     post '/v1/customers/:customer_id/subscriptions' do
       FakeStripe.subscription_count += 1
