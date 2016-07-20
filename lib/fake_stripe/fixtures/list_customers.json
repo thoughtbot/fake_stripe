@@ -51,7 +51,7 @@
         }
       ]
     },
-    "default_card": "card_1234567890ABCDEFghijklmn"
+    "default_source": "card_1234567890ABCDEFghijklmn"
   },
   {
     "object": "customer",
@@ -101,7 +101,7 @@
         }
       ]
     },
-    "default_card": "card_103ewU2eZvKYlo2CVToIWv6R"
+    "default_source": "card_103ewU2eZvKYlo2CVToIWv6R"
   },
   {
     "object": "customer",
@@ -151,7 +151,7 @@
         }
       ]
     },
-    "default_card": "card_103ewU2eZvKYlo2CVToIWv6S"
+    "default_source": "card_103ewU2eZvKYlo2CVToIWv6S"
   }
   ]
 }

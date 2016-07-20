@@ -79,5 +79,5 @@
       }
     ]
   },
-  "default_card": "card_1234567890ABCDEFghijklmn"
+  "default_source": "card_1234567890ABCDEFghijklmn"
 }
