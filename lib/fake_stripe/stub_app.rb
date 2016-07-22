@@ -53,29 +53,25 @@ module FakeStripe
     end
 
     # Cards
-    post '/v1/customers/:customer_id/cards' do
+    post '/v1/customers/:customer_id/sources' do
       FakeStripe.card_count += 1
       json_response 200, fixture('create_card')
     end
 
-    get '/v1/customers/:customer_id/cards/:card_id' do
+    get '/v1/customers/:customer_id/sources/:card_id' do
       json_response 200, fixture('retrieve_card')
     end
 
-    post '/v1/customers/:customer_id/cards/:card_id' do
+    post '/v1/customers/:customer_id/sources/:card_id' do
       json_response 200, fixture('update_card')
     end
 
-    delete '/v1/customers/:customer_id/cards/:card_id' do
+    delete '/v1/customers/:customer_id/sources/:card_id' do
       json_response 200, fixture('delete_card')
     end
 
-    get '/v1/customers/:customer_id/cards' do
+    get '/v1/customers/:customer_id/sources' do
       json_response 200, fixture('list_cards')
-    end
-
-    get '/v1/customers/:customer_id/sources/:id' do
-      json_response 200, fixture('retrieve_card')
     end
 
     # Subscriptions
