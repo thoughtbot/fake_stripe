@@ -22,16 +22,16 @@ describe 'Stub app' do
        { route: '/v1/customers/1', method: :delete },
     'GET customers' => { route: '/v1/customers', method: :get },
     # Cards
-    'POST customers/:customer_id/cards' =>
-       { route: '/v1/customers/1/cards', method: :post },
-    'GET customers/:customer_id/cards/:card_id' =>
-       { route: '/v1/customers/1/cards/1', method: :get },
-    'POST customers/:customer_id/cards/:card_id' =>
-       { route: '/v1/customers/1/cards/1', method: :post },
-    'DELETE customers/:customer_id/cards/:card_id' =>
-       { route: '/v1/customers/1/cards/1', method: :delete },
-    'GET customers/:customer_id/cards' =>
-       { route: '/v1/customers/1/cards', method: :get },
+    'POST customers/:customer_id/sources' =>
+       { route: '/v1/customers/1/sources', method: :post },
+    'GET customers/:customer_id/sources/:card_id' =>
+       { route: '/v1/customers/1/sources/1', method: :get },
+    'POST customers/:customer_id/sources/:card_id' =>
+       { route: '/v1/customers/1/sources/1', method: :post },
+    'DELETE customers/:customer_id/sources/:card_id' =>
+       { route: '/v1/customers/1/sources/1', method: :delete },
+    'GET customers/:customer_id/sources' =>
+       { route: '/v1/customers/1/sources', method: :get },
     # Subscriptions
     'POST customers/:customer_id/subscriptions' =>
        { route: '/v1/customers/1/subscriptions', method: :post },
