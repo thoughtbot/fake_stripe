@@ -72,12 +72,12 @@ describe FakeStripe::StubApp do
     end
   end
 
-  describe "POST /v1/customers/:customer_id/cards" do
+  describe "POST /v1/customers/:customer_id/sources" do
     it "increments the card counter" do
       customer = Stripe::Customer.retrieve("ABC123")
 
       expect do
-        customer.cards.create(card: "xyz890")
+        customer.sources.create(card: "xyz890")
       end.to change(FakeStripe, :card_count).by(1)
     end
   end

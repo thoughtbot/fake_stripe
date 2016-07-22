@@ -23,10 +23,10 @@
     "discount": null,
     "account_balance": 0,
     "currency": "usd",
-    "cards": {
+    "sources": {
       "object": "list",
       "count": 1,
-      "url": "/v1/customers/abcdefghijklmnop/cards",
+      "url": "/v1/customers/abcdefghijklmnop/sources",
       "data": [
         {
           "id": "card_1234567890ABCDEFghijklmn",
@@ -73,10 +73,10 @@
     "discount": null,
     "account_balance": 0,
     "currency": "usd",
-    "cards": {
+    "sources": {
       "object": "list",
       "count": 1,
-      "url": "/v1/customers/cus_3ewUPsNuSVb5hF/cards",
+      "url": "/v1/customers/cus_3ewUPsNuSVb5hF/sources",
       "data": [
         {
           "id": "card_103ewU2eZvKYlo2CVToIWv6R",
@@ -123,10 +123,10 @@
     "discount": null,
     "account_balance": 0,
     "currency": "usd",
-    "cards": {
+    "sources": {
       "object": "list",
       "count": 1,
-      "url": "/v1/customers/cus_3ewUPsNuSVb5hG/cards",
+      "url": "/v1/customers/cus_3ewUPsNuSVb5hG/sources",
       "data": [
         {
           "id": "card_103ewU2eZvKYlo2CVToIWv6S",
