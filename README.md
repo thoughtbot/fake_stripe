@@ -34,11 +34,20 @@ unless defined? STRIPE_JS_HOST
 end
 ```
 
-Include the Stripe JavaScript in your application template:
+Include the Stripe JavaScript in your application template.
+
+If you're using Stripe.js v1:
 
 ```rhtml
 # app/views/layouts/application.html.erb
 <%= javascript_include_tag "#{STRIPE_JS_HOST}/v1/" %>
+```
+
+Or if you're using Stripe.js v2:
+
+```rhtml
+# app/views/layouts/application.html.erb
+<%= javascript_include_tag "#{STRIPE_JS_HOST}/v2/" %>
 ```
 
 When the test suite runs `fake_stripe` will override the address for
