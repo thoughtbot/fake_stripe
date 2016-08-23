@@ -21,12 +21,19 @@ end
 
 Remember to run `bundle install`.
 
+### Rails 5 Compatibility
+
+`fake_stripe` depends on Sinatra, which is currently in the process of being
+upgraded to use Rack 2.0, a requirement for compatibility with Rails 5. This
+should be resolved once Sinatra 2.0 is officially released; in the meantime,
+you can add `gem 'sinatra', '2.0.0.beta2'` to the `:test` group in your Gemfile.
+
 ### Stripe settings
 
 Set the `STRIPE_JS_HOST` constant in an initializer:
 
 ```ruby
-# config/initilialzers/stripe.rb
+# config/initializers/stripe.rb
 Stripe.api_key = ENV['STRIPE_API_KEY']
 
 unless defined? STRIPE_JS_HOST
