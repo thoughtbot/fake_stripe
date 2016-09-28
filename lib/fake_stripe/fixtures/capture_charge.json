@@ -25,6 +25,7 @@
     "address_zip": null,
     "address_country": null,
     "cvc_check": "pass",
+    "dynamic_last4": null,
     "address_line1_check": null,
     "address_zip_check": null
   },
