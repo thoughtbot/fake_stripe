@@ -4,7 +4,7 @@
   "period_end": 1394731307,
   "lines": {
     "object": "list",
-    "count": 1,
+    "total_count": 1,
     "url": "/v1/invoices/upcoming/lines?customer=abcdefghijklmnop",
     "data": [
       {

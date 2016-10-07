@@ -49,7 +49,7 @@
   },
   "transactions": {
     "object": "list",
-    "count": 626,
+    "total_count": 626,
     "url": "/v1/transfers/tr_103ehW2eZvKYlo2CvqXdcIQL/transactions",
     "data": [
       {

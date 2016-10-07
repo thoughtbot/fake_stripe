@@ -1,7 +1,7 @@
 {
   "object": "list",
   "url": "/v1/customers/cu_103ewU2eZvKYlo2CUREXSezP/subscriptions",
-  "count": 3,
+  "total_count": 3,
   "data": [
     {
     "id": "sub_3ewdhCIki3FxWt",

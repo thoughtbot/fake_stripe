@@ -1,7 +1,7 @@
 {
   "object": "list",
   "url": "/v1/balance/history",
-  "count": 3,
+  "total_count": 3,
   "data": [
     {
     "id": "txn_103cQg2eZvKYlo2CYKVlR2nh",

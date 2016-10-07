@@ -1,7 +1,7 @@
 {
   "object": "list",
     "url": "/v1/charges",
-    "count": 3,
+    "total_count": 3,
     "data": [
       {
       "id": "ch_103ewb2eZvKYlo2CjopvmZyM",
