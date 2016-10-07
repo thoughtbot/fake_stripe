@@ -75,25 +75,50 @@ module FakeStripe
     end
 
     # Subscriptions
-    post '/v1/customers/:customer_id/subscriptions' do
-      FakeStripe.subscription_count += 1
-      json_response 200, fixture('create_subscription')
+    [
+      '/v1/subscriptions',
+      '/v1/customers/:customer_id/subscriptions',
+    ].each do |path|
+      post path do
+        FakeStripe.subscription_count += 1
+        json_response 200, fixture('create_subscription')
+      end
     end
 
-    get '/v1/customers/:customer_id/subscriptions/:subscription_id' do
-      json_response 200, fixture('retrieve_subscription')
+    [
+      '/v1/subscriptions/:subscription_id',
+      '/v1/customers/:customer_id/subscriptions/:subscription_id',
+    ].each do |path|
+      get path do
+        json_response 200, fixture('retrieve_subscription')
+      end
     end
 
-    post '/v1/customers/:customer_id/subscriptions/:subscription_id' do
-      json_response 200, fixture('update_subscription')
+    [
+      '/v1/subscriptions/:subscription_id',
+      '/v1/customers/:customer_id/subscriptions/:subscription_id',
+    ].each do |path|
+      post path do
+        json_response 200, fixture('update_subscription')
+      end
     end
 
-    delete '/v1/customers/:customer_id/subscriptions/:subscription_id' do
-      json_response 200, fixture('cancel_subscription')
+    [
+      '/v1/subscriptions/:subscription_id',
+      '/v1/customers/:customer_id/subscriptions/:subscription_id',
+    ].each do |path|
+      delete path do
+        json_response 200, fixture('cancel_subscription')
+      end
     end
 
-    get '/v1/customers/:customer_id/subscriptions' do
-      json_response 200, fixture('list_subscriptions')
+    [
+      '/v1/subscriptions',
+      '/v1/customers/:customer_id/subscriptions',
+    ].each do |path|
+      get path do
+        json_response 200, fixture('list_subscriptions')
+      end
     end
 
     # Plans
