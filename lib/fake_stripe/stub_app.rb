@@ -17,6 +17,11 @@ module FakeStripe
       json_response 200, fixture('update_charge')
     end
 
+    post '/v1/refunds' do
+      FakeStripe.refund_count += 1
+      json_response 200, fixture('refund_charge')
+    end
+
     post '/v1/charges/:charge_id/refund' do
       FakeStripe.refund_count += 1
       json_response 200, fixture('refund_charge')

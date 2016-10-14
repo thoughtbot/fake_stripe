@@ -8,6 +8,7 @@ describe 'Stub app' do
     'POST charges' => { route: '/v1/charges', method: :post },
     'GET charges/:charge_id' => { route: '/v1/charges/1', method: :get },
     'POST charges/:charge_id' => { route: '/v1/charges/1', method: :post },
+    'POST refunds' => { route: '/v1/refunds', method: :post },
     'POST charges/:charge_id/refund' =>
     { route: '/v1/charges/1/refund', method: :post },
     'POST charges/:charge_id/capture' =>
