@@ -30,9 +30,15 @@ you can add `gem 'sinatra', '2.0.0.beta2'` to the `:test` group in your Gemfile.
 
 ### Stripe settings
 
+Set the `STRIPE_JS_HOST` constant in an initializer:
+
 ```ruby
 # config/initializers/stripe.rb
 Stripe.api_key = ENV['STRIPE_API_KEY']
+
+unless defined? STRIPE_JS_HOST
+  STRIPE_JS_HOST = 'https://js.stripe.com'
+end
 ```
 
 Include the Stripe JavaScript in your application template.
@@ -41,18 +47,18 @@ If you're using Stripe.js v1:
 
 ```rhtml
 # app/views/layouts/application.html.erb
-<%= javascript_include_tag "https://js.stripe.com/v1/" %>
+<%= javascript_include_tag "#{STRIPE_JS_HOST}/v1/" %>
 ```
 
 Or if you're using Stripe.js v2:
 
 ```rhtml
 # app/views/layouts/application.html.erb
-<%= javascript_include_tag "https://js.stripe.com/v2/" %>
+<%= javascript_include_tag "#{STRIPE_JS_HOST}/v2/" %>
 ```
 
-When the test suite runs `fake_stripe` will intercept requests to the Stripe
-address and serve up a local version of [Stripe.js](https://stripe.com/docs/stripe.js).
+When the test suite runs `fake_stripe` will override the address for
+`STRIPE_JS_HOST` and serve up a local version of [Stripe.js](https://stripe.com/docs/stripe.js).
 
 ### In Tests
 

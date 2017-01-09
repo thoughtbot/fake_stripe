@@ -33,8 +33,8 @@ module FakeStripe
     Stripe.api_key = 'FAKE_STRIPE_API_KEY'
     FakeStripe.reset
     stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::StubApp)
-    stub_request(:any, /js.stripe.com/).to_rack(FakeStripe::StubApp)
   end
 end
 
-FakeStripe::StubStripeJS.boot
+server = FakeStripe::StubStripeJS.boot
+STRIPE_JS_HOST = "http://#{server.host}:#{server.port}"
