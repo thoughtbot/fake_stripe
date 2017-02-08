@@ -85,6 +85,10 @@ module FakeStripe
       json_response 200, fixture('create_subscription')
     end
 
+    get '/v1/subscriptions/:subscription_id' do
+      json_response 200, fixture('retrieve_subscription')
+    end
+
     get '/v1/customers/:customer_id/subscriptions/:subscription_id' do
       json_response 200, fixture('retrieve_subscription')
     end

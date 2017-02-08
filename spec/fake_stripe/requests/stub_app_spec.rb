@@ -36,6 +36,8 @@ describe 'Stub app' do
     # Subscriptions
     'POST customers/:customer_id/subscriptions' =>
        { route: '/v1/customers/1/subscriptions', method: :post },
+    'GET subscriptions/:subscription_id' =>
+       { route: '/v1/subscriptions/1', method: :get },
     'GET customers/:customer_id/subscriptions/:subscription_id' =>
        { route: '/v1/customers/1/subscriptions/1', method: :get },
     'POST customers/:customer_id/subscriptions/:subscription_id' =>
