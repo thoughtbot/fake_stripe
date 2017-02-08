@@ -36,8 +36,6 @@ describe 'Stub app' do
     # Subscriptions
     'POST customers/:customer_id/subscriptions' =>
        { route: '/v1/customers/1/subscriptions', method: :post },
-    'GET subscriptions/:subscription_id' =>
-       { route: '/v1/subscriptions/1', method: :get },
     'GET customers/:customer_id/subscriptions/:subscription_id' =>
        { route: '/v1/customers/1/subscriptions/1', method: :get },
     'POST customers/:customer_id/subscriptions/:subscription_id' =>
@@ -46,6 +44,12 @@ describe 'Stub app' do
        { route: '/v1/customers/1/subscriptions/1', method: :delete },
     'GET customers/:customer_id/subscriptions' =>
        { route: '/v1/customers/1/subscriptions', method: :get },
+
+    'GET subscriptions/:subscription_id' =>
+       { route: '/v1/subscriptions/1', method: :get },
+    'POST subscriptions/:subscription_id' =>
+       { route: '/v1/subscriptions/1', method: :post },
+
     # Plans
     'POST plans' => { route: '/v1/plans', method: :post },
     'GET plans/:plan_id' => { route: '/v1/plans/1', method: :get },
