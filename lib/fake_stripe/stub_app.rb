@@ -109,6 +109,10 @@ module FakeStripe
       json_response 200, fixture('retrieve_subscription')
     end
 
+    post '/v1/subscriptions' do
+      json_response 200, fixture('retrieve_subscription')
+    end
+
     # Plans
     post '/v1/plans' do
       FakeStripe.plan_count += 1
