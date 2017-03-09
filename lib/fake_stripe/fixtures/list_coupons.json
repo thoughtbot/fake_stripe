@@ -53,6 +53,23 @@
     "valid": true,
     "metadata": {
     }
+  },
+  {
+    "id": "10OFF",
+    "created": 1391687277,
+    "percent_off": null,
+    "amount_off": 10,
+    "currency": "usd",
+    "object": "coupon",
+    "livemode": false,
+    "duration": "once",
+    "redeem_by": null,
+    "max_redemptions": null,
+    "times_redeemed": 0,
+    "duration_in_months": 3,
+    "valid": true,
+    "metadata": {
+    }
   }
   ]
 }
