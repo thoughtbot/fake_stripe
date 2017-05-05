@@ -1,5 +1,6 @@
 require 'capybara'
 require 'capybara/server'
+require 'fake_stripe/utils'
 require 'sinatra/base'
 
 module FakeStripe
@@ -21,9 +22,17 @@ module FakeStripe
       IO.read(file_path) + IO.read(mock_file_path)
     end
 
-    def self.boot
+    def self.boot(port = FakeStripe::Utils.find_available_port)
       instance = new
-      Capybara::Server.new(instance).tap { |server| server.boot }
+      Capybara::Server.new(instance, port).tap { |server| server.boot }
+    end
+
+    def self.boot_once
+      @@stripe_js_server ||= FakeStripe::StubStripeJS.boot(self.server_port)
+    end
+
+    def self.server_port
+      @@stripe_js_port ||= FakeStripe::Utils.find_available_port
     end
   end
 end
