@@ -57,6 +57,19 @@ module FakeStripe
       json_response 200, fixture('list_customers')
     end
 
+    # Bank Accounts
+    get %r(/v1/customers/.+/sources/ba_.+) do
+      json_response 200, fixture('retrieve_bank_account')
+    end
+
+    post %r(/v1/customers/.+/sources/ba_.+) do
+      json_response 200, fixture('update_bank_account')
+    end
+
+    delete %r(/v1/customers/.+/sources/ba_.+) do
+      json_response 200, fixture('delete_bank_account')
+    end
+    
     # Cards
     post '/v1/customers/:customer_id/sources' do
       FakeStripe.card_count += 1

@@ -1,0 +1,18 @@
+{
+  "id": "ba_AdDnqVodgyllM7",
+  "object": "bank_account",
+  "account": "acct_23JZqd8aZx3igsin7Zny",
+  "account_holder_name": "Jane Austen",
+  "account_holder_type": "individual",
+  "bank_name": "STRIPE TEST BANK",
+  "country": "US",
+  "currency": "usd",
+  "default_for_currency": false,
+  "fingerprint": "PnB8FUaXClXjGyOU",
+  "last4": "6789",
+  "metadata": {
+  },
+  "routing_number": "110000000",
+  "status": "new",
+  "customer": "cus_AcounLdkoJSxvJ"
+}
