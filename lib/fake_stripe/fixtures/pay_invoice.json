@@ -53,7 +53,7 @@
   "currency": "usd",
   "starting_balance": 0,
   "ending_balance": null,
-  "next_payment_attempt": null,
+  "next_payment_attempt": 1405002552,
   "charge": "ch_103ewb2eZvKYlo2CjopvmZyM",
   "discount": null,
   "application_fee": null,
