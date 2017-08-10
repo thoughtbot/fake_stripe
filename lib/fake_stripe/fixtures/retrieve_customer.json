@@ -1,18 +1,22 @@
 {
+  "id": "cus_BBZPrUZswuINpq",
   "object": "customer",
-  "created": 1394731627,
-  "id": "abcdefghijklmnop",
-  "livemode": false,
-  "description": null,
-  "email": null,
+  "account_balance": 0,
+  "created": 1502354611,
+  "currency": "usd",
+  "default_source": "card_1ApCGIDo6PqffbuCBMurKJIO",
   "delinquent": false,
-  "metadata": {
-  },
+  "description": null,
+  "discount": null,
+  "email": "neeraj@bigbinary.com",
+  "livemode": false,
+  "metadata": {},
+  "shipping": null,
   "sources": {
     "object": "list",
     "data": [
       {
-        "id": "card_1234567890ABCDEFghijklmn",
+        "id": "card_1ApCGIDo6PqffbuCBMurKJIO",
         "object": "card",
         "address_city": null,
         "address_country": null,
@@ -24,32 +28,93 @@
         "address_zip_check": null,
         "brand": "Visa",
         "country": "US",
-        "customer": "abcdefghijklmnop",
+        "customer": "cus_BBZPrUZswuINpq",
         "cvc_check": "pass",
         "dynamic_last4": null,
-        "exp_month": 10,
-        "exp_year": 2016,
+        "exp_month": 2,
+        "exp_year": 2022,
+        "fingerprint": "IjiAodSOulASa7bn",
         "funding": "credit",
         "last4": "4242",
         "metadata": {},
-        "name": null,
+        "name": "neeraj@bigbinary.com",
         "tokenization_method": null
       }
     ],
     "has_more": false,
     "total_count": 1,
-    "url": "/v1/customers/abcdefghijklmnop/sources"
+    "url": "/v1/customers/cus_BBZPrUZswuINpq/sources"
   },
   "subscriptions": {
     "object": "list",
-    "count": 0,
-    "url": "/v1/customers/abcdefghijklmnop/subscriptions",
     "data": [
-
-    ]
-  },
-  "discount": null,
-  "account_balance": 0,
-  "currency": "usd",
-  "default_source": "card_1234567890ABCDEFghijklmn"
+      {
+        "id": "sub_BBZP8dvoLgFkuh",
+        "object": "subscription",
+        "application_fee_percent": null,
+        "cancel_at_period_end": false,
+        "canceled_at": null,
+        "created": 1502354616,
+        "current_period_end": 1505033016,
+        "current_period_start": 1502354616,
+        "customer": "cus_BBZPrUZswuINpq",
+        "discount": null,
+        "ended_at": null,
+        "items": {
+          "object": "list",
+          "data": [
+            {
+              "id": "si_1ApCGSDo6PqffbuCZKScdUJh",
+              "object": "subscription_item",
+              "created": 1502354616,
+              "metadata": {},
+              "plan": {
+                "id": "startup",
+                "object": "plan",
+                "amount": 5000,
+                "created": 1501752647,
+                "currency": "usd",
+                "interval": "month",
+                "interval_count": 1,
+                "livemode": false,
+                "metadata": {},
+                "name": "Startup",
+                "statement_descriptor": null,
+                "trial_period_days": null
+              },
+              "quantity": 1
+            }
+          ],
+          "has_more": false,
+          "total_count": 1,
+          "url": "/v1/subscription_items?subscription=sub_BBZP8dvoLgFkuh"
+        },
+        "livemode": false,
+        "metadata": {},
+        "plan": {
+          "id": "startup",
+          "object": "plan",
+          "amount": 5000,
+          "created": 1501752647,
+          "currency": "usd",
+          "interval": "month",
+          "interval_count": 1,
+          "livemode": false,
+          "metadata": {},
+          "name": "Startup",
+          "statement_descriptor": null,
+          "trial_period_days": null
+        },
+        "quantity": 1,
+        "start": 1502354616,
+        "status": "active",
+        "tax_percent": null,
+        "trial_end": null,
+        "trial_start": null
+      }
+    ],
+    "has_more": false,
+    "total_count": 1,
+    "url": "/v1/customers/cus_BBZPrUZswuINpq/subscriptions"
+  }
 }
