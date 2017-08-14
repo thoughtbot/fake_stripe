@@ -8,7 +8,7 @@
   "delinquent": false,
   "description": null,
   "discount": null,
-  "email": "neeraj@bigbinary.com",
+  "email": "nancy.smith@example.com",
   "livemode": false,
   "metadata": {},
   "shipping": null,
@@ -37,7 +37,7 @@
         "funding": "credit",
         "last4": "4242",
         "metadata": {},
-        "name": "neeraj@bigbinary.com",
+        "name": "nancy.smith@example.com",
         "tokenization_method": null
       }
     ],
