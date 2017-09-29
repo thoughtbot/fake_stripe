@@ -39,6 +39,13 @@
       "balance_transaction": "txn_3ewdvdDggQXEhV"
     }
   ],
+  "outcome": {
+    "network_status": "approved_by_network",
+    "reason": null,
+    "risk_level": "normal",
+    "seller_message": "Payment complete.",
+    "type": "authorized"
+  },
   "balance_transaction": "txn_103cQg2eZvKYlo2CYKVlR2nh",
   "failure_message": null,
   "failure_code": null,
