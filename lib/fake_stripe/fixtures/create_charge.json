@@ -21,6 +21,13 @@
   "metadata": {
   },
   "order": null,
+  "outcome": {
+    "network_status": "approved_by_network",
+    "reason": null,
+    "risk_level": "normal",
+    "seller_message": "Payment complete.",
+    "type": "authorized"
+  },
   "paid": true,
   "receipt_email": null,
   "receipt_number": null,
