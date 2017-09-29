@@ -3,7 +3,7 @@
 1. Fork the repo.
 
 2. Run the tests. We only take pull requests with passing tests, and it's great
-to know that you have a clean slate: `bundle && rspec spec`
+to know that you have a clean slate: `bundle && rspec`
 
 3. Create your feature branch (`git checkout -b my-new-feature`).
 
