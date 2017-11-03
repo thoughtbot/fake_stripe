@@ -127,7 +127,8 @@ describe 'Stub app' do
     'GET events' => { route: '/v1/events', method: :get },
     # Tokens
     'POST tokens' => { route: '/v1/tokens', method: :post },
-    'GET tokens/:token_id' => { route: '/v1/tokens/1', method: :get }
+    'GET tokens/:token_id' => { route: '/v1/tokens/1', method: :get },
+    'POST ephemeral_keys' => { route: '/v1/ephemeral_keys', method: :post }
   }
 
   TESTS.each_pair do |name, action|

@@ -354,6 +354,11 @@ module FakeStripe
       json_response 200, fixture('retrieve_token')
     end
 
+    # Ephemeral Keys
+    post '/v1/ephemeral_keys' do
+      json_response 201, fixture('create_ephemeral_key')
+    end
+
     private
 
     def fixture(file_name)
