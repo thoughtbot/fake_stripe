@@ -1,0 +1,8 @@
+{
+  "error" :
+  {
+      "type"    : "invalid_request_error",
+      "message" : "Invalid positive integer",
+      "param"   : "amount"
+  }
+}
