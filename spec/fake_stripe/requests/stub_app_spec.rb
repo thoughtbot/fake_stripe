@@ -22,6 +22,13 @@ describe 'Stub app' do
     'DELETE customers/:customer_id' =>
        { route: '/v1/customers/1', method: :delete },
     'GET customers' => { route: '/v1/customers', method: :get },
+    # Bank Accounts
+    'GET customers/:customer_id/sources/:bank_account_id' =>
+        { route: '/v1/customers/1/sources/ba_1', method: :get },
+    'POST customers/:customer_id/sources/:bank_account_id' =>
+        { route: '/v1/customers/1/sources/ba_1', method: :post },
+    'DELETE customers/:customer_id/sources/:bank_account_id' =>
+        { route: '/v1/customers/1/sources/ba_1', method: :delete },
     # Cards
     'POST customers/:customer_id/sources' =>
        { route: '/v1/customers/1/sources', method: :post },
