@@ -15,3 +15,6 @@ RSpec.configure do |config|
 
   config.order = 'random'
 end
+
+# Do not announce that capybara is starting puma
+Capybara.server = :puma, { Silent: true }
