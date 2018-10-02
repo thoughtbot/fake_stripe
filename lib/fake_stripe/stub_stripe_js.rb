@@ -24,7 +24,7 @@ module FakeStripe
 
     def self.boot(port = FakeStripe::Utils.find_available_port)
       instance = new
-      Capybara::Server.new(instance, port).tap { |server| server.boot }
+      Capybara::Server.new(instance, port: port).tap { |server| server.boot }
     end
 
     def self.boot_once
