@@ -1,5 +1,12 @@
 # Changelog
 
+## V0.2.0
+
+- Add basic v3 support for Stripe Elements to Fake JS server
+- Do not announce capybara starting puma
+- Remove deprecated positional arguments for Capybara::Server.new
+- Return error for negative or 0 amounts
+
 ## V0.1.0
 
 - Only boot Fake Stripe JS server when needed ([#77](https://github.com/thoughtbot/fake_stripe/pull/77))
