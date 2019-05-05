@@ -2,8 +2,7 @@
 
 This library is a way to test [Stripe](http://www.stripe.com/) code without hitting Stripe's
 servers. It uses
-[Capybara::Server](https://github.com/jnicklas/capybara/blob/master/lib/capybara/server.rb)
-and [Webmock](https://github.com/bblimke/webmock) to intercept all of the calls from Stripe's
+[Capybara::Server](https://github.com/jnicklas/capybara/blob/master/lib/capybara/server.rb) to intercept all of the calls from Stripe's
 Ruby library and returns JSON that the Stripe library can parse.
 
 ## Installation

@@ -1,5 +1,4 @@
 require 'fake_stripe/configuration'
-require 'fake_stripe/initializers/webmock'
 require 'fake_stripe/stub_app'
 require 'fake_stripe/stub_stripe_js'
 
