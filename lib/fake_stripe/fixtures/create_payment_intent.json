@@ -1,0 +1,58 @@
+{
+  "object": {
+    "id": "pi_1EXXWCL91mzKIzpGtqrOHA7K",
+    "object": "payment_intent",
+    "allowed_source_types": [
+      "card_present"
+    ],
+    "amount": 2500,
+    "amount_capturable": 0,
+    "amount_received": 0,
+    "application": null,
+    "application_fee_amount": null,
+    "canceled_at": null,
+    "cancellation_reason": null,
+    "capture_method": "manual",
+    "charges": {
+      "object": "list",
+      "data": [
+      ],
+      "has_more": false,
+      "total_count": 0,
+      "url": "/v1/charges?payment_intent=pi_1EXXWCL91mzKIzpGtqrOHA7K"
+    },
+    "client_secret": "pi_1EXXWCL91mzKIzpGtqrOHA7K_secret_Lm1yUCrebNN2K8qFgDLp7nslp",
+    "confirmation_method": "automatic",
+    "created": 1557251756,
+    "currency": "usd",
+    "customer": "cus_F1ahxh1NxvFPlB",
+    "description": null,
+    "invoice": null,
+    "last_payment_error": null,
+    "livemode": false,
+    "metadata": {
+      "category_id": "2335",
+      "contribution_id": "31905",
+      "project_id": "820",
+      "payer_name": "Carl Weis",
+      "payer_email": "carl@gmail.com"
+    },
+    "next_action": null,
+    "next_source_action": null,
+    "on_behalf_of": "acct_1A1xvnHNvvp0Twf9",
+    "payment_method": null,
+    "payment_method_types": [
+      "card_present"
+    ],
+    "receipt_email": null,
+    "review": null,
+    "shipping": null,
+    "source": null,
+    "statement_descriptor": "Demo University",
+    "status": "requires_source",
+    "transfer_data": {
+      "destination": "acct_1A1xvnHNvvp0Twf9"
+    },
+    "transfer_group": null
+  }
+}

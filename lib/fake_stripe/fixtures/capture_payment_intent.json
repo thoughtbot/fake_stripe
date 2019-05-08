@@ -1,0 +1,113 @@
+{
+  "object": {
+    "id": "ch_1EXXWTL91mzKIzpGbVz9DiMs",
+    "object": "charge",
+    "amount": 2500,
+    "amount_refunded": 0,
+    "application": null,
+    "application_fee": null,
+    "application_fee_amount": null,
+    "authorization_code": "123456",
+    "balance_transaction": "txn_1EXXWXL91mzKIzpGFYT6dvRl",
+    "billing_details": {
+      "address": {
+        "city": null,
+        "country": null,
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "state": null
+      },
+      "email": null,
+      "name": null,
+      "phone": null
+    },
+    "captured": true,
+    "created": 1557251773,
+    "currency": "usd",
+    "customer": "cus_F1ahxh1NxvFPlB",
+    "description": null,
+    "destination": "acct_1A1xvnHNvvp0Twf9",
+    "dispute": null,
+    "failure_code": null,
+    "failure_message": null,
+    "fraud_details": {
+    },
+    "invoice": null,
+    "livemode": false,
+    "metadata": {
+      "category_id": "2335",
+      "contribution_id": "31905",
+      "project_id": "820",
+      "payer_name": "Carl Weis",
+      "payer_email": "carl@gmail.com"
+    },
+    "on_behalf_of": "acct_1A1xvnHNvvp0Twf9",
+    "order": null,
+    "outcome": {
+      "network_status": "approved_by_network",
+      "reason": null,
+      "risk_level": "normal",
+      "risk_score": 27,
+      "seller_message": "Payment complete.",
+      "type": "authorized"
+    },
+    "paid": true,
+    "payment_intent": "pi_1EXXWCL91mzKIzpGtqrOHA7K",
+    "payment_method": "pm_1EXXWTL91mzKIzpGs1J3ud4F",
+    "payment_method_details": {
+      "card_present": {
+        "brand": "visa",
+        "country": "US",
+        "emv_auth_data": "8A023030",
+        "exp_month": 12,
+        "exp_year": 2022,
+        "fingerprint": "sachZ6QnomtJVtLF",
+        "funding": "credit",
+        "generated_card": null,
+        "last4": "9969",
+        "read_method": "contactless_emv",
+        "receipt": {
+          "application_cryptogram": "965FC7F68F672851",
+          "application_preferred_name": "Stripe Credit",
+          "authorization_code": null,
+          "authorization_response_code": "3030",
+          "cardholder_verification_method": "signature",
+          "dedicated_file_name": "A0000000031010",
+          "terminal_verification_results": "0000000000",
+          "transaction_status_information": "0000"
+        }
+      },
+      "type": "card_present"
+    },
+    "receipt_email": null,
+    "receipt_number": null,
+    "receipt_url": "https://pay.stripe.com/receipts/acct_184AzvL91mzKIzpG/ch_1EXXWTL91mzKIzpGbVz9DiMs/rcpt_F1ah5HyICeqk7QyMMQcIMe8d784KR2Q",
+    "refunded": false,
+    "refunds": {
+      "object": "list",
+      "data": [
+      ],
+      "has_more": false,
+      "total_count": 0,
+      "url": "/v1/charges/ch_1EXXWTL91mzKIzpGbVz9DiMs/refunds"
+    },
+    "review": null,
+    "shipping": null,
+    "source": null,
+    "source_transfer": null,
+    "statement_descriptor": "Demo University",
+    "status": "succeeded",
+    "transfer": "tr_1EXXWXL91mzKIzpG3rstK9l0",
+    "transfer_data": {
+      "amount": null,
+      "destination": "acct_1A1xvnHNvvp0Twf9"
+    },
+    "transfer_group": "group_pi_1EXXWCL91mzKIzpGtqrOHA7K"
+  },
+  "previous_attributes": {
+    "transfer": null,
+    "balance_transaction": null,
+    "captured": false
+  }
+}
