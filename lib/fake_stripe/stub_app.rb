@@ -354,6 +354,26 @@ module FakeStripe
       json_response 200, fixture('retrieve_token')
     end
 
+    # Connection tokens
+
+    post '/v1/terminal/connection_tokens' do
+      json_response 200, fixture(create_connection_token)
+    end
+
+    # Payment Intents
+    post '/v1/payment_intents' do
+      json_response 200, fixture(create_payment_intent)
+    end
+
+    post '/v1/payment_intents/pi_1EXK12L91mzKIzpGuXKit4pE/confirm' do
+      json_response 200, fixture(confirm_payment_intent)
+    end
+
+    post '/v1/payment_intents/pi_1EXK12L91mzKIzpGuXKit4pE/capture' do
+      json_response 200, fixture(capture_payment_intent)
+    end
+
+
     private
 
     def fixture(file_name)
