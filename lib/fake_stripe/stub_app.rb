@@ -361,10 +361,13 @@ module FakeStripe
     end
 
     # Payment Intents
-    post '/v1/payment_intents' do
-      json_response 200, fixture("create_payment_intent")
+    post '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K' do
+      json_response 200, fixture("retrieve_payment_intent")
     end
 
+    get '/v1/payment_intents' do
+      json_response 200, fixture("create_payment_intent")
+    end
     post '/v1/payment_intents/pi_1EXK12L91mzKIzpGuXKit4pE/confirm' do
       json_response 200, fixture("confirm_payment_intent")
     end

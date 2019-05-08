@@ -28,6 +28,49 @@ describe FakeStripe::StubApp do
     end
   end
 
+  describe "POST v1/connection_tokens" do
+    it "returns a connection token" do
+      result = Stripe::Terminal::ConnectionToken.create
+
+      expect(result.object).to eq("terminal.connection_token")
+    end
+  end
+
+  # describe "POST v1/payment_intents" do
+  #   it "returns a payment intent" do
+  #     params = {
+  #       amount: 10000,
+  #       payment_method_types: ["card_present"],
+  #       capture_method: "manual",
+  #       on_behalf_of: Stripe::Account.create.id,
+  #       statement_descriptor: "Demo University",
+  #       metadata: {
+  #         category_id: 1,
+  #         contribution_id: 1,
+  #         project_id: 1,
+  #         payer_name: "Frank Sinatra",
+  #         payer_email: "frank@example.com"
+  #       },
+  #       transfer_data: {
+  #         destination: "acct_1A1xvnHNvvp0Twf9",
+  #         currency: "USD"
+  #       }
+  #     }
+  #     result = Stripe::PaymentIntent.create(params)
+  #
+  #     expect(result.object.object).to eq("payment_intent")
+  #   end
+  # end
+  #
+  # describe "POST v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K/capture" do
+  #   it "captures a payment intent" do
+  #     result = Stripe::PaymentIntent.create
+  #     result = result.capture
+  #
+  #     expect(result.object.object).to eq("payment_intent")
+  #   end
+  # end
+
   describe "POST /v1/accounts" do
     it "returns an account response" do
       result = Stripe::Account.create

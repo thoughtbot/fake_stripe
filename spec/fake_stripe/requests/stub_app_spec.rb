@@ -122,6 +122,10 @@ describe 'Stub app' do
     'GET balance/history/:transaction_id' =>
        { route: '/v1/balance/history/1', method: :get },
     'GET balance/history' => { route: '/v1/balance/history', method: :get },
+    # Payment Intents
+    'POST payment_intents' => { route: '/v1/payment_intents', method: :post },
+    'POST payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K', method: :get },
+    'POST payment_intents/:payment_intent_id/capture' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K/capture', method: :post },
     # Events
     'GET events/:event_id' => { route: '/v1/events/1', method: :get },
     'GET events' => { route: '/v1/events', method: :get },
