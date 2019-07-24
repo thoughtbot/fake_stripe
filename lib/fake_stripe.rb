@@ -2,6 +2,7 @@ require 'fake_stripe/configuration'
 require 'fake_stripe/initializers/webmock'
 require 'fake_stripe/stub_app'
 require 'fake_stripe/stub_stripe_js'
+require 'fake_stripe/stub_stripe_connect'
 
 module FakeStripe
   extend Configuration
@@ -33,8 +34,10 @@ module FakeStripe
     Stripe.api_key = 'FAKE_STRIPE_API_KEY'
     FakeStripe.reset
     FakeStripe::StubStripeJS.boot_once
+    FakeStripe::StubStripeConnect.boot_once
     stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::StubApp)
   end
 end
 
 STRIPE_JS_HOST = "http://localhost:#{FakeStripe::StubStripeJS.server_port}"
+STRIPE_CONNECT_HOST = "http://localhost:#{FakeStripe::StubStripeConnect.server_port}"

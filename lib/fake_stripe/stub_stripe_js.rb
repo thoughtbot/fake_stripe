@@ -1,10 +1,10 @@
-require "capybara"
-require "capybara/server"
-require "fake_stripe/utils"
+require "fake_stripe/bootable"
 require "sinatra/base"
 
 module FakeStripe
   class StubStripeJS < Sinatra::Base
+    extend Bootable
+
     get "/v1/" do
       file_path = File.join(File.dirname(__FILE__), "/assets/v1.js")
 
@@ -28,19 +28,6 @@ module FakeStripe
       content_type "text/javascript"
       status 200
       IO.read(file_path)
-    end
-
-    def self.boot(port = FakeStripe::Utils.find_available_port)
-      instance = new
-      Capybara::Server.new(instance, port: port).tap(&:boot)
-    end
-
-    def self.boot_once
-      @@stripe_js_server ||= FakeStripe::StubStripeJS.boot(server_port)
-    end
-
-    def self.server_port
-      @@stripe_js_port ||= FakeStripe::Utils.find_available_port
     end
   end
 end
