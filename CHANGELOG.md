@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3.0
+
+- Add support for Stripe Express Connect Oauth flow
+- Fix bug when passing string to Element#mount
+
 ## V0.2.0
 
 - Add basic v3 support for Stripe Elements to Fake JS server
