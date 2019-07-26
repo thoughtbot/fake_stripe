@@ -29,7 +29,7 @@ module FakeStripe
     end
 
     get "/express/oauth/authorize" do
-      uri = URI(params["redirect_uri"])
+      uri = URI(params[:redirect_uri])
       uri.query = URI.encode_www_form(state: params[:state], code: CODE)
       redirect uri
     end
