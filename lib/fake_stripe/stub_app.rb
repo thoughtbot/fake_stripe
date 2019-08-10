@@ -26,6 +26,32 @@ module FakeStripe
     post '/v1/payment_methods/:id/detach' do
       json_response 200, fixture('attach_payment_method')
     end
+
+    # Intents
+    post '/v1/setup_intents' do
+      json_response 200, fixture('retrieve_setup_intent')
+    end
+
+    get '/v1/setup_intents/:id' do
+      json_response 200, fixture('retrieve_setup_intent')
+    end
+
+    post '/v1/setup_intents/:id' do
+      json_response 200, fixture('retrieve_setup_intent')
+    end
+
+    post '/v1/setup_intents/:id/confirm' do
+      json_response 200, fixture('retrieve_setup_intent')
+    end
+
+    post '/v1/setup_intents/:id/cancel' do
+      json_response 200, fixture('retrieve_setup_intent')
+    end
+
+    get '/v1/setup_intents' do
+      json_response 200, fixture('retrieve_setup_intent')
+    end
+
     # Charges
     post '/v1/charges' do
       if params['amount'] && params['amount'].to_i <= 0
