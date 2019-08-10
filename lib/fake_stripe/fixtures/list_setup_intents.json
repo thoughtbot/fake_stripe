@@ -27,6 +27,6 @@
       ],
       "status": "requires_payment_method",
       "usage": "off_session"
-    },
+    }
   ]
 }

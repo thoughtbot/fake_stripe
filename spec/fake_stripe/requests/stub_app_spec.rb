@@ -4,6 +4,17 @@ describe 'Stub app' do
   include Rack::Test::Methods
 
   TESTS = {
+    # PaymentMethods
+    'POST payment_methods' => { route: '/v1/payment_methods', method: :post },
+    'GET payment_methods/:payment_method_id' => { route: '/v1/payment_methods/1', method: :get },
+    
+    # SetupIntents
+    'POST setup_intents' => { route: '/v1/setup_intents', method: :post },
+    'GET setup_intents/:setup_intent_id' => { route: '/v1/setup_intents/1', method: :get },
+    'POST setup_intents/:setup_intent_id' => { route: '/v1/setup_intents/1', method: :post },
+    'POST setup_intents/:setup_intent_id/confirm' => { route: '/v1/setup_intents/1/confirm', method: :post },
+    'POST setup_intents/:setup_intent_id/cancel' => { route: '/v1/setup_intents/1/cancel', method: :post },
+    'GET setup_intents' => { route: '/v1/setup_intents', method: :get },
     # Charges
     'POST charges' => { route: '/v1/charges', method: :post },
     'GET charges/:charge_id' => { route: '/v1/charges/1', method: :get },
