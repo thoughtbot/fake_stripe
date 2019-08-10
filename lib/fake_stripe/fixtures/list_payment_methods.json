@@ -1,6 +1,7 @@
 {
   "object": "list",
   "url": "/v1/payment_methods",
+  "count": 1,
   "has_more": false,
   "data": [
     {
@@ -43,6 +44,6 @@
       "livemode": false,
       "metadata": {},
       "type": "card"
-    },
+    }
   ]
 }
