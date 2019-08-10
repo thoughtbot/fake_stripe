@@ -29,7 +29,7 @@ module FakeStripe
 
     # SetupIntents https://stripe.com/docs/api/setup_intents
     post '/v1/setup_intents' do
-      json_response 200, fixture('retrieve_setup_intent')
+      json_response 200, fixture('create_setup_intent')
     end
 
     get '/v1/setup_intents/:id' do
@@ -37,23 +37,49 @@ module FakeStripe
     end
 
     post '/v1/setup_intents/:id' do
-      json_response 200, fixture('retrieve_setup_intent')
+      json_response 200, fixture('update_setup_intent')
     end
 
     post '/v1/setup_intents/:id/confirm' do
-      json_response 200, fixture('retrieve_setup_intent')
+      json_response 200, fixture('confirm_setup_intent')
     end
 
     post '/v1/setup_intents/:id/cancel' do
-      json_response 200, fixture('retrieve_setup_intent')
+      json_response 200, fixture('cancel_setup_intent')
     end
 
     get '/v1/setup_intents' do
-      json_response 200, fixture('retrieve_setup_intent')
+      json_response 200, fixture('list_setup_intent')
     end
 
-    # PaymentIntents https://stripe.com/docs/api/setup_intents
+    # PaymentIntents https://stripe.com/docs/api/payment_intents
+    post '/v1/payment_intents' do
+      json_response 200, fixture('create_payment_intent')
+    end
 
+    get '/v1/payment_intents/:id' do
+      json_response 200, fixture('retrieve_payment_intent')
+    end
+
+    post '/v1/payment_intents/:id' do
+      json_response 200, fixture('update_payment_intent')
+    end
+
+    post '/v1/payment_intents/:id/confirm' do
+      json_response 200, fixture('confirm_payment_intent')
+    end
+
+    post '/v1/payment_intents/:id/capture' do
+      json_response 200, fixture('capture_payment_intent')
+    end
+
+    post '/v1/payment_intents/:id/cancel' do
+      json_response 200, fixture('cancel_payment_intent')
+    end
+
+    get '/v1/payment_intents' do
+      json_response 200, fixture('list_payment_intent')
+    end
 
     # Charges
     post '/v1/charges' do
