@@ -15,6 +15,10 @@ module FakeStripe
       json_response 200, fixture('attach_payment_method')
     end
 
+    get '/v1/payment_methods' do
+      json_response 200, fixture('list_payment_methods')
+    end
+
     post '/v1/payment_methods/:id/attach' do
       json_response 200, fixture('attach_payment_method')
     end
