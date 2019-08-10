@@ -49,7 +49,7 @@ module FakeStripe
     end
 
     get '/v1/setup_intents' do
-      json_response 200, fixture('list_setup_intent')
+      json_response 200, fixture('list_setup_intents')
     end
 
     # PaymentIntents https://stripe.com/docs/api/payment_intents
@@ -78,7 +78,7 @@ module FakeStripe
     end
 
     get '/v1/payment_intents' do
-      json_response 200, fixture('list_payment_intent')
+      json_response 200, fixture('list_payment_intents')
     end
 
     # Charges
