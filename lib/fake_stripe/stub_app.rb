@@ -27,7 +27,7 @@ module FakeStripe
       json_response 200, fixture('attach_payment_method')
     end
 
-    # Intents
+    # SetupIntents https://stripe.com/docs/api/setup_intents
     post '/v1/setup_intents' do
       json_response 200, fixture('retrieve_setup_intent')
     end
@@ -51,6 +51,9 @@ module FakeStripe
     get '/v1/setup_intents' do
       json_response 200, fixture('retrieve_setup_intent')
     end
+
+    # PaymentIntents https://stripe.com/docs/api/setup_intents
+
 
     # Charges
     post '/v1/charges' do
