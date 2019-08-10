@@ -2,6 +2,12 @@
   "object": "customer",
   "created": 1394731627,
   "id": "abcdefghijklmnop",
+  "invoice_prefix": "ABCDEF",
+  "invoice_settings": {
+    "custom_fields": null,
+    "default_payment_method": "pm_1234567890ABCDEFghijklmn",
+    "footer": null
+  },
   "livemode": false,
   "description": null,
   "email": null,
