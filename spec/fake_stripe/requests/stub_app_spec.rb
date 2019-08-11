@@ -15,6 +15,15 @@ describe 'Stub app' do
     'POST setup_intents/:setup_intent_id/confirm' => { route: '/v1/setup_intents/1/confirm', method: :post },
     'POST setup_intents/:setup_intent_id/cancel' => { route: '/v1/setup_intents/1/cancel', method: :post },
     'GET setup_intents' => { route: '/v1/setup_intents', method: :get },
+
+    # PaymentIntents
+    'POST payment_intents' => { route: '/v1/payment_intents', method: :post },
+    'GET payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/1', method: :get },
+    'POST payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/1', method: :post },
+    'POST payment_intents/:payment_intent_id/confirm' => { route: '/v1/payment_intents/1/confirm', method: :post },
+    'POST payment_intents/:payment_intent_id/capture' => { route: '/v1/payment_intents/1/capture', method: :post },
+    'POST payment_intents/:payment_intent_id/cancel' => { route: '/v1/payment_intents/1/cancel', method: :post },
+    'GET payment_intents' => { route: '/v1/payment_intents', method: :get },
     # Charges
     'POST charges' => { route: '/v1/charges', method: :post },
     'GET charges/:charge_id' => { route: '/v1/charges/1', method: :get },

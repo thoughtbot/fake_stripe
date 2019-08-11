@@ -49,6 +49,6 @@
       "status": "requires_payment_method",
       "transfer_data": null,
       "transfer_group": null
-    },
+    }
   ]
 }
