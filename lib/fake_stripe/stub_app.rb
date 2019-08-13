@@ -2,6 +2,15 @@ require 'sinatra/base'
 
 module FakeStripe
   class StubApp < Sinatra::Base
+     
+    post '/v1/accounts' do
+      json_response 200, fixture('create_account_method')
+    end
+
+    get '/v1/accounts/:id' do
+      json_response 200, fixture('retrieve_account_method')
+    end
+
     # PaymentMethods https://stripe.com/docs/api/payment_methods
     post '/v1/payment_methods' do
       json_response 200, fixture('attach_payment_method')
