@@ -1,0 +1,33 @@
+{
+  "object": "list",
+  "url": "/v1/accounts/acct_16eBzEGLk2w1zF1q/external_accounts",
+  "has_more": false,
+  "count": 1,
+  "data": [
+    {
+      "id": "card_1F9Eg5GLk2w1zF1qhZ5EMBE5",
+      "object": "card",
+      "address_city": null,
+      "address_country": null,
+      "address_line1": null,
+      "address_line1_check": null,
+      "address_line2": null,
+      "address_state": null,
+      "address_zip": null,
+      "address_zip_check": null,
+      "brand": "Visa",
+      "country": "US",
+      "cvc_check": null,
+      "dynamic_last4": null,
+      "exp_month": 8,
+      "exp_year": 2020,
+      "fingerprint": "n3gYpD5pidJ6tqrf",
+      "funding": "credit",
+      "last4": "4242",
+      "metadata": {},
+      "name": null,
+      "tokenization_method": null,
+      "account": "acct_16eBzEGLk2w1zF1q"
+    }
+  ]
+}

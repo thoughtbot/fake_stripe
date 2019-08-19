@@ -28,6 +28,14 @@ module FakeStripe
       json_response 200, fixture('delete_external_account')
     end
 
+    get '/v1/accounts/:account_id/external_accounts' do
+      if params[:object] == 'bank_account'
+        json_response 200, fixture('list_bank_external_accounts')
+      elsif params[:object] == 'card'
+        json_response 200, fixture('list_card_external_accounts')
+      end
+    end
+
     # PaymentMethods https://stripe.com/docs/api/payment_methods
     post '/v1/payment_methods' do
       json_response 200, fixture('attach_payment_method')
