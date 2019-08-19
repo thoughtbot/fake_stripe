@@ -17,7 +17,8 @@
       "metadata": {},
       "routing_number": "110000000",
       "status": "new",
-      "account": "acct_16eBzEGLk2w1zF1q"
+      "account": "acct_16eBzEGLk2w1zF1q",
+      "default_for_currency": false
     }
   ]
 }
