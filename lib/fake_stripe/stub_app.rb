@@ -12,19 +12,19 @@ module FakeStripe
     end
 
     # ExternalAccounts https://stripe.com/docs/api/external_account_bank_accounts
-    post '/v1/accounts/:id/external_accounts' do
+    post '/v1/accounts/:account_id/external_accounts' do
       json_response 200, fixture('retrieve_external_account')
     end
 
-    get '/v1/accounts/:id/external_accounts/:id' do
+    get '/v1/accounts/:account_id/external_accounts/:external_account_id' do
       json_response 200, fixture('retrieve_external_account')
     end
 
-    post '/v1/accounts/:id/external_accounts/:id' do
+    post '/v1/accounts/:account_id/external_accounts/:external_account_id' do
       json_response 200, fixture('retrieve_external_account')
     end
 
-    delete '/v1/accounts/:id/external_accounts/:id' do
+    delete '/v1/accounts/:account_id/external_accounts/:external_account_id' do
       json_response 200, fixture('delete_external_account')
     end
 
