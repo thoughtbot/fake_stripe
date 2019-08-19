@@ -27,7 +27,9 @@
       "metadata": {},
       "name": null,
       "tokenization_method": null,
-      "account": "acct_16eBzEGLk2w1zF1q"
+      "account": "acct_16eBzEGLk2w1zF1q",
+      "currency": "usd",
+      "default_for_currency": false
     }
   ]
 }
