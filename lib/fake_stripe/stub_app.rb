@@ -11,6 +11,23 @@ module FakeStripe
       json_response 200, fixture('retrieve_account_method')
     end
 
+    # ExternalAccounts https://stripe.com/docs/api/external_account_bank_accounts
+    post '/v1/accounts/:id/external_accounts' do
+      json_response 200, fixture('retrieve_external_account')
+    end
+
+    get '/v1/accounts/:id/external_accounts/:id' do
+      json_response 200, fixture('retrieve_external_account')
+    end
+
+    post '/v1/accounts/:id/external_accounts/:id' do
+      json_response 200, fixture('retrieve_external_account')
+    end
+
+    delete '/v1/accounts/:id/external_accounts/:id' do
+      json_response 200, fixture('delete_external_account')
+    end
+
     # PaymentMethods https://stripe.com/docs/api/payment_methods
     post '/v1/payment_methods' do
       json_response 200, fixture('attach_payment_method')
