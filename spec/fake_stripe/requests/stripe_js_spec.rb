@@ -31,7 +31,7 @@ describe "Stub Stripe JS" do
 
       response = Net::HTTP.get(url)
 
-      expect(response).to include "class Element"
+      expect(response).to include "class FakeStripeElement"
     end
   end
 end
