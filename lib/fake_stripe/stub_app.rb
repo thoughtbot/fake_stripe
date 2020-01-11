@@ -57,6 +57,33 @@ module FakeStripe
       json_response 200, fixture('list_customers')
     end
 
+    # Pyment Methods
+    post '/v1/payment_methods' do
+      FakeStripe.card_count += 1
+      json_response 200, fixture('create_payment_method')
+    end
+
+    get '/v1/payment_methods/:payment_method_id' do
+      json_response 200, fixture('retrieve_payment_method')
+    end
+
+    post '/v1/payment_methods/:payment_method_id' do
+      json_response 200, fixture('update_payment_method')
+    end
+
+    get '/v1/payment_methods' do
+      json_response 200, fixture('list_payment_methods')
+    end
+
+    post '/v1/payment_methods/:payment_method_id/attach' do
+      json_response 200, fixture('attach_payment_method_to_customer')
+    end
+
+    post '/v1/payment_methods/:payment_method_id/detach' do
+      json_response 200, fixture('detach_payment_method_from_customer')
+    end
+
+
     # Cards
     post '/v1/customers/:customer_id/sources' do
       FakeStripe.card_count += 1
@@ -361,18 +388,19 @@ module FakeStripe
     end
 
     # Payment Intents
-    post '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K' do
+    post '/v1/payment_intents' do
+      json_response 200, fixture("create_payment_intent")
+    end
+
+    post '/v1/payment_intents/:payment_intent_id' do
       json_response 200, fixture("retrieve_payment_intent")
     end
 
-    get '/v1/payment_intents' do
-      json_response 200, fixture("create_payment_intent")
-    end
-    post '/v1/payment_intents/pi_1EXK12L91mzKIzpGuXKit4pE/confirm' do
+    post '/v1/payment_intents/:payment_intent_id/confirm' do
       json_response 200, fixture("confirm_payment_intent")
     end
 
-    post '/v1/payment_intents/pi_1EXK12L91mzKIzpGuXKit4pE/capture' do
+    post '/v1/payment_intents/:payment_intent_id/capture' do
       json_response 200, fixture("capture_payment_intent")
     end
 
