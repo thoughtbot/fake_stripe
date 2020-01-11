@@ -1,0 +1,16 @@
+{
+  "id": "re_1EYlNRL91mzKIzpGYUuIL6pe",
+  "object": "refund",
+  "amount": 2000,
+  "balance_transaction": null,
+  "charge": "ch_18uPw8L91mzKIzpGAYTRv8jQ",
+  "created": 1557543357,
+  "currency": "usd",
+  "metadata": {},
+  "payment_intent": "pi_1EWE2PL91mzKIzpGIWTswBfS",
+  "reason": "expired_uncaptured_charge",
+  "receipt_number": null,
+  "source_transfer_reversal": null,
+  "status": "succeeded",
+  "transfer_reversal": null
+}

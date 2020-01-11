@@ -9,8 +9,6 @@ describe 'Stub app' do
     'GET charges/:charge_id' => { route: '/v1/charges/1', method: :get },
     'POST charges/:charge_id' => { route: '/v1/charges/1', method: :post },
     'POST refunds' => { route: '/v1/refunds', method: :post },
-    'POST charges/:charge_id/refund' =>
-    { route: '/v1/charges/1/refund', method: :post },
     'POST charges/:charge_id/capture' =>
       { route: '/v1/charges/1/capture', method: :post },
     'GET charges' => { route: '/v1/charges', method: :get },
@@ -33,6 +31,19 @@ describe 'Stub app' do
        { route: '/v1/customers/1/sources/1', method: :delete },
     'GET customers/:customer_id/sources' =>
        { route: '/v1/customers/1/sources', method: :get },
+    # Payment Methods
+    'POST payment_methods' =>
+       { route: '/v1/payment_methods', method: :post },
+    'GET payment_methods/:payment_method_id' =>
+       { route: '/v1/payment_methods/:payment_method_id', method: :get },
+    'POST payment_methods/:payment_method_id' =>
+       { route: '/v1/payment_methods/:payment_method_id', method: :post },
+    'GET payment_methods' =>
+       { route: '/v1/payment_methods/:customer_id/:type', method: :get },
+    'POST payment_methods/attach' =>
+       { route: '/v1/payment_methods/attach', method: :post },
+    'POST payment_methods/dettach' =>
+       { route: '/v1/payment_methods/detach', method: :post },
     # Subscriptions
     'POST customers/:customer_id/subscriptions' =>
        { route: '/v1/customers/1/subscriptions', method: :post },
@@ -124,7 +135,10 @@ describe 'Stub app' do
     'GET balance/history' => { route: '/v1/balance/history', method: :get },
     # Payment Intents
     'POST payment_intents' => { route: '/v1/payment_intents', method: :post },
-    'POST payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K', method: :get },
+    'GET payment_intents' => { route: '/v1/payment_intents', method: :get },
+    'GET payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K', method: :get },
+    'POST payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K', method: :post },
+    'POST payment_intents/:payment_intent_id/confirm' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K/capture', method: :post },
     'POST payment_intents/:payment_intent_id/capture' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K/capture', method: :post },
     # Events
     'GET events/:event_id' => { route: '/v1/events/1', method: :get },
