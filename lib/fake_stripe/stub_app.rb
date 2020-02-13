@@ -405,7 +405,7 @@ module FakeStripe
     end
 
     # Setup Intents
-    get "/v1/setup_intents" do
+    get '/v1/setup_intents/' do
       json_response 200, fixture("retrieve_setup_intent")
     end
 
