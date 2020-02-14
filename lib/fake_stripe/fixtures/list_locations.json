@@ -1,0 +1,52 @@
+{
+  "object": "list",
+  "url": "/v1/terminal/locations",
+  "has_more": false,
+  "data": [
+    {
+      "id": "tml_GiFc2v8I36CRIgseZN5iD7bY",
+      "object": "terminal.location",
+      "address": {
+        "city": null,
+        "country": null,
+        "line1": null,
+        "line2": null,
+        "postal_code": "20001",
+        "state": null
+      },
+      "display_name": "My First Store",
+      "livemode": false,
+      "metadata": {}
+    },
+    {
+      "id": "tml_GiFc2v8I36CRIgseZN5iD7bY",
+      "object": "terminal.location",
+      "address": {
+        "city": null,
+        "country": null,
+        "line1": null,
+        "line2": null,
+        "postal_code": "20001",
+        "state": null
+      },
+      "display_name": "My First Store",
+      "livemode": false,
+      "metadata": {}
+    },
+    {
+      "id": "tml_GiFc2v8I36CRIgseZN5iD7bY",
+      "object": "terminal.location",
+      "address": {
+        "city": null,
+        "country": null,
+        "line1": null,
+        "line2": null,
+        "postal_code": "20001",
+        "state": null
+      },
+      "display_name": "My First Store",
+      "livemode": false,
+      "metadata": {}
+    }
+  ]
+}

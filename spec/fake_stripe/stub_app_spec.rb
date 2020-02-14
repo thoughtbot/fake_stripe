@@ -37,11 +37,100 @@ describe FakeStripe::StubApp do
   end
 
   # Terminal
-  describe "POST v1/connection_tokens" do
+  describe "POST v1/terminal/connection_tokens" do
     it "returns a connection token" do
       result = Stripe::Terminal::ConnectionToken.create
 
       expect(result.object).to eq("terminal.connection_token")
+    end
+  end
+
+  # Reader Locations
+  describe "POST v1/terminal/locations" do
+    it "create a reader location" do
+      result = Stripe::Terminal::Location.create
+
+      expect(result.object).to eq("terminal.location")
+    end
+  end
+
+  describe "GET v1/terminal/locations/:id" do
+    it "returns a reader location" do
+      result = Stripe::Terminal::Location.retrieve("tml_GiFc2v8I36CRIgseZN5iD7bY")
+
+      expect(result.object).to eq("terminal.location")
+    end
+  end
+
+  describe "POST v1/terminal/locations/:id" do
+    it "updates a reader location" do
+      result = Stripe::Terminal::Location.update("tml_GiFc2v8I36CRIgseZN5iD7bY", { label: "main reader"})
+
+      expect(result.object).to eq("terminal.location")
+    end
+  end
+
+  describe "DELETE v1/terminal/locations/:id" do
+    it "deletes a reader location" do
+      result = Stripe::Terminal::Location.delete("tml_GiFc2v8I36CRIgseZN5iD7bY")
+
+      expect(result.object).to eq("terminal.location")
+    end
+  end
+
+  describe "GET /v1/terminal/locations" do
+    it "returns a list of a customers payment methods" do
+      result = Stripe::Terminal::Location.list({
+        limit: 100,
+      })
+
+      expect(result.count).to eq(3)
+      expect(result.first.object).to eq("terminal.location")
+    end
+  end
+
+  # Readers
+
+  describe "POST v1/terminal/readeers" do
+    it "create a reader" do
+      result = Stripe::Terminal::Reader.create
+
+      expect(result.object).to eq("terminal.reader")
+    end
+  end
+
+  describe "GET v1/terminal/readers/:id" do
+    it "returns a reader" do
+      result = Stripe::Terminal::Reader.retrieve("tmr_P400-123-456-789")
+
+      expect(result.object).to eq("terminal.reader")
+    end
+  end
+
+  describe "POST v1/terminal/readers/:id" do
+    it "updates a reader" do
+      result = Stripe::Terminal::Reader.update("tmr_P400-123-456-789", { label: "main reader"})
+
+      expect(result.object).to eq("terminal.reader")
+    end
+  end
+
+  describe "DELETE v1/terminal/readers/:id" do
+    it "deletes a reader location" do
+      result = Stripe::Terminal::Reader.delete("tmr_P400-123-456-789")
+
+      expect(result.object).to eq("terminal.reader")
+    end
+  end
+
+  describe "GET /v1/terminal/locations" do
+    it "returns a list of a customers payment methods" do
+      result = Stripe::Terminal::Location.list({
+        limit: 100,
+      })
+
+      expect(result.count).to eq(3)
+      expect(result.first.object).to eq("terminal.location")
     end
   end
 
@@ -68,7 +157,7 @@ describe FakeStripe::StubApp do
       }
       result = Stripe::PaymentIntent.create(params)
 
-      expect(result.object.object).to eq("payment_intent")
+      expect(result.object).to eq("payment_intent")
     end
   end
 
@@ -76,14 +165,14 @@ describe FakeStripe::StubApp do
     it "returns a payment intent" do
       result = Stripe::PaymentIntent.create
 
-      expect(result.object.object).to eq("payment_intent")
+      expect(result.object).to eq("payment_intent")
     end
   end
 
   describe "POST v1/payment_intents/:payment_intent_id/confirm" do
     it "confirms a payment intent" do
       payment_intent = Stripe::PaymentIntent.create
-      result = Stripe::PaymentIntent.confirm(payment_intent.object.id)
+      result = Stripe::PaymentIntent.confirm(payment_intent.id)
 
       expect(result.object).to eq("payment_intent")
     end
@@ -92,9 +181,9 @@ describe FakeStripe::StubApp do
   describe "POST v1/payment_intents/:payment_intent_id/capture" do
     it "captures a payment intent" do
       payment_intent = Stripe::PaymentIntent.create
-      result = Stripe::PaymentIntent.capture(payment_intent.object.id)
+      result = Stripe::PaymentIntent.capture(payment_intent.id)
 
-      expect(result.object.object).to eq("charge")
+      expect(result.charges.data.first.object).to eq("charge")
     end
   end
 

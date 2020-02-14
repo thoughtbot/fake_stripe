@@ -2,6 +2,56 @@ require 'sinatra/base'
 
 module FakeStripe
   class StubApp < Sinatra::Base
+    # Terminal
+
+    # Connection tokens
+    post '/v1/terminal/connection_tokens' do
+      json_response 200, fixture("create_connection_token")
+    end
+
+    # Locations
+    post '/v1/terminal/locations' do
+      json_response 201, fixture('create_location')
+    end
+
+    get '/v1/terminal/locations/:id' do
+      json_response 201, fixture('retrieve_location')
+    end
+
+    post '/v1/terminal/locations/:id' do
+      json_response 201, fixture('update_location')
+    end
+
+    delete '/v1/terminal/locations/:id' do
+      json_response 201, fixture('delete_location')
+    end
+
+    get '/v1/terminal/locations' do
+      json_response 201, fixture('list_locations')
+    end
+
+    # Readers
+    post '/v1/terminal/readers' do
+      json_response 201, fixture('create_reader')
+    end
+
+    get '/v1/terminal/readers/:id' do
+      json_response 201, fixture('retrieve_reader')
+    end
+
+    post '/v1/terminal/readers/:id' do
+      json_response 201, fixture('update_reader')
+    end
+
+    delete '/v1/terminal/readers/:id' do
+      json_response 201, fixture('delete_reader')
+    end
+
+    get '/v1/terminal/readers' do
+      json_response 201, fixture('list_readers')
+    end
+
+    # ----------------------------------------------------------------------#
 
     # Charges
     post '/v1/charges' do
@@ -379,12 +429,6 @@ module FakeStripe
 
     get '/v1/tokens/:token_id' do
       json_response 200, fixture('retrieve_token')
-    end
-
-    # Connection tokens
-
-    post '/v1/terminal/connection_tokens' do
-      json_response 200, fixture("create_connection_token")
     end
 
     # Payment Intents

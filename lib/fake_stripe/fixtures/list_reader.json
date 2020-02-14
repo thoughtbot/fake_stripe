@@ -1,0 +1,20 @@
+{
+  "object": "list",
+  "url": "/v1/terminal/readers",
+  "has_more": false,
+  "data": [
+    {
+      "id": "tmr_P400-123-456-789",
+      "object": "terminal.reader",
+      "device_sw_version": null,
+      "device_type": "verifone_P400",
+      "ip_address": "192.168.2.2",
+      "label": "Blue Rabbit",
+      "livemode": false,
+      "location": null,
+      "metadata": {},
+      "serial_number": "123-456-789",
+      "status": "online"
+    }
+  ]
+}

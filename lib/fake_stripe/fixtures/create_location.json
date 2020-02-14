@@ -1,0 +1,13 @@
+{
+  "id": "tml_GiFc2v8I36CRIgseZN5iD7bY",
+  "object": "terminal.location",
+  "address": {
+    "line1": "1234 Main Street",
+    "city": "San Francisco",
+    "country": "US",
+    "postal_code": "94111"
+  },
+  "display_name": "Main Reader",
+  "livemode": false,
+  "metadata": {}
+}
