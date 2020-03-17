@@ -134,6 +134,54 @@ describe FakeStripe::StubApp do
     end
   end
 
+  # Setup Intents
+  describe "POST v1/setup_intents" do
+    it "returns a setup intent" do
+      result = Stripe::SetupIntent.create
+
+      expect(result.object).to eq("setup_intent")
+    end
+  end
+  describe "GET v1/setup_intents/:id" do
+    it "returns a setup intent" do
+      result = Stripe::SetupIntent.create
+
+      expect(result.object).to eq("setup_intent")
+    end
+  end
+
+  describe "POST v1/setup_intents/:id/confirm" do
+    it "confirms a setup intent" do
+      setup_intent = Stripe::SetupIntent.create
+      result = Stripe::SetupIntent.confirm(setup_intent.id)
+
+      expect(result.object).to eq("setup_intent")
+    end
+  end
+
+  describe "POST v1/setup_intents/:id/cancel" do
+    it "cancels a setup intent" do
+      setup_intent = Stripe::SetupIntent.create
+      result = Stripe::SetupIntent.cancel(setup_intent.id)
+
+      expect(result.object).to eq("setup_intent")
+      expect(result.status).to eq("canceled")
+    end
+  end
+
+  describe "GET /v1/setup_intents" do
+    it "returns a list of a setup intents" do
+      results = Stripe::SetupIntent.list({
+        limit: 100,
+      })
+
+      expect(results.count).to eq(3)
+      results.each do |result|
+        expect(result.object).to eq("setup_intent")
+      end
+    end
+  end
+
   # Payment Intents
   describe "POST v1/payment_intents" do
     it "returns a payment intent" do
