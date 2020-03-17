@@ -23,7 +23,7 @@
   "description": null,
   "invoice": null,
   "last_payment_error": {
-    "code": "payment_intent_authentication_failure",
+    "decline_code": "payment_intent_authentication_failure",
     "doc_url": "https://stripe.com/docs/error-codes/payment-intent-authentication-failure",
     "message": "The provided PaymentMethod has failed authentication. You can provide payment_method_data or a new PaymentMethod to attempt to fulfill this PaymentIntent again.",
     "payment_method": {
@@ -89,7 +89,7 @@
   "shipping": null,
   "statement_descriptor": null,
   "statement_descriptor_suffix": null,
-  "status": "requires_payment_method",
+  "status": "succeeded",
   "transfer_data": null,
   "transfer_group": null
 }
