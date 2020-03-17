@@ -1,29 +1,17 @@
 {
-  "id": "pi_1F2UicL91mzKIzpGIeLYAe0P",
+  "id": "pi_1GLrZO2eZvKYlo2CfMpq8zT8",
   "object": "payment_intent",
   "amount": 2000,
   "amount_capturable": 0,
-  "amount_received": 0,
+  "amount_received": 2000,
   "application": null,
   "application_fee_amount": null,
   "canceled_at": null,
   "cancellation_reason": null,
   "capture_method": "automatic",
-  "charges": {
-    "object": "list",
-    "data": [],
-    "has_more": false,
-    "url": "/v1/charges?payment_intent=pi_1F2UicL91mzKIzpGIeLYAe0P"
-  },
-  "client_secret": "pi_1F2UicL91mzKIzpGIeLYAe0P_secret_9uZKwQyfTTPzpl96yIfBAzaKK",
-  "confirmation_method": "manual",
-  "created": 1564629162,
-  "currency": "usd",
-  "customer": null,
-  "description": null,
-  "invoice": null,
   "last_payment_error": {
     "code": "payment_intent_authentication_failure",
+    "decline_code": "authentication_failure",
     "doc_url": "https://stripe.com/docs/error-codes/payment-intent-authentication-failure",
     "message": "The provided PaymentMethod has failed authentication. You can provide payment_method_data or a new PaymentMethod to attempt to fulfill this PaymentIntent again.",
     "payment_method": {
@@ -69,13 +57,118 @@
     },
     "type": "invalid_request_error"
   },
-  "livemode": false,
-  "metadata": {
-    "order_id": "6735"
+  "charges": {
+    "object": "list",
+    "data": [
+      {
+        "id": "ch_1F2MxIL91mzKIzpGs9ZImGUz",
+        "object": "charge",
+        "amount": 2000,
+        "amount_refunded": 0,
+        "application": null,
+        "application_fee": null,
+        "application_fee_amount": null,
+        "balance_transaction": "txn_1F2MxJL91mzKIzpGj58So3cO",
+        "billing_details": {
+          "address": {
+            "city": null,
+            "country": null,
+            "line": null,
+            "line2": null,
+            "postal_code": "20001",
+            "state": null
+          },
+          "email": null,
+          "name": "Carl Weis",
+          "phone": null
+        },
+        "captured": true,
+        "created": 1564599320,
+        "currency": "usd",
+        "customer": null,
+        "description": null,
+        "disputed": false,
+        "failure_code": null,
+        "failure_message": null,
+        "fraud_details": {},
+        "invoice": null,
+        "livemode": false,
+        "metadata": {},
+        "on_behalf_of": null,
+        "order": null,
+        "outcome": {
+          "network_status": "approved_by_network",
+          "reason": null,
+          "risk_level": "normal",
+          "risk_score": 24,
+          "rule": "allow_if_3ds_authenticated_liability_shift",
+          "seller_message": "Payment complete.",
+          "type": "authorized"
+        },
+        "paid": true,
+        "payment_intent": "pi_1GLrZO2eZvKYlo2CfMpq8zT8",
+        "payment_method": "pm_1F2Mx4L91mzKIzpG4SghJzJg",
+        "payment_method_details": {
+          "card": {
+            "brand": "visa",
+            "checks": {
+              "address_line1_check": null,
+              "address_postal_code_check": "pass",
+              "cvc_check": "pass"
+            },
+            "country": "FR",
+            "exp_month": 12,
+            "exp_year": 2022,
+            "fingerprint": "2e7Sko4Qsqq8MiWZ",
+            "funding": "credit",
+            "installments": null,
+            "last4": "3155",
+            "network": "visa",
+            "three_d_secure": {
+              "authenticated": false,
+              "succeeded": false,
+              "version": "1.0"
+            },
+            "wallet": null
+          },
+          "type": "card"
+        },
+        "receipt_email": null,
+        "receipt_number": null,
+        "receipt_url": "https://pay.stripe.com/receipts/acct_184AzvL91mzKIzpG/ch_1F2MxIL91mzKIzpGs9ZImGUz/rcpt_FXRrIw8TyKRCtf99aXyGbUhVFhl7fH1",
+        "refunded": false,
+        "refunds": {
+          "object": "list",
+          "data": [],
+          "has_more": false,
+          "url": "/v1/charges/ch_1F2MxIL91mzKIzpGs9ZImGUz/refunds"
+        },
+        "review": null,
+        "shipping": null,
+        "source_transfer": null,
+        "statement_descriptor": null,
+        "statement_descriptor_suffix": null,
+        "status": "succeeded",
+        "transfer_data": null,
+        "transfer_group": null
+      }
+    ],
+    "has_more": false,
+    "url": "/v1/charges?payment_intent=pi_1GLrZO2eZvKYlo2CfMpq8zT8"
   },
+  "client_secret": "pi_1GLrZO2eZvKYlo2CfMpq8zT8_secret_XqRFSdxcv3nWzOn5LuKrYD10v",
+  "confirmation_method": "manual",
+  "created": 1564599308,
+  "currency": "usd",
+  "customer": null,
+  "description": null,
+  "invoice": null,
+  "last_payment_error": null,
+  "livemode": false,
+  "metadata": {},
   "next_action": null,
   "on_behalf_of": null,
-  "payment_method": null,
+  "payment_method": "pm_1F2Mx4L91mzKIzpG4SghJzJg",
   "payment_method_options": {
     "card": {
       "installments": null,
@@ -91,7 +184,7 @@
   "shipping": null,
   "statement_descriptor": null,
   "statement_descriptor_suffix": null,
-  "status": "requires_payment_method",
+  "status": "succeeded",
   "transfer_data": null,
   "transfer_group": null
 }
