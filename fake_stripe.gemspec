@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sinatra'
   s.add_dependency 'webmock'
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'puma'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'stripe'
 end

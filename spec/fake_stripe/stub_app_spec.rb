@@ -248,6 +248,23 @@ describe FakeStripe::StubApp do
         Stripe::Charge.create
       end.to change(FakeStripe, :charge_count).by(1)
     end
+
+    context 'with an invalid amount' do
+      it 'returns an error' do
+        expect do
+          Stripe::Charge.create(amount: -100)
+        end.to raise_error(Stripe::InvalidRequestError)
+      end
+
+      it 'does not increment the charge counter' do
+        expect do
+          begin
+            Stripe::Charge.create(amount: 0)
+          rescue Stripe::InvalidRequestError
+          end
+        end.not_to change(FakeStripe, :charge_count)
+      end
+    end
   end
 
   # Refunds

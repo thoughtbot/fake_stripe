@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    parallelism: 2
+    docker:
+      - image: circleci/ruby:2.5
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          RAILS_ENV: test
+          SECRET_KEY_BASE: 13597737746c1ccae1ad593ba41cf1930908e4f7f490b4e9eed0a9509ab2627a21f5efb1c546b3d9ced44d0f82431ccde7d78434763e8fa153b448ce16b7336f
+    steps:
+      - checkout
+
+      # Which version of bundler?
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      # Restore bundle cache
+      - restore_cache:
+          keys:
+            - fake_stripe-bundle-v2-{{ checksum "Gemfile.lock" }}
+            - fake_stripe-bundle-v2-
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Store bundle cache
+      - save_cache:
+          key: fake_stripe-bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      # Run rspec in parallel
+      - type: shell
+        command: |
+          bundle exec rspec --profile 10 \
+            --format RspecJunitFormatter \
+            --out test_results/rspec.xml \
+            --format progress \
+            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
+
+      # Save the tests split for replication of failures with the same seed
+      - store_artifacts:
+          path: test_results
+          destination: test_results

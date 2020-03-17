@@ -2,6 +2,5 @@
 log/*.log
 *.swp
 bin/
-Gemfile.lock
 pkg/
-.idea
+/test_results
