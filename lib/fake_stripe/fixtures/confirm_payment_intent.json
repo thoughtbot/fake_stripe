@@ -61,53 +61,58 @@
     "object": "list",
     "data": [
       {
-        "id": "ch_1F2MxIL91mzKIzpGs9ZImGUz",
+        "id": "ch_18uPw8L91mzKIzpGAYTRv8jQ",
         "object": "charge",
-        "amount": 2000,
+        "amount": 10000,
         "amount_refunded": 0,
         "application": null,
         "application_fee": null,
         "application_fee_amount": null,
-        "balance_transaction": "txn_1F2MxJL91mzKIzpGj58So3cO",
+        "balance_transaction": "txn_1GN9r6L91mzKIzpGFXOhImQH",
         "billing_details": {
           "address": {
             "city": null,
             "country": null,
-            "line": null,
+            "line1": null,
             "line2": null,
             "postal_code": "20001",
             "state": null
           },
           "email": null,
-          "name": "Carl Weis",
+          "name": "John Cardholder",
           "phone": null
         },
         "captured": true,
-        "created": 1564599320,
+        "created": 1474046140,
         "currency": "usd",
         "customer": null,
-        "description": null,
+        "description": "Donation of 100.0 to Regular Fund",
         "disputed": false,
         "failure_code": null,
         "failure_message": null,
         "fraud_details": {},
         "invoice": null,
         "livemode": false,
-        "metadata": {},
-        "on_behalf_of": null,
+        "metadata": {
+          "category_id": "36",
+          "contribution_id": "111",
+          "customer": "N\\A",
+          "payer_email": "donor@example.com",
+          "payer_name": "Donor Jones",
+          "project_id": "9"
+        },
+        "on_behalf_of": "acct_18uPPYAWmcVS821L",
         "order": null,
         "outcome": {
           "network_status": "approved_by_network",
           "reason": null,
           "risk_level": "normal",
-          "risk_score": 24,
-          "rule": "allow_if_3ds_authenticated_liability_shift",
           "seller_message": "Payment complete.",
           "type": "authorized"
         },
         "paid": true,
-        "payment_intent": "pi_1GLrZO2eZvKYlo2CfMpq8zT8",
-        "payment_method": "pm_1F2Mx4L91mzKIzpG4SghJzJg",
+        "payment_intent": null,
+        "payment_method": "card_18uPw7L91mzKIzpGoYarbJxf",
         "payment_method_details": {
           "card": {
             "brand": "visa",
@@ -116,32 +121,28 @@
               "address_postal_code_check": "pass",
               "cvc_check": "pass"
             },
-            "country": "FR",
-            "exp_month": 12,
-            "exp_year": 2022,
-            "fingerprint": "2e7Sko4Qsqq8MiWZ",
+            "country": "US",
+            "exp_month": 9,
+            "exp_year": 2017,
+            "fingerprint": "cQEn3eGSNGyvdFnX",
             "funding": "credit",
             "installments": null,
-            "last4": "3155",
+            "last4": "4242",
             "network": "visa",
-            "three_d_secure": {
-              "authenticated": false,
-              "succeeded": false,
-              "version": "1.0"
-            },
+            "three_d_secure": null,
             "wallet": null
           },
           "type": "card"
         },
         "receipt_email": null,
         "receipt_number": null,
-        "receipt_url": "https://pay.stripe.com/receipts/acct_184AzvL91mzKIzpG/ch_1F2MxIL91mzKIzpGs9ZImGUz/rcpt_FXRrIw8TyKRCtf99aXyGbUhVFhl7fH1",
+        "receipt_url": "https://pay.stripe.com/receipts/acct_184AzvL91mzKIzpG/ch_18uPw8L91mzKIzpGAYTRv8jQ/rcpt_EHSGZ99v3U6NB17DvRf0Yk3sFckXQGo",
         "refunded": false,
         "refunds": {
           "object": "list",
           "data": [],
           "has_more": false,
-          "url": "/v1/charges/ch_1F2MxIL91mzKIzpGs9ZImGUz/refunds"
+          "url": "/v1/charges/ch_18uPw8L91mzKIzpGAYTRv8jQ/refunds"
         },
         "review": null,
         "shipping": null,
@@ -149,8 +150,12 @@
         "statement_descriptor": null,
         "statement_descriptor_suffix": null,
         "status": "succeeded",
-        "transfer_data": null,
-        "transfer_group": null
+        "transfer": "tr_18uPw8L91mzKIzpGRKSsDIjk",
+        "transfer_data": {
+          "amount": null,
+          "destination": "acct_18uPPYAWmcVS821L"
+        },
+        "transfer_group": "group_ch_18uPw8L91mzKIzpGAYTRv8jQ"
       }
     ],
     "has_more": false,
