@@ -449,8 +449,28 @@ module FakeStripe
     end
 
     # Setup Intents
-    get '/v1/setup_intents/' do
+    post '/v1/setup_intents' do
+      json_response 200, fixture("create_setup_intent")
+    end
+
+    get '/v1/setup_intents/:id' do
       json_response 200, fixture("retrieve_setup_intent")
+    end
+
+    post '/v1/setup_intents/:id' do
+      json_response 200, fixture('update_setup_intent')
+    end
+
+    post '/v1/setup_intents/:id/confirm' do
+      json_response 200, fixture('update_setup_intent')
+    end
+
+    post '/v1/setup_intents/:id/cancel' do
+      json_response 200, fixture('cancel_setup_intent')
+    end
+
+    get '/v1/setup_intents' do
+      json_response 200, fixture('list_setup_intents')
     end
 
     private
