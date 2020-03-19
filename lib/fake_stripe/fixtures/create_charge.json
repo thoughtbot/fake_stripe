@@ -54,8 +54,8 @@
   "source": {
     "id": "ba_1GKVlSL91mzKIzpG7fF6Mph9",
     "object": "bank_account",
-    "account_holder_name": null,
-    "account_holder_type": null,
+    "account_holder_name": "John Accountholder",
+    "account_holder_type": "owner",
     "bank_name": "STRIPE TEST BANK",
     "country": "US",
     "currency": "usd",
