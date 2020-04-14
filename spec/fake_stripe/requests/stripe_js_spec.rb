@@ -33,5 +33,31 @@ describe "Stub Stripe JS" do
 
       expect(response).to include "class Element"
     end
+
+    context "POST v3" do
+      it "sets the token in requests" do
+        token = "tok_abc123"
+        url = URI.parse(STRIPE_JS_HOST)
+        url.path = "/v3/"
+
+        params = {
+          token: {
+            id: token,
+          }
+        }.to_json
+        http_post(url, params)
+
+        response = Net::HTTP.get(url)
+        expect(response).to include token
+      end
+    end
+  end
+
+  def http_post(uri, json)
+    header = {"Content-Type": "text/json"}
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri.request_uri, header)
+    request.body = json
+    http.request(request)
   end
 end
