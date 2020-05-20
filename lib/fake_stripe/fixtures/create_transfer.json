@@ -1,161 +1,24 @@
 {
-  "id": "tr_103ehW2eZvKYlo2CvqXdcIQL",
+  "id": "tr_1GkqC12eZvKYlo2CqjEw4f8p",
   "object": "transfer",
-  "date": 1394841600,
-  "livemode": false,
-  "amount": 336081,
+  "amount": 400,
+  "amount_reversed": 0,
+  "balance_transaction": "txn_19XJJ02eZvKYlo2ClwuJ1rbA",
+  "created": 1589974477,
   "currency": "usd",
-  "status": "pending",
-  "balance_transaction": "txn_103cQg2eZvKYlo2CYKVlR2nh",
-  "summary": {
-    "charge_gross": 365872,
-    "charge_fees": 29694,
-    "charge_fee_details": [
-      {
-        "amount": 29661,
-        "currency": "usd",
-        "type": "stripe_fee",
-        "description": null,
-        "application": null
-      }
-    ],
-    "refund_gross": -100,
-    "refund_fees": -3,
-    "refund_fee_details": [
-      {
-        "amount": -3,
-        "currency": "usd",
-        "type": "stripe_fee",
-        "description": null,
-        "application": null
-      }
-    ],
-    "adjustment_gross": 0,
-    "adjustment_fees": 0,
-    "adjustment_fee_details": [
-
-    ],
-    "validation_fees": 0,
-    "validation_count": 0,
-    "charge_count": 625,
-    "refund_count": 1,
-    "adjustment_count": 0,
-    "net": 336081,
-    "currency": "usd",
-    "collected_fee_gross": 0,
-    "collected_fee_count": 0,
-    "collected_fee_refund_gross": 0,
-    "collected_fee_refund_count": 0
-  },
-  "transactions": {
+  "description": null,
+  "destination": "acct_1032D82eZvKYlo2C",
+  "destination_payment": "py_1GkqC1I9Pbw6jkMZpolpe6Cn",
+  "livemode": false,
+  "metadata": {},
+  "reversals": {
     "object": "list",
-    "count": 626,
-    "url": "/v1/transfers/tr_103ehW2eZvKYlo2CvqXdcIQL/transactions",
-    "data": [
-      {
-        "id": "ch_103d7S2eZvKYlo2ClgiFvMVj",
-        "type": "charge",
-        "amount": 500,
-        "currency": "usd",
-        "net": 455,
-        "created": 1394311101,
-        "description": null,
-        "fee": 45,
-        "fee_details": [
-          {
-            "amount": 45,
-            "currency": "usd",
-            "type": "stripe_fee",
-            "description": "Stripe processing fees",
-            "application": null
-          }
-        ]
-      },
-      {
-        "id": "ch_103d4l2eZvKYlo2CYxMUKdVS",
-        "type": "charge",
-        "amount": 500,
-        "currency": "usd",
-        "net": 455,
-        "created": 1394301116,
-        "description": null,
-        "fee": 45,
-        "fee_details": [
-          {
-            "amount": 45,
-            "currency": "usd",
-            "type": "stripe_fee",
-            "description": "Stripe processing fees",
-            "application": null
-          }
-        ]
-      },
-      {
-        "id": "ch_103cv62eZvKYlo2CC16QiOJh",
-        "type": "charge",
-        "amount": 2000,
-        "currency": "usd",
-        "net": 1912,
-        "created": 1394265182,
-        "description": "payinguser@example.com",
-        "fee": 88,
-        "fee_details": [
-          {
-            "amount": 88,
-            "currency": "usd",
-            "type": "stripe_fee",
-            "description": "Stripe processing fees",
-            "application": null
-          }
-        ]
-      },
-      {
-        "id": "ch_103cnV2eZvKYlo2CRoDM3aSW",
-        "type": "charge",
-        "amount": 500,
-        "currency": "usd",
-        "net": 455,
-        "created": 1394236904,
-        "description": null,
-        "fee": 45,
-        "fee_details": [
-          {
-            "amount": 45,
-            "currency": "usd",
-            "type": "stripe_fee",
-            "description": "Stripe processing fees",
-            "application": null
-          }
-        ]
-      },
-      {
-        "id": "ch_103cnX2eZvKYlo2CrtXEpq5u",
-        "type": "charge",
-        "amount": 500,
-        "currency": "usd",
-        "net": 455,
-        "created": 1394237040,
-        "description": null,
-        "fee": 45,
-        "fee_details": [
-          {
-            "amount": 45,
-            "currency": "usd",
-            "type": "stripe_fee",
-            "description": "Stripe processing fees",
-            "application": null
-          }
-        ]
-      }
-    ]
+    "data": [],
+    "has_more": false,
+    "url": "/v1/transfers/tr_1GkqC12eZvKYlo2CqjEw4f8p/reversals"
   },
-  "other_transfers": [
-    "tr_103ehW2eZvKYlo2CvqXdcIQL"
-  ],
-  "account": null,
-  "description": "STRIPE TRANSFER",
-  "metadata": {
-  },
-  "statement_descriptor": null,
-  "recipient": null
+  "reversed": false,
+  "source_transaction": "ch_1GkqC12eZvKYlo2C46Ohrt2n",
+  "source_type": "card",
+  "transfer_group": "ORDER_95"
 }

@@ -1,0 +1,32 @@
+{
+  "object": "list",
+  "url": "/v1/balance_transactions",
+  "has_more": false,
+  "data": [
+    {
+      "id": "txn_19XJJ02eZvKYlo2ClwuJ1rbA",
+      "object": "balance_transaction",
+      "amount": 999,
+      "available_on": 1483920000,
+      "created": 1483315442,
+      "currency": "usd",
+      "description": null,
+      "exchange_rate": null,
+      "fee": 59,
+      "fee_details": [
+        {
+          "amount": 59,
+          "application": null,
+          "currency": "usd",
+          "description": "Stripe processing fees",
+          "type": "stripe_fee"
+        }
+      ],
+      "net": 940,
+      "reporting_category": "charge",
+      "source": "ch_19XJJ02eZvKYlo2CHfSUsSpl",
+      "status": "available",
+      "type": "charge"
+    }
+  ]
+}

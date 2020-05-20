@@ -1,9 +1,9 @@
 {
-  "id": "pi_1G0CcC2eZvKYlo2CeZT6tXsA",
+  "id": "pi_1GipKc2eZvKYlo2CSkpn2rM8",
   "object": "payment_intent",
-  "amount": 2000,
+  "amount": 1000,
   "amount_capturable": 0,
-  "amount_received": 2000,
+  "amount_received": 1000,
   "application": null,
   "application_fee_amount": null,
   "canceled_at": null,
@@ -13,32 +13,33 @@
     "object": "list",
     "data": [
       {
-        "id": "ch_1F2MxIL91mzKIzpGs9ZImGUz",
+        "id": "ch_1EXUPv2eZvKYlo2CStIqOmbY",
         "object": "charge",
-        "amount": 2000,
+        "amount": 1000,
         "amount_refunded": 0,
         "application": null,
         "application_fee": null,
         "application_fee_amount": null,
-        "balance_transaction": "txn_1F2MxJL91mzKIzpGj58So3cO",
+        "balance_transaction": "txn_1EXUPv2eZvKYlo2CNUI18wV8",
         "billing_details": {
           "address": {
             "city": null,
             "country": null,
             "line1": null,
             "line2": null,
-            "postal_code": "20001",
+            "postal_code": null,
             "state": null
           },
           "email": null,
-          "name": "Carl Weis",
+          "name": null,
           "phone": null
         },
+        "calculated_statement_descriptor": "Stripe",
         "captured": true,
-        "created": 1564599320,
+        "created": 1557239835,
         "currency": "usd",
         "customer": null,
-        "description": null,
+        "description": "One blue fish",
         "disputed": false,
         "failure_code": null,
         "failure_message": null,
@@ -52,48 +53,43 @@
           "network_status": "approved_by_network",
           "reason": null,
           "risk_level": "normal",
-          "risk_score": 24,
-          "rule": "allow_if_3ds_authenticated_liability_shift",
+          "risk_score": 9,
           "seller_message": "Payment complete.",
           "type": "authorized"
         },
         "paid": true,
-        "payment_intent": "pi_1G0CcC2eZvKYlo2CeZT6tXsA",
-        "payment_method": "pm_1F2Mx4L91mzKIzpG4SghJzJg",
+        "payment_intent": "pi_1GipKc2eZvKYlo2CSkpn2rM8",
+        "payment_method": "pm_1EXUPv2eZvKYlo2CUkqZASBe",
         "payment_method_details": {
           "card": {
             "brand": "visa",
             "checks": {
               "address_line1_check": null,
-              "address_postal_code_check": "pass",
-              "cvc_check": "pass"
+              "address_postal_code_check": null,
+              "cvc_check": null
             },
-            "country": "FR",
-            "exp_month": 12,
-            "exp_year": 2022,
-            "fingerprint": "2e7Sko4Qsqq8MiWZ",
+            "country": "US",
+            "exp_month": 5,
+            "exp_year": 2020,
+            "fingerprint": "Xt5EWLLDS7FJjR1c",
             "funding": "credit",
             "installments": null,
-            "last4": "3155",
+            "last4": "4242",
             "network": "visa",
-            "three_d_secure": {
-              "authenticated": true,
-              "succeeded": true,
-              "version": "1.0"
-            },
+            "three_d_secure": null,
             "wallet": null
           },
           "type": "card"
         },
         "receipt_email": null,
-        "receipt_number": null,
-        "receipt_url": "https://pay.stripe.com/receipts/acct_184AzvL91mzKIzpG/ch_1F2MxIL91mzKIzpGs9ZImGUz/rcpt_FXRrIw8TyKRCtf99aXyGbUhVFhl7fH1",
+        "receipt_number": "1230-7299",
+        "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_1EXUPv2eZvKYlo2CStIqOmbY/rcpt_F1XUd7YIQjmM5TVGoaOmzEpU0FBogb2",
         "refunded": false,
         "refunds": {
           "object": "list",
           "data": [],
           "has_more": false,
-          "url": "/v1/charges/ch_1F2MxIL91mzKIzpGs9ZImGUz/refunds"
+          "url": "/v1/charges/ch_1EXUPv2eZvKYlo2CStIqOmbY/refunds"
         },
         "review": null,
         "shipping": null,
@@ -106,27 +102,22 @@
       }
     ],
     "has_more": false,
-    "url": "/v1/charges?payment_intent=pi_1G0CcC2eZvKYlo2CeZT6tXsA"
+    "url": "/v1/charges?payment_intent=pi_1GipKc2eZvKYlo2CSkpn2rM8"
   },
-  "client_secret": "pi_1G0CcC2eZvKYlo2CeZT6tXsA_secret_XqRFSdxcv3nWzOn5LuKrYD10v",
-  "confirmation_method": "manual",
-  "created": 1564599308,
+  "client_secret": "pi_1GipKc2eZvKYlo2CSkpn2rM8_secret_9J35eTzWlxVmfbbQhmkNbewuL",
+  "confirmation_method": "automatic",
+  "created": 1524505326,
   "currency": "usd",
   "customer": null,
-  "description": null,
+  "description": "One blue fish",
   "invoice": null,
   "last_payment_error": null,
   "livemode": false,
   "metadata": {},
   "next_action": null,
   "on_behalf_of": null,
-  "payment_method": "pm_1F2Mx4L91mzKIzpG4SghJzJg",
-  "payment_method_options": {
-    "card": {
-      "installments": null,
-      "request_three_d_secure": "automatic"
-    }
-  },
+  "payment_method": "pm_1EXUPv2eZvKYlo2CUkqZASBe",
+  "payment_method_options": {},
   "payment_method_types": [
     "card"
   ],

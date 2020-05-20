@@ -1,31 +1,24 @@
 {
-  "id": "tr_103ehW2eZvKYlo2CvqXdcIQL",
+  "id": "tr_1GkqC12eZvKYlo2CqjEw4f8p",
   "object": "transfer",
-  "amount": 336081,
+  "amount": 8657,
   "amount_reversed": 0,
-  "application_fee": null,
-  "balance_transaction": "txn_103cQg2eZvKYlo2CYKVlR2nh",
-  "created": 1394841600,
+  "balance_transaction": "txn_19XJJ02eZvKYlo2ClwuJ1rbA",
+  "created": 1589974477,
   "currency": "usd",
-  "date": 1394841600,
-  "description": "STRIPE TRANSFER",
-  "destination": "acct_28ndDlB5ETbGCaQr",
-  "destination_payment": "py_175CevIWkACJe2IDLAxrRJFo",
-  "failure_code": null,
-  "failure_message": null,
+  "description": null,
+  "destination": "acct_1AojmwI9Pbw6jkMZ",
+  "destination_payment": "py_1GkqC1I9Pbw6jkMZpolpe6Cn",
   "livemode": false,
   "metadata": {},
-  "recipient": null,
   "reversals": {
     "object": "list",
     "data": [],
     "has_more": false,
-    "total_count": 0,
-    "url": "/v1/transfers/tr_175Cev2eZvKYlo2CESBArzc9/reversals"
+    "url": "/v1/transfers/tr_1GkqC12eZvKYlo2CqjEw4f8p/reversals"
   },
   "reversed": false,
-  "source_transaction": null,
-  "statement_descriptor": null,
-  "status": "paid",
-  "type": "stripe_account"
+  "source_transaction": "ch_1GkqC12eZvKYlo2C46Ohrt2n",
+  "source_type": "card",
+  "transfer_group": "group_pi_1GkqC12eZvKYlo2C6xMv5yon"
 }

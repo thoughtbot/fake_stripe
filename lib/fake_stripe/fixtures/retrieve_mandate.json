@@ -1,0 +1,24 @@
+{
+  "id": "mandate_123456789",
+  "object": "mandate",
+  "customer_acceptance": {
+    "accepted_at": 123456789,
+    "online": {
+      "ip_address": "127.0.0.0",
+      "user_agent": "device"
+    },
+    "type": "online"
+  },
+  "livemode": false,
+  "multi_use": {},
+  "payment_method": "pm_123456789",
+  "payment_method_details": {
+    "sepa_debit": {
+      "reference": "123456789",
+      "url": ""
+    },
+    "type": "sepa_debit"
+  },
+  "status": "active",
+  "type": "multi_use"
+}

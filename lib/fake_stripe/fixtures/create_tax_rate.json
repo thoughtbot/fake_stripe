@@ -1,0 +1,13 @@
+{
+  "id": "txr_1Gkvbm2eZvKYlo2CgzaJ0Cyr",
+  "object": "tax_rate",
+  "active": true,
+  "created": 1589995294,
+  "description": "VAT Germany",
+  "display_name": "VAT",
+  "inclusive": false,
+  "jurisdiction": "DE",
+  "livemode": false,
+  "metadata": {},
+  "percentage": 19.0
+}

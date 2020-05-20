@@ -1,61 +1,48 @@
 {
   "object": "list",
-  "url": "/v1/invoices/in_103ewP2eZvKYlo2CFLLwIX7a/lines",
-  "count": 3,
+  "url": "/v1/invoices/in_19yTU92eZvKYlo2C7uDjvu6v/lines",
+  "has_more": false,
   "data": [
     {
-    "id": "ii_103UAn2eZvKYlo2CkLmj7ne9",
-    "object": "line_item",
-    "type": "invoiceitem",
-    "livemode": false,
-    "amount": 100,
-    "currency": "usd",
-    "proration": false,
-    "period": {
-      "start": 1392247767,
-      "end": 1392247767
-    },
-    "quantity": null,
-    "plan": null,
-    "description": null,
-    "metadata": {
+      "id": "il_tmp1GiTZL2eZvKYlo2CuSOG4FkN",
+      "object": "line_item",
+      "amount": 12345,
+      "currency": "usd",
+      "description": "INVOICE ALL THE THINGS",
+      "discountable": true,
+      "invoice_item": "ii_1GiTZL2eZvKYlo2CuSOG4FkN",
+      "livemode": false,
+      "metadata": {},
+      "period": {
+        "end": 1589410855,
+        "start": 1589410855
+      },
+      "plan": null,
+      "price": {
+        "id": "price_HH1cxiElAONZyG",
+        "object": "price",
+        "active": false,
+        "billing_scheme": "per_unit",
+        "created": 1589410855,
+        "currency": "usd",
+        "livemode": false,
+        "lookup_key": null,
+        "metadata": {},
+        "nickname": null,
+        "product": "prod_HH1cg09M1tJq6c",
+        "recurring": null,
+        "tiers_mode": null,
+        "transform_quantity": null,
+        "type": "one_time",
+        "unit_amount": 12345,
+        "unit_amount_decimal": "12345"
+      },
+      "proration": false,
+      "quantity": 1,
+      "subscription": null,
+      "tax_amounts": [],
+      "tax_rates": [],
+      "type": "invoiceitem"
     }
-  },
-  {
-    "id": "ii_103UAn2eZvKYlo2CkLmj7ne0",
-    "object": "line_item",
-    "type": "invoiceitem",
-    "livemode": false,
-    "amount": 200,
-    "currency": "usd",
-    "proration": false,
-    "period": {
-      "start": 1392247768,
-      "end": 1392247768
-    },
-    "quantity": null,
-    "plan": null,
-    "description": null,
-    "metadata": {
-    }
-  },
-  {
-    "id": "ii_103UAn2eZvKYlo2CkLmj7ne1",
-    "object": "line_item",
-    "type": "invoiceitem",
-    "livemode": false,
-    "amount": 300,
-    "currency": "usd",
-    "proration": false,
-    "period": {
-      "start": 1392247769,
-      "end": 1392247769
-    },
-    "quantity": null,
-    "plan": null,
-    "description": null,
-    "metadata": {
-    }
-  }
   ]
 }

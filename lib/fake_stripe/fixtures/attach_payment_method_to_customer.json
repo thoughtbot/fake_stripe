@@ -1,5 +1,5 @@
 {
-  "id": "pm_1FzVb62eZvKYlo2CKPwNF9Bz",
+  "id": "pm_1Gkt652eZvKYlo2CruewhwyU",
   "object": "payment_method",
   "billing_details": {
     "address": {
@@ -19,7 +19,7 @@
     "checks": {
       "address_line1_check": null,
       "address_postal_code_check": null,
-      "cvc_check": null
+      "cvc_check": "pass"
     },
     "country": "US",
     "exp_month": 8,
@@ -33,8 +33,8 @@
     },
     "wallet": null
   },
-  "created": 1578693892,
-  "customer": "cus_GWYi294gYXLNRR",
+  "created": 1589985641,
+  "customer": "cus_HJW8pCbjxjcjb4",
   "livemode": false,
   "metadata": {},
   "type": "card"

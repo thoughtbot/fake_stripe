@@ -1,115 +1,94 @@
 {
   "id": "acct_1032D82eZvKYlo2C",
   "object": "account",
-  "email": "site@stripe.com",
-  "display_name": null,
-  "details_submitted": false,
-  "business_logo": null,
-  "business_name": null,
-  "business_url": null,
-  "charge_enabled": false,
-  "debit_negative_balances": false,
-  "decline_charge_on": {"avs_failure": false, "cvc_failure": false},
-  "currencies_supported": [
-    "usd",
-    "aed",
-    "afn",
-    "..."
-  ],
-  "default_currency": "usd",
-  "country": "US",
-  "object": "account",
-  "bank_accounts": {
-    "object": "list",
-    "total_count": 1,
-    "has_more": false,
-    "url": "/v1/accounts/acct_1032D82eZvKYlo2C/external_accounts",
-    "data": [{
-      "id":"ba_16ndClBdETbGCbQrGski5zps",
-      "object":"bank_account",
-      "last4":"1234",
-      "country":"US",
-      "currency":"usd",
-      "status":"new",
-      "fingerprint":"axCsvGRahxD6fvu0",
-      "routing_number":"110000000",
-      "bank_name":"STRIPE TEST BANK",
-      "account":"acct_28ndDlB5ETbGCaQr",
-      "default_for_currency":true,
-      "metadata":{}
-    }]
+  "business_profile": {
+    "mcc": null,
+    "name": "Stripe.com",
+    "product_description": null,
+    "support_address": null,
+    "support_email": null,
+    "support_phone": null,
+    "support_url": null,
+    "url": null
   },
+  "business_type": null,
+  "capabilities": {
+    "card_payments": "active",
+    "transfers": "active"
+  },
+  "charges_enabled": false,
+  "country": "US",
+  "created": 1385798567,
+  "default_currency": "usd",
+  "details_submitted": false,
+  "email": "site@stripe.com",
   "external_accounts": {
     "object": "list",
-    "data": [
-      {
-        "id":"ba_16ndClBdETbGCbQrGski5zps",
-        "object": "bank_account",
-        "account":"acct_28ndDlB5ETbGCaQr",
-        "bank_name": "STRIPE TEST BANK",
-        "country": "US",
-        "currency": "usd",
-        "default_for_currency": true,
-        "fingerprint":"axCsvGRahxD6fvu0",
-        "last4": "1234",
-        "metadata": {},
-        "routing_number": "110000000",
-        "status": "new"
-      }
-    ],
+    "data": [],
     "has_more": false,
-    "total_count": 1,
-    "url": "/v1/accounts/acct_16vteKH0GjZwV0ke/external_accounts"
+    "url": "/v1/accounts/acct_1032D82eZvKYlo2C/external_accounts"
   },
-  "legal_entity": {
-    "additional_owners": null,
-    "address": {
-      "city": "San Francisco",
-      "country": "US",
-      "line1": "1 Market St",
-      "line2": null,
-      "postal_code": "94105",
-      "state": "CA"
+  "metadata": {},
+  "payouts_enabled": false,
+  "requirements": {
+    "current_deadline": null,
+    "currently_due": [
+      "business_url",
+      "external_account",
+      "product_description",
+      "support_phone",
+      "tos_acceptance.date",
+      "tos_acceptance.ip"
+    ],
+    "disabled_reason": "requirements.past_due",
+    "errors": [],
+    "eventually_due": [
+      "business_url",
+      "external_account",
+      "product_description",
+      "support_phone",
+      "tos_acceptance.date",
+      "tos_acceptance.ip"
+    ],
+    "past_due": [],
+    "pending_verification": []
+  },
+  "settings": {
+    "branding": {
+      "icon": null,
+      "logo": null,
+      "primary_color": null,
+      "secondary_color": null
     },
-    "business_name": null,
-    "dob": {"day": 1, "month": 1, "year": 1980},
-    "first_name": "John",
-    "last_name": "Doe",
-    "personal_address": {
-      "city": null,
-      "country": null,
-      "line1": null,
-      "line2": null,
-      "postal_code": null,
-      "state": null
+    "card_payments": {
+      "decline_on": {
+        "avs_failure": true,
+        "cvc_failure": false
+      },
+      "statement_descriptor_prefix": null
     },
-    "personal_id_number_provided": false,
-    "ssn_last_4_provided": true,
-    "type": "individual",
-    "verification": {
-      "details": null,
-      "details_code": null,
-      "document": null,
-      "status": "unverified"
+    "dashboard": {
+      "display_name": "Stripe.com",
+      "timezone": "US/Pacific"
+    },
+    "payments": {
+      "statement_descriptor": "",
+      "statement_descriptor_kana": null,
+      "statement_descriptor_kanji": null
+    },
+    "payouts": {
+      "debit_negative_balances": true,
+      "schedule": {
+        "delay_days": 7,
+        "interval": "daily"
+      },
+      "statement_descriptor": null
     }
   },
-  "managed": true,
-  "metadata": {},
-  "product_description": null,
-  "statement_descriptor": null,
-  "support_phone": null,
-  "timezone": "Etc/UTC",
   "tos_acceptance": {
-    "date": 1444846011,
-    "ip": "162.222.102.30",
+    "date": null,
+    "ip": null,
     "user_agent": null
   },
-  "transfer_schedule": {"delay_days": 2, "interval": "daily"},
-  "transfers_enabled": true,
-  "verification": {
-    "disabled_reason": null,
-    "due_by": null,
-    "fields_needed": [],
-    "contacted": false
-  }
+  "type": "custom"
 }

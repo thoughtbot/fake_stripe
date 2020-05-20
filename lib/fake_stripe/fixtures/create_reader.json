@@ -6,8 +6,9 @@
   "ip_address": "192.168.2.2",
   "label": "Blue Rabbit",
   "livemode": false,
-  "location": null,
+  "location": "tml_1234",
   "metadata": {},
   "serial_number": "123-456-789",
-  "status": "online"
+  "status": "online",
+  "registration_code": "puppies-plug-could"
 }

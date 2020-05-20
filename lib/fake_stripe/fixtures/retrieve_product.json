@@ -1,0 +1,22 @@
+{
+  "id": "prod_HJYjNYEEJgaVaN",
+  "object": "product",
+  "active": true,
+  "attributes": [
+    "size",
+    "gender"
+  ],
+  "caption": null,
+  "created": 1589995293,
+  "deactivate_on": [],
+  "description": "Comfortable gray cotton t-shirts",
+  "images": [],
+  "livemode": false,
+  "metadata": {},
+  "name": "T-shirt",
+  "package_dimensions": null,
+  "shippable": true,
+  "type": "good",
+  "updated": 1589995293,
+  "url": null
+}

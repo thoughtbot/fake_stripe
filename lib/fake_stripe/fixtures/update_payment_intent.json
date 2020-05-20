@@ -1,185 +1,36 @@
 {
-  "id": "pi_1GLrZO2eZvKYlo2CfMpq8zT8",
+  "id": "pi_1DeODs2eZvKYlo2CO32HnTV3",
   "object": "payment_intent",
-  "amount": 2000,
+  "amount": 1000,
   "amount_capturable": 0,
-  "amount_received": 2000,
+  "amount_received": 0,
   "application": null,
   "application_fee_amount": null,
   "canceled_at": null,
   "cancellation_reason": null,
   "capture_method": "automatic",
-  "last_payment_error": {
-    "code": "payment_intent_authentication_failure",
-    "decline_code": "authentication_failure",
-    "doc_url": "https://stripe.com/docs/error-codes/payment-intent-authentication-failure",
-    "message": "The provided PaymentMethod has failed authentication. You can provide payment_method_data or a new PaymentMethod to attempt to fulfill this PaymentIntent again.",
-    "payment_method": {
-      "id": "pm_1F2UiZL91mzKIzpGmKzaQfb3",
-      "object": "payment_method",
-      "billing_details": {
-        "address": {
-          "city": null,
-          "country": null,
-          "line1": null,
-          "line2": null,
-          "postal_code": "20001",
-          "state": null
-        },
-        "email": null,
-        "name": "Carl Weis",
-        "phone": null
-      },
-      "card": {
-        "brand": "visa",
-        "checks": {
-          "address_line1_check": null,
-          "address_postal_code_check": "unchecked",
-          "cvc_check": "unchecked"
-        },
-        "country": "FR",
-        "exp_month": 12,
-        "exp_year": 2022,
-        "fingerprint": "2e7Sko4Qsqq8MiWZ",
-        "funding": "credit",
-        "generated_from": null,
-        "last4": "3155",
-        "three_d_secure_usage": {
-          "supported": true
-        },
-        "wallet": null
-      },
-      "created": 1564629159,
-      "customer": null,
-      "livemode": false,
-      "metadata": {},
-      "type": "card"
-    },
-    "type": "invalid_request_error"
-  },
   "charges": {
     "object": "list",
-    "data": [
-      {
-        "id": "ch_18uPw8L91mzKIzpGAYTRv8jQ",
-        "object": "charge",
-        "amount": 10000,
-        "amount_refunded": 0,
-        "application": null,
-        "application_fee": null,
-        "application_fee_amount": null,
-        "balance_transaction": "txn_1GN9r6L91mzKIzpGFXOhImQH",
-        "billing_details": {
-          "address": {
-            "city": null,
-            "country": null,
-            "line1": null,
-            "line2": null,
-            "postal_code": "20001",
-            "state": null
-          },
-          "email": null,
-          "name": "John Cardholder",
-          "phone": null
-        },
-        "captured": true,
-        "created": 1474046140,
-        "currency": "usd",
-        "customer": null,
-        "description": "Donation of 100.0 to Regular Fund",
-        "disputed": false,
-        "failure_code": null,
-        "failure_message": null,
-        "fraud_details": {},
-        "invoice": null,
-        "livemode": false,
-        "metadata": {
-          "category_id": "36",
-          "contribution_id": "111",
-          "customer": "N\\A",
-          "payer_email": "donor@example.com",
-          "payer_name": "Donor Jones",
-          "project_id": "9"
-        },
-        "on_behalf_of": "acct_18uPPYAWmcVS821L",
-        "order": null,
-        "outcome": {
-          "network_status": "approved_by_network",
-          "reason": null,
-          "risk_level": "normal",
-          "seller_message": "Payment complete.",
-          "type": "authorized"
-        },
-        "paid": true,
-        "payment_intent": null,
-        "payment_method": "card_18uPw7L91mzKIzpGoYarbJxf",
-        "payment_method_details": {
-          "card": {
-            "brand": "visa",
-            "checks": {
-              "address_line1_check": null,
-              "address_postal_code_check": "pass",
-              "cvc_check": "pass"
-            },
-            "country": "US",
-            "exp_month": 9,
-            "exp_year": 2017,
-            "fingerprint": "cQEn3eGSNGyvdFnX",
-            "funding": "credit",
-            "installments": null,
-            "last4": "4242",
-            "network": "visa",
-            "three_d_secure": null,
-            "wallet": null
-          },
-          "type": "card"
-        },
-        "receipt_email": null,
-        "receipt_number": null,
-        "receipt_url": "https://pay.stripe.com/receipts/acct_184AzvL91mzKIzpG/ch_18uPw8L91mzKIzpGAYTRv8jQ/rcpt_EHSGZ99v3U6NB17DvRf0Yk3sFckXQGo",
-        "refunded": false,
-        "refunds": {
-          "object": "list",
-          "data": [],
-          "has_more": false,
-          "url": "/v1/charges/ch_18uPw8L91mzKIzpGAYTRv8jQ/refunds"
-        },
-        "review": null,
-        "shipping": null,
-        "source_transfer": null,
-        "statement_descriptor": null,
-        "statement_descriptor_suffix": null,
-        "status": "succeeded",
-        "transfer": "tr_18uPw8L91mzKIzpGRKSsDIjk",
-        "transfer_data": {
-          "amount": null,
-          "destination": "acct_18uPPYAWmcVS821L"
-        },
-        "transfer_group": "group_ch_18uPw8L91mzKIzpGAYTRv8jQ"
-      }
-    ],
+    "data": [],
     "has_more": false,
-    "url": "/v1/charges?payment_intent=pi_1GLrZO2eZvKYlo2CfMpq8zT8"
+    "url": "/v1/charges?payment_intent=pi_1DeODs2eZvKYlo2CO32HnTV3"
   },
-  "client_secret": "pi_1GLrZO2eZvKYlo2CfMpq8zT8_secret_XqRFSdxcv3nWzOn5LuKrYD10v",
-  "confirmation_method": "manual",
-  "created": 1564599308,
+  "client_secret": "pi_1DeODs2eZvKYlo2CO32HnTV3_secret_PWhcu9fa1zV3d6I85gFBvtpmB",
+  "confirmation_method": "automatic",
+  "created": 1544107984,
   "currency": "usd",
-  "customer": null,
+  "customer": "cus_E6bQGPynGECNJZ",
   "description": null,
   "invoice": null,
   "last_payment_error": null,
   "livemode": false,
-  "metadata": {},
+  "metadata": {
+    "order_id": "6735"
+  },
   "next_action": null,
   "on_behalf_of": null,
-  "payment_method": "pm_1F2Mx4L91mzKIzpG4SghJzJg",
-  "payment_method_options": {
-    "card": {
-      "installments": null,
-      "request_three_d_secure": "automatic"
-    }
-  },
+  "payment_method": null,
+  "payment_method_options": {},
   "payment_method_types": [
     "card"
   ],
@@ -189,7 +40,7 @@
   "shipping": null,
   "statement_descriptor": null,
   "statement_descriptor_suffix": null,
-  "status": "succeeded",
+  "status": "requires_payment_method",
   "transfer_data": null,
   "transfer_group": null
 }

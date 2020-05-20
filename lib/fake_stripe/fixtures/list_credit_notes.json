@@ -1,0 +1,94 @@
+{
+  "object": "list",
+  "url": "/v1/credit_notes",
+  "has_more": false,
+  "data": [
+    {
+      "id": "cn_1Gkvbm2eZvKYlo2CqhhZGC8C",
+      "object": "credit_note",
+      "amount": 1690,
+      "created": 1589995294,
+      "currency": "usd",
+      "customer": "cus_HJYfEnsfVLxB3C",
+      "customer_balance_transaction": null,
+      "discount_amount": 0,
+      "invoice": "in_1Gkvbm2eZvKYlo2CSm6KHKZS",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "cnli_1Gkvbm2eZvKYlo2C0NOM0E67",
+            "object": "credit_note_line_item",
+            "amount": 1190,
+            "description": "My First Invoice Item (created for API docs)",
+            "discount_amount": 0,
+            "invoice_line_item": "il_1Gkvbm2eZvKYlo2CirS8w7fv",
+            "livemode": false,
+            "quantity": 1,
+            "tax_amounts": [
+              {
+                "amount": 190,
+                "inclusive": false,
+                "tax_rate": "txr_1Gkvbm2eZvKYlo2CrPvfs21u"
+              }
+            ],
+            "tax_rates": [
+              {
+                "id": "txr_1Gkvbm2eZvKYlo2CrPvfs21u",
+                "object": "tax_rate",
+                "active": true,
+                "created": 1589995294,
+                "description": "VAT Germany",
+                "display_name": "VAT",
+                "inclusive": false,
+                "jurisdiction": "DE",
+                "livemode": false,
+                "metadata": {},
+                "percentage": 19.0
+              }
+            ],
+            "type": "invoice_line_item",
+            "unit_amount": null,
+            "unit_amount_decimal": null
+          },
+          {
+            "id": "cnli_1Gkvbm2eZvKYlo2CbZlTkjaq",
+            "object": "credit_note_line_item",
+            "amount": 500,
+            "description": "Service credit",
+            "discount_amount": 0,
+            "livemode": false,
+            "quantity": 1,
+            "tax_amounts": [],
+            "tax_rates": [],
+            "type": "custom_line_item",
+            "unit_amount": 500,
+            "unit_amount_decimal": "500"
+          }
+        ],
+        "has_more": false,
+        "url": "/v1/credit_notes/cn_1Gkvbm2eZvKYlo2CqhhZGC8C/lines"
+      },
+      "livemode": false,
+      "memo": null,
+      "metadata": {},
+      "number": "ABCD-1234-CN-01",
+      "out_of_band_amount": null,
+      "pdf": "https://pay.stripe.com/credit_notes/acct_1032D82eZvKYlo2C/cnst_123456789/pdf",
+      "reason": null,
+      "refund": null,
+      "status": "issued",
+      "subtotal": 1690,
+      "tax_amounts": [
+        {
+          "amount": 190,
+          "inclusive": false,
+          "tax_rate": "txr_1Gkvbm2eZvKYlo2CrPvfs21u"
+        }
+      ],
+      "total": 1690,
+      "type": "pre_payment",
+      "voided_at": null
+    }
+  ]
+}

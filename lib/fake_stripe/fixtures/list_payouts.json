@@ -1,0 +1,29 @@
+{
+  "object": "list",
+  "url": "/v1/payouts",
+  "has_more": false,
+  "data": [
+    {
+      "id": "po_1GkvSj2eZvKYlo2C0xOmaM51",
+      "object": "payout",
+      "amount": 1100,
+      "arrival_date": 1589994733,
+      "automatic": true,
+      "balance_transaction": "txn_19XJJ02eZvKYlo2ClwuJ1rbA",
+      "created": 1589994733,
+      "currency": "usd",
+      "description": "STRIPE PAYOUT",
+      "destination": "ba_1GkvSj2eZvKYlo2CLHT6mUMZ",
+      "failure_balance_transaction": null,
+      "failure_code": null,
+      "failure_message": null,
+      "livemode": false,
+      "metadata": {},
+      "method": "standard",
+      "source_type": "card",
+      "statement_descriptor": null,
+      "status": "in_transit",
+      "type": "bank_account"
+    }
+  ]
+}
