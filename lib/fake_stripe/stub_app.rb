@@ -87,11 +87,11 @@ module FakeStripe
       json_response 201, fixture('create_charge')
     end
 
-    get '/v1/charges/:id' do
+    get '/v1/charges/:charge_id' do
       json_response 200, fixture('retrieve_charge')
     end
 
-    post '/v1/charges/:id' do
+    post '/v1/charges/:charge_id' do
       json_response 200, fixture('update_charge')
     end
 
@@ -100,12 +100,12 @@ module FakeStripe
       json_response 200, fixture('refund_charge')
     end
 
-    post '/v1/charges/:id/refund' do
+    post '/v1/charges/:charge_id/refund' do
       FakeStripe.refund_count += 1
       json_response 200, fixture('refund_charge')
     end
 
-    post '/v1/charges/:id/capture' do
+    post '/v1/charges/:charge_id/capture' do
       json_response 200, fixture('capture_charge')
     end
 
