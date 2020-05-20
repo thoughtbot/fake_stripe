@@ -448,15 +448,15 @@ module FakeStripe
       json_response 200, fixture('create_credit_note')
     end
 
-    get '/v1/credit_notes/:credit_note_id' do
+    get '/v1/credit_notes/:id' do
       json_response 200, fixture('retrieve_credit_note')
     end
 
-    post '/v1/credit_notes/:credit_note_id' do
+    post '/v1/credit_notes/:id' do
       json_response 200, fixture('update_credit_note')
     end
 
-    post '/v1/credit_notes/:credit_note_id/void' do
+    post '/v1/credit_notes/:id/void' do
       json_response 200, fixture('void_credit_note')
     end
 
@@ -593,15 +593,15 @@ module FakeStripe
     end
 
     # Disputes
-    get '/v1/disputes/:dispute_id' do
+    get '/v1/disputes/:id' do
       json_response 200, fixture('retrieve_dispute')
     end
 
-    post '/v1/disputes/:dispute_id' do
+    post '/v1/disputes/:id' do
       json_response 200, fixture('update_dispute')
     end
 
-    post '/v1/disputes/:dispute_id/close' do
+    post '/v1/disputes/:id/close' do
       json_response 200, fixture('close_dispute')
     end
 
