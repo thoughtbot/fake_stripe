@@ -83,8 +83,12 @@ module FakeStripe
 
     # Charges
     post '/v1/charges' do
-      FakeStripe.charge_count += 1
-      json_response 201, fixture('create_charge')
+      if params['amount'] && params['amount'].to_i <= 0
+        json_response 400, fixture('invalid_positive_integer')
+      else
+        FakeStripe.charge_count += 1
+        json_response 201, fixture('create_charge')
+      end
     end
 
     get '/v1/charges/:charge_id' do
@@ -127,10 +131,6 @@ module FakeStripe
     end
 
     # Files
-    post 'http://files.stripe.com/v1/files' do
-      json_response 200, fixture('create_file')
-    end
-
     get 'v1/files/:id' do
       json_response 200, fixture('retrieve_file')
     end

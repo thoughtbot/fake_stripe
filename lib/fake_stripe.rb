@@ -2,13 +2,14 @@ require 'fake_stripe/configuration'
 require 'fake_stripe/initializers/webmock'
 require 'fake_stripe/stub_app'
 require 'fake_stripe/stub_stripe_js'
+require 'fake_stripe/stub_stripe_connect'
 
 module FakeStripe
   extend Configuration
 
   VALID_CARD_NUMBER = '4242424242424242'
   STRIPE_OBJECTS = %w{card charge coupon customer invoice invoiceitem plan
-    recipient refund subscription token transfer payment_intent payment_method connection_token}.freeze
+    recipient refund subscription token transfer}.freeze
   CARD_OBJECT_TYPE = "card"
   BANK_ACCOUNT_OBJECT_TYPE = "bank_account"
 
@@ -33,8 +34,10 @@ module FakeStripe
     Stripe.api_key = 'FAKE_STRIPE_API_KEY'
     FakeStripe.reset
     FakeStripe::StubStripeJS.boot_once
+    FakeStripe::StubStripeConnect.boot_once
     stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::StubApp)
   end
 end
 
 STRIPE_JS_HOST = "http://localhost:#{FakeStripe::StubStripeJS.server_port}"
+STRIPE_CONNECT_HOST = "http://localhost:#{FakeStripe::StubStripeConnect.server_port}"
