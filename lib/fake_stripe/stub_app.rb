@@ -261,12 +261,12 @@ module FakeStripe
       json_response 200, fixture('delete_card')
     end
 
-    get '/v1/customers/:customer_id/sources?object=bank_account' do
-      json_response 200, fixture('list_bank_accounts')
-    end
-
-    get '/v1/customers/:customer_id/sources?object=card' do
-      json_response 200, fixture('list_cards')
+    get '/v1/customers/:customer_id/sources' do
+      if params[:object] == "bank_account"
+        json_response 200, fixture('list_bank_accounts')
+      else
+        json_response 200, fixture('list_cards')
+      end
     end
 
     # Source (payment method)
@@ -689,7 +689,7 @@ module FakeStripe
     end
 
     # There is no way to distinguish card vs. bank with FakeStripe gem
-    get '/v1/external_accounts/:external_account_id' do
+    get '/v1/accounts/:account_id/external_accounts/:external_account_id' do
       # json_response 200, fixture('retrieve_external_bank_account')
       json_response 200, fixture('retrieve_external_card_account')
     end
@@ -706,12 +706,12 @@ module FakeStripe
       json_response 200, fixture('delete_external_card_account')
     end
 
-    get '/v1/accounts/:account_id/external_accounts?object=bank_account' do
-      json_response 200, fixture('list_external_bank_accounts')
-    end
-
-    get '/v1/accounts/:account_id/external_accounts?object=card' do
-      json_response 200, fixture('list_external_card_accounts')
+    get '/v1/accounts/:account_id/external_accounts' do
+      if params[:object] == "bank_account"
+        json_response 200, fixture('list_external_bank_accounts')
+      else
+        json_response 200, fixture('list_external_card_accounts')
+      end
     end
 
     # Persons
