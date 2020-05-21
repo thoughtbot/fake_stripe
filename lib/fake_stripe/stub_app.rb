@@ -819,7 +819,7 @@ module FakeStripe
     post '/v1/payment_intents' do
       FakeStripe.payment_intent_count += 1
       if params[:confirm]
-        json_response 200, fixture("confirm_payment_intent")
+        json_response 200, fixture("retrieve_payment_intent")
       else
         json_response 200, fixture("create_payment_intent")
       end
