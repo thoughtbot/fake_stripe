@@ -6,6 +6,7 @@ module FakeStripe
 
     # Connection tokens
     post '/v1/terminal/connection_tokens' do
+      FakeStripe.connection_token_count += 1
       json_response 200, fixture("create_connection_token")
     end
 
@@ -127,10 +128,6 @@ module FakeStripe
     end
 
     # Files
-    post 'http://files.stripe.com/v1/files' do
-      json_response 200, fixture('create_file')
-    end
-
     get 'v1/files/:id' do
       json_response 200, fixture('retrieve_file')
     end
@@ -206,7 +203,7 @@ module FakeStripe
 
     # Pyment Methods
     post '/v1/payment_methods' do
-      FakeStripe.card_count += 1
+      FakeStripe.payment_method_count += 1
       json_response 200, fixture('create_payment_method')
     end
 
@@ -232,48 +229,47 @@ module FakeStripe
 
     # Bank Account (payment methods)
     post '/v1/customers/:customer_id/sources' do
-      json_response 200, fixture('create_bank_account')
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        json_response 200, fixture('create_bank_account')
+      else
+        FakeStripe.card_count += 1
+        json_response 200, fixture('create_card')
+      end
     end
 
-    get '/v1/bank_accounts/:bank_account_id' do
-      json_response 200, fixture('retrieve_bank_account')
+    get '/v1/bank_accounts/:id' do
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        json_response 200, fixture('retrieve_bank_account')
+      else
+        json_response 200, fixture('retrieve_card')
+      end
     end
 
-    post '/v1/customers/:customer_id/sources/:bank_account_id' do
-      json_response 200, fixture('update_bank_account')
+    post '/v1/customers/:customer_id/sources/:id' do
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        json_response 200, fixture('update_bank_account')
+      else
+        json_response 200, fixture('update_card')
+      end
     end
 
-    post '/v1/customers/:customer_id/sources/:bank_account_id/verify' do
+    post '/v1/customers/:customer_id/sources/:id/verify' do
       json_response 200, fixture('verify_bank_account')
     end
 
-    delete '/v1/customers/:customer_id/sources/:bank_account_id' do
-      json_response 200, fixture('delete_bank_account')
+    delete '/v1/customers/:customer_id/sources/:id' do
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        json_response 200, fixture('delete_bank_account')
+      else
+        json_response 200, fixture('delete_card')
+      end
     end
 
     get '/v1/customers/:customer_id/sources?object=bank_account' do
       json_response 200, fixture('list_bank_accounts')
     end
 
-    # Cards
-    post '/v1/customers/:customer_id/sources' do
-      FakeStripe.card_count += 1
-      json_response 200, fixture('create_card')
-    end
-
-    get '/v1/customers/:customer_id/sources/:card_id' do
-      json_response 200, fixture('retrieve_card')
-    end
-
-    post '/v1/customers/:customer_id/sources/:card_id' do
-      json_response 200, fixture('update_card')
-    end
-
-    delete '/v1/customers/:customer_id/sources/:card_id' do
-      json_response 200, fixture('delete_card')
-    end
-
-    get '/v1/customers/:customer_id/sources' do
+    get '/v1/customers/:customer_id/sources?object=card' do
       json_response 200, fixture('list_cards')
     end
 
@@ -831,6 +827,7 @@ module FakeStripe
 
     # Payment Intents
     post '/v1/payment_intents' do
+      FakeStripe.payment_intent_count += 1      
       json_response 200, fixture("create_payment_intent")
     end
 

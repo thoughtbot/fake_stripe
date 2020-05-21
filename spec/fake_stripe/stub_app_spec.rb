@@ -175,7 +175,7 @@ describe FakeStripe::StubApp do
         limit: 100,
       })
 
-      expect(results.count).to eq(3)
+      expect(results.count).to eq(1)
       results.each do |result|
         expect(result.object).to eq("setup_intent")
       end
@@ -255,7 +255,8 @@ describe FakeStripe::StubApp do
     it 'returns a fake refund response' do
       result = Stripe::Refund.create(charge: 'ABC123')
 
-      expect(result.refunded).to eq true
+      expect(result.object).to eq "refund"
+      expect(result.status).to eq "succeeded"
     end
 
     it 'increments the refund counter' do
@@ -308,7 +309,7 @@ describe FakeStripe::StubApp do
             cvc: "321",
           }
         })
-      end.to change(FakeStripe, :card_count).by(1)
+      end.to change(FakeStripe, :payment_method_count).by(1)
     end
   end
 
@@ -334,12 +335,12 @@ describe FakeStripe::StubApp do
   describe "GET /v1/payment_methods" do
     it "returns a list of a customers payment methods" do
       result = Stripe::PaymentMethod.list({
-        customer: Stripe::Customer.create.id,
-        type: "card",
+        customer: 'cus_HJgVYqarqPTGiG',
+        type: 'card',
       })
 
       expect(result.count).to eq(1)
-      expect(result.first.object).to eq("payment_method")
+      expect(result.data.first.object).to eq("payment_method")
     end
   end
 
