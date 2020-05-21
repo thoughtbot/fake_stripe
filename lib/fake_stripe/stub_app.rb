@@ -681,35 +681,29 @@ module FakeStripe
 
     # External Bank/Card Accounts
     post '/v1/accounts/:account_id/external_accounts' do
-      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+      if params[:external_account]&.include?("btok")
         json_response 200, fixture('create_external_bank_account')
       else
         json_response 200, fixture('create_external_card_account')
       end
     end
 
+    # There is no way to distinguish card vs. bank with FakeStripe gem
     get '/v1/external_accounts/:external_account_id' do
-      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
-        json_response 200, fixture('retrieve_external_bank_account')
-      else
-        json_response 200, fixture('retrieve_external_card_account')
-      end
+      # json_response 200, fixture('retrieve_external_bank_account')
+      json_response 200, fixture('retrieve_external_card_account')
     end
 
+    # There is no way to distinguish card vs. bank with FakeStripe gem
     post '/v1/accounts/:account_id/external_accounts/:external_account_id' do
-      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
-        json_response 200, fixture('update_external_bank_account')
-      else
-        json_response 200, fixture('update_external_card_account')
-      end
+      # json_response 200, fixture('update_external_bank_account')
+      json_response 200, fixture('update_external_card_account')
     end
 
+    # There is no way to distinguish card vs. bank with FakeStripe gem
     delete '/v1/accounts/:account_id/external_accounts/:external_account_id' do
-      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
-        json_response 200, fixture('delete_external_bank_account')
-      else
-        json_response 200, fixture('delete_external_card_account')
-      end
+      # json_response 200, fixture('delete_external_bank_account')
+      json_response 200, fixture('delete_external_card_account')
     end
 
     get '/v1/accounts/:account_id/external_accounts?object=bank_account' do
