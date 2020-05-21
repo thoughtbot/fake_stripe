@@ -10,7 +10,7 @@
       "cancellation_reason": null,
       "client_secret": "seti_1Gkv0C2eZvKYlo2CJGg2RAJg_secret_HJY6kFexTih39TtXDGkkM1XSZY3cuHy",
       "created": 1589992964,
-      "customer": null,
+      "customer": "cus_HJVhpVBHUSF0vY",
       "description": null,
       "last_setup_error": null,
       "livemode": false,
@@ -18,7 +18,7 @@
       "metadata": {},
       "next_action": null,
       "on_behalf_of": null,
-      "payment_method": null,
+      "payment_method": "pm_1FzVb62eZvKYlo2CKPwNF9Bz",
       "payment_method_options": {
         "card": {
           "request_three_d_secure": "automatic"
