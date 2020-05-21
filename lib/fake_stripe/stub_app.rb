@@ -229,7 +229,7 @@ module FakeStripe
 
     # Bank Account (payment methods)
     post '/v1/customers/:customer_id/sources' do
-      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+      if params[:source]&.include?("btok")
         json_response 200, fixture('create_bank_account')
       else
         FakeStripe.card_count += 1
@@ -238,31 +238,27 @@ module FakeStripe
     end
 
     get '/v1/bank_accounts/:id' do
-      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
-        json_response 200, fixture('retrieve_bank_account')
-      else
-        json_response 200, fixture('retrieve_card')
-      end
+      json_response 200, fixture('retrieve_bank_account')
     end
 
+    get '/v1/customers/:customer_id/sources/:id' do
+      json_response 200, fixture('retrieve_card')
+    end
+
+    # There is no way to distinguish card vs. bank with FakeStripe gem
     post '/v1/customers/:customer_id/sources/:id' do
-      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
-        json_response 200, fixture('update_bank_account')
-      else
-        json_response 200, fixture('update_card')
-      end
+      # json_response 200, fixture('update_bank_account')
+      json_response 200, fixture('update_card')
     end
 
     post '/v1/customers/:customer_id/sources/:id/verify' do
       json_response 200, fixture('verify_bank_account')
     end
 
+    # There is no way to distinguish card vs. bank with FakeStripe gem
     delete '/v1/customers/:customer_id/sources/:id' do
-      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
-        json_response 200, fixture('delete_bank_account')
-      else
-        json_response 200, fixture('delete_card')
-      end
+      # json_response 200, fixture('delete_bank_account')
+      json_response 200, fixture('delete_card')
     end
 
     get '/v1/customers/:customer_id/sources?object=bank_account' do
