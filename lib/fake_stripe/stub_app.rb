@@ -52,6 +52,34 @@ module FakeStripe
     end
 
     # ----------------------------------------------------------------------#
+    # Terminal
+
+    # Orders
+    post '/v1/orders' do
+      json_response 200, fixture('create_order')
+    end
+
+    get '/v1/orders/:id' do
+      json_response 200, fixture('retrieve_order')
+    end
+
+    post '/v1/orders/:id' do
+      json_response 200, fixture('update_order')
+    end
+
+    post '/v1/orders/:id/returns' do
+      json_response 200, fixture('return_order')
+    end
+
+    delete '/v1/orders/:id' do
+      json_response 200, fixture('delete_order')
+    end
+
+    get '/v1/orders' do
+      json_response 200, fixture('list_orders')
+    end
+
+    # ----------------------------------------------------------------------#
 
     # Charges
     post '/v1/charges' do
@@ -85,6 +113,75 @@ module FakeStripe
       json_response 200, fixture('list_charges')
     end
 
+    # Refunds
+    get '/v1/refunds/:id' do
+      json_response 200, fixture('retrieve_refund')
+    end
+
+    post '/v1/refunds/:id' do
+      json_response 200, fixture('update_refund')
+    end
+
+    get '/v1/refunds' do
+      json_response 200, fixture('list_refunds')
+    end
+
+    # Files
+    post 'http://files.stripe.com/v1/files' do
+      json_response 200, fixture('create_file')
+    end
+
+    get 'v1/files/:id' do
+      json_response 200, fixture('retrieve_file')
+    end
+
+    get 'v1/files' do
+      json_response 200, fixture('list_files')
+    end
+
+    # Mandates
+    get 'v1/mandates/:id' do
+      json_response 200, fixture('retrieve_mandate')
+    end
+
+    # Products
+    post 'v1/products' do
+      json_response 200, fixture('create_product')
+    end
+
+    get 'v1/products/:id' do
+      json_response 200, fixture('retrieve_product')
+    end
+
+    post 'v1/products/:id' do
+      json_response 200, fixture('update_product')
+    end
+
+    delete '/v1/products/:id' do
+      json_response 200, fixture('delete_product')
+    end
+
+    get 'v1/products' do
+      json_response 200, fixture('list_products')
+    end
+
+    # Prices
+    post 'v1/prices' do
+      json_response 200, fixture('create_price')
+    end
+
+    get 'v1/prices/:id' do
+      json_response 200, fixture('retrieve_price')
+    end
+
+    post 'v1/prices/:id' do
+      json_response 200, fixture('update_price')
+    end
+
+    get 'v1/prices' do
+      json_response 200, fixture('list_prices')
+    end
+
     # Customers
     post '/v1/customers' do
       FakeStripe.customer_count += 1
@@ -99,7 +196,7 @@ module FakeStripe
       json_response 200, fixture('update_customer')
     end
 
-    delete '/v1/customers/:customer_id' do
+    delete '/v1/customers/:id' do
       json_response 200, fixture('delete_customer')
     end
 
@@ -133,6 +230,30 @@ module FakeStripe
       json_response 200, fixture('detach_payment_method_from_customer')
     end
 
+    # Bank Account (payment methods)
+    post '/v1/customers/:customer_id/sources' do
+      json_response 200, fixture('create_bank_account')
+    end
+
+    get '/v1/bank_accounts/:bank_account_id' do
+      json_response 200, fixture('retrieve_bank_account')
+    end
+
+    post '/v1/customers/:customer_id/sources/:bank_account_id' do
+      json_response 200, fixture('update_bank_account')
+    end
+
+    post '/v1/customers/:customer_id/sources/:bank_account_id/verify' do
+      json_response 200, fixture('verify_bank_account')
+    end
+
+    delete '/v1/customers/:customer_id/sources/:bank_account_id' do
+      json_response 200, fixture('delete_bank_account')
+    end
+
+    get '/v1/customers/:customer_id/sources?object=bank_account' do
+      json_response 200, fixture('list_bank_accounts')
+    end
 
     # Cards
     post '/v1/customers/:customer_id/sources' do
@@ -154,6 +275,27 @@ module FakeStripe
 
     get '/v1/customers/:customer_id/sources' do
       json_response 200, fixture('list_cards')
+    end
+
+    # Source (payment method)
+    post '/v1/sources' do
+      json_response 200, fixture('create_source')
+    end
+
+    get '/v1/sources/:source_id' do
+      json_response 200, fixture('retrieve_source')
+    end
+
+    post '/v1/sources/:source_id' do
+      json_response 200, fixture('update_source')
+    end
+
+    post '/v1/customers/:customer_id/sources' do
+      json_response 200, fixture('attach_source')
+    end
+
+    delete '/v1/customers/:customer_id/sources/:source_id' do
+      json_response 200, fixture('detach_source')
     end
 
     # Subscriptions
@@ -215,6 +357,52 @@ module FakeStripe
       json_response 200, fixture('retrieve_subscription')
     end
 
+    # Susbscription Items
+    post '/v1/subscription_items' do
+      json_response 200, fixture('create_subscription_item')
+    end
+
+    get '/v1/subscription_items/:id' do
+      json_response 200, fixture('retrieve_subscription_item')
+    end
+
+    post '/v1/subscription_items/:id' do
+      json_response 200, fixture('update_subscription_item')
+    end
+
+    delete '/v1/subscription_items/:id' do
+      json_response 200, fixture('delete_subscription_item')
+    end
+
+    get '/v1/subscription_items' do
+      json_response 200, fixture('list_subscription_items')
+    end
+
+    # Susbscription Schedules
+    post '/v1/subscription_schedules' do
+      json_response 200, fixture('create_subscription_schedule')
+    end
+
+    get '/v1/subscription_schedules/:id' do
+      json_response 200, fixture('retrieve_subscription_schedule')
+    end
+
+    post '/v1/subscription_schedules/:id' do
+      json_response 200, fixture('update_subscription_schedule')
+    end
+
+    post '/v1/subscription_schedules/:id/cancel' do
+      json_response 200, fixture('cancel_subscription_schedule')
+    end
+
+    post '/v1/subscription_schedules/:id/release' do
+      json_response 200, fixture('release_subscription_schedule')
+    end
+
+    get '/v1/subscription_schedules' do
+      json_response 200, fixture('list_subscription_schedules')
+    end
+
     # Plans
     post '/v1/plans' do
       FakeStripe.plan_count += 1
@@ -255,6 +443,78 @@ module FakeStripe
       json_response 200, fixture('list_coupons')
     end
 
+    # Credit Notes
+    post '/v1/credit_notes' do
+      json_response 200, fixture('create_credit_note')
+    end
+
+    get '/v1/credit_notes/:id' do
+      json_response 200, fixture('retrieve_credit_note')
+    end
+
+    post '/v1/credit_notes/:id' do
+      json_response 200, fixture('update_credit_note')
+    end
+
+    post '/v1/credit_notes/:id/void' do
+      json_response 200, fixture('void_credit_note')
+    end
+
+    get '/v1/credit_notes' do
+      json_response 200, fixture('list_credit_notes')
+    end
+
+    # Balance Transactions
+    post '/v1/customers/:customer_id/balance_transactions' do
+      json_response 200, fixture('create_customer_balance_transaction')
+    end
+
+    get '/v1/customers/:customer_id/balance_transactions/:balance_transaction_id' do
+      json_response 200, fixture('retrieve_customer_balance_transaction')
+    end
+
+    post '/v1/customers/:customer_id/balance_transactions/:balance_transaction_id' do
+      json_response 200, fixture('update_customer_balance_transaction')
+    end
+
+    get '/v1/customers/:customer_id/balance_transactions' do
+      json_response 200, fixture('list_customer_balance_transactions')
+    end
+
+    # Tax IDs
+    post '/v1/customers/:customer_id/tax_ids' do
+      json_response 200, fixture('create_tax_id')
+    end
+
+    get '/v1/customers/:customer_id/tax_ids/:tax_id' do
+      json_response 200, fixture('retrieve_tax_id')
+    end
+
+    post '/v1/customers/:customer_id/tax_ids/:tax_id' do
+      json_response 200, fixture('update_tax_id')
+    end
+
+    get '/v1/customers/:customer_id/tax_ids' do
+      json_response 200, fixture('list_customer_tax_ids')
+    end
+
+    # Tax Rates
+    post '/v1/tax_rates' do
+      json_response 200, fixture('create_tax_rate')
+    end
+
+    get '/v1/tax_rates/:id' do
+      json_response 200, fixture('retrieve_tax_rate')
+    end
+
+    post '/v1/tax_rates/:id' do
+      json_response 200, fixture('update_tax_rate')
+    end
+
+    get '/v1/tax_rates' do
+      json_response 200, fixture('list_tax_rates')
+    end
+
     # Discounts
     delete '/v1/customers/:customer_id/discount' do
       json_response 200, fixture('delete_customer_discount')
@@ -265,6 +525,11 @@ module FakeStripe
     end
 
     # Invoices
+    post '/v1/invoices' do
+      FakeStripe.invoice_count += 1
+      json_response 200, fixture('create_invoice')
+    end
+
     get '/v1/invoices/:invoice_id' do
       json_response 200, fixture('retrieve_invoice')
     end
@@ -273,17 +538,24 @@ module FakeStripe
       json_response 200, fixture('retrieve_invoice_line_items')
     end
 
-    post '/v1/invoices' do
-      FakeStripe.invoice_count += 1
-      json_response 200, fixture('create_invoice')
-    end
-
     post '/v1/invoices/:invoice_id/pay' do
       json_response 200, fixture('pay_invoice')
     end
 
+    post '/v1/invoices/:invoice_id/send' do
+      json_response 200, fixture('send_invoice')
+    end
+
     post '/v1/invoices/:invoice_id' do
       json_response 200, fixture('update_invoice')
+    end
+
+    post '/v1/invoices/:invoice_id/finalize' do
+      json_response 200, fixture('finalize_invoice')
+    end
+
+    post '/v1/invoices/:invoice_id/void' do
+      json_response 200, fixture('void_invoice')
     end
 
     get '/v1/invoices' do
@@ -292,6 +564,10 @@ module FakeStripe
 
     get '/v1/invoices/upcoming' do
       json_response 200, fixture('retrieve_upcoming_invoice')
+    end
+
+    get '/v1/invoices/upcoming/lines' do
+      json_response 200, fixture('retrieve_upcoming_invoice_line_items')
     end
 
     # Invoice Items
@@ -317,6 +593,22 @@ module FakeStripe
     end
 
     # Disputes
+    get '/v1/disputes/:id' do
+      json_response 200, fixture('retrieve_dispute')
+    end
+
+    post '/v1/disputes/:id' do
+      json_response 200, fixture('update_dispute')
+    end
+
+    post '/v1/disputes/:id/close' do
+      json_response 200, fixture('close_dispute')
+    end
+
+    get '/v1/disputes' do
+      json_response 200, fixture('list_disputes')
+    end
+
     post '/v1/charges/:charge_id/dispute' do
       json_response 200, fixture('update_dispute')
     end
@@ -382,6 +674,81 @@ module FakeStripe
       json_response 200, fixture('list_application_fees')
     end
 
+    # Application Fees
+    get '/v1/capabilities/:id' do
+      json_response 200, fixture('retrieve_capability')
+    end
+
+    post '/v1/capabilities/:id' do
+      json_response 200, fixture('update_capability')
+    end
+
+    get '/v1/accounts/:account_id/capabilities' do
+      json_response 200, fixture('list_capabilities')
+    end
+
+    # External Bank/Card Accounts
+    post '/v1/accounts/:account_id/external_accounts' do
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        json_response 200, fixture('create_external_bank_account')
+      else
+        json_response 200, fixture('create_external_card_account')
+      end
+    end
+
+    get '/v1/external_accounts/:external_account_id' do
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        json_response 200, fixture('retrieve_external_bank_account')
+      else
+        json_response 200, fixture('retrieve_external_card_account')
+      end
+    end
+
+    post '/v1/accounts/:account_id/external_accounts/:external_account_id' do
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        json_response 200, fixture('update_external_bank_account')
+      else
+        json_response 200, fixture('update_external_card_account')
+      end
+    end
+
+    delete '/v1/accounts/:account_id/external_accounts/:external_account_id' do
+      if params.has_key?(FakeStripe::BANK_ACCOUNT_OBJECT_TYPE)
+        json_response 200, fixture('delete_external_bank_account')
+      else
+        json_response 200, fixture('delete_external_card_account')
+      end
+    end
+
+    get '/v1/accounts/:account_id/external_accounts?object=bank_account' do
+      json_response 200, fixture('list_external_bank_accounts')
+    end
+
+    get '/v1/accounts/:account_id/external_accounts?object=card' do
+      json_response 200, fixture('list_external_card_accounts')
+    end
+
+    # Persons
+    get '/v1/accounts/:account_id/persons' do
+      json_response 200, fixture('create_person')
+    end
+
+    get '/v1/accounts/:account_id/persons/:person_id' do
+      json_response 200, fixture('retrieve_person')
+    end
+
+    post '/v1/accounts/:account_id/persons/:person_id' do
+      json_response 200, fixture('update_person')
+    end
+
+    delete '/v1/accounts/:account_id/persons/:person_id' do
+      json_response 200, fixture('delete_person')
+    end
+
+    get '/v1/accounts/:account_id/persons' do
+      json_response 200, fixture('list_persons')
+    end
+
     # Accounts
     get '/v1/account' do
       json_response 200, fixture('retrieve_account')
@@ -399,9 +766,40 @@ module FakeStripe
       json_response 201, fixture("update_account")
     end
 
+    delete "/v1/accounts/:account_id" do
+      json_response 201, fixture("delete_account")
+    end
+
+    post "/v1/accounts/:account_id/reject" do
+      json_response 201, fixture("reject_account")
+    end
+
+    get "/v1/accounts" do
+      json_response 201, fixture("list_accounts")
+    end
+
+    # Login Link
+    get '/v1/login_links' do
+      json_response 200, fixture('create_login_link')
+    end
+
+    # Account Link
+    get '/v1/account_links' do
+      json_response 200, fixture('create_account_link')
+    end
+
+    # Application Fees
+    get '/v1/application_fees/:id' do
+      json_response 200, fixture('retrieve_application_fees')
+    end
+
     # Balance
     get '/v1/balance' do
       json_response 200, fixture('retrieve_balance')
+    end
+
+    get '/v1/balance_transactions' do
+      json_response 200, fixture('list_balances')
     end
 
     get '/v1/balance/history/:transaction_id' do
@@ -473,8 +871,45 @@ module FakeStripe
       json_response 200, fixture('list_setup_intents')
     end
 
-    private
+    # Payout
+    post '/v1/payouts' do
+      json_response 200, fixture("create_payout")
+    end
 
+    get '/v1/payouts/:id' do
+      json_response 200, fixture("retrieve_payout")
+    end
+
+    post '/v1/payouts/:id' do
+      json_response 200, fixture('update_payout')
+    end
+
+    post '/v1/payouts/:id/cancel' do
+      json_response 200, fixture('cancel_payout')
+    end
+
+    get '/v1/payouts' do
+      json_response 200, fixture('list_payouts')
+    end
+
+    # Session (checkout)
+    post '/v1/checkout/sessions' do
+      json_response 200, fixture("create_session")
+    end
+
+    get '/v1/sessions/:id' do
+      json_response 200, fixture("retrieve_session")
+    end
+
+    get '/v1/checkout/sessions' do
+      json_response 200, fixture('list_sessions')
+    end
+
+    get '/v1/checkout/sessions/:id/line_items' do
+      json_response 200, fixture('retrieve_session_line_items')
+    end
+  
+    private
     def fixture(file_name)
       file_path = File.join(FakeStripe.fixture_path, "#{file_name}.json")
       File.open(file_path, 'rb').read

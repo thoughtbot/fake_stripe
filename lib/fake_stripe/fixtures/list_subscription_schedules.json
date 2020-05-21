@@ -1,0 +1,56 @@
+{
+  "object": "list",
+  "url": "/v1/subscription_schedules",
+  "has_more": false,
+  "data": [
+    {
+      "id": "sub_sched_1GNmSE2eZvKYlo2CH03uV99G",
+      "object": "subscription_schedule",
+      "canceled_at": 1585778190,
+      "completed_at": null,
+      "created": 1584478562,
+      "current_phase": null,
+      "customer": "cus_HJYfEnsfVLxB3C",
+      "default_settings": {
+        "billing_thresholds": null,
+        "collection_method": "charge_automatically",
+        "default_payment_method": null,
+        "invoice_settings": null
+      },
+      "end_behavior": "release",
+      "livemode": false,
+      "metadata": {},
+      "phases": [
+        {
+          "add_invoice_items": [],
+          "application_fee_percent": null,
+          "billing_thresholds": null,
+          "collection_method": null,
+          "coupon": null,
+          "default_payment_method": null,
+          "default_tax_rates": [],
+          "end_date": 1616014562,
+          "invoice_settings": null,
+          "plans": [
+            {
+              "billing_thresholds": null,
+              "plan": "plan_DGenmbl4GbrTTa",
+              "price": "plan_DGenmbl4GbrTTa",
+              "quantity": 1,
+              "tax_rates": []
+            }
+          ],
+          "prorate": true,
+          "proration_behavior": "create_prorations",
+          "start_date": 1584478562,
+          "tax_percent": null,
+          "trial_end": null
+        }
+      ],
+      "released_at": null,
+      "released_subscription": null,
+      "status": "canceled",
+      "subscription": "sub_Gvdjv1jdC5pImc"
+    }
+  ]
+}

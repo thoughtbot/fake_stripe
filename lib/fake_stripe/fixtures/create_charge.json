@@ -1,83 +1,56 @@
 {
-  "id": "ch_18uPw8L91mzKIzpGAYTRv8jQ",
+  "id": "ch_1Gkt7f2eZvKYlo2CVzqe4sgl",
   "object": "charge",
-  "amount": 10000,
+  "amount": 2000,
   "amount_refunded": 0,
   "application": null,
   "application_fee": null,
   "application_fee_amount": null,
-  "balance_transaction": "txn_1GJAcKL91mzKIzpG8ldYX5JB",
+  "balance_transaction": "txn_19XJJ02eZvKYlo2ClwuJ1rbA",
   "billing_details": {
     "address": {
       "city": null,
       "country": null,
       "line1": null,
       "line2": null,
-      "postal_code": "20001",
+      "postal_code": null,
       "state": null
     },
     "email": null,
-    "name": "John Cardholder",
+    "name": "Jenny Rosen",
     "phone": null
   },
-  "captured": true,
-  "created": 1474046140,
+  "calculated_statement_descriptor": null,
+  "captured": false,
+  "created": 1589985739,
   "currency": "usd",
   "customer": null,
-  "description": "Donation of 100.0 to Regular Fund",
+  "description": "My First Test Charge (created for API docs)",
   "disputed": false,
   "failure_code": null,
   "failure_message": null,
   "fraud_details": {},
   "invoice": null,
   "livemode": false,
-  "metadata": {
-    "category_id": "36",
-    "contribution_id": "111",
-    "customer": "N\\A",
-    "payer_email": "donor@example.com",
-    "payer_name": "Donor Jones",
-    "project_id": "9"
-  },
-  "on_behalf_of": "acct_18uPPYAWmcVS821L",
+  "metadata": {},
+  "on_behalf_of": null,
   "order": null,
-  "outcome": {
-    "network_status": "approved_by_network",
-    "reason": null,
-    "risk_level": "normal",
-    "seller_message": "Payment complete.",
-    "type": "authorized"
-  },
+  "outcome": null,
   "paid": true,
   "payment_intent": null,
-  "payment_method": "card_18uPw7L91mzKIzpGoYarbJxf",
-  "source": {
-    "id": "ba_1GKVlSL91mzKIzpG7fF6Mph9",
-    "object": "bank_account",
-    "account_holder_name": "John Accountholder",
-    "account_holder_type": "owner",
-    "bank_name": "STRIPE TEST BANK",
-    "country": "US",
-    "currency": "usd",
-    "customer": "cus_GsGI9702lDGahI",
-    "fingerprint": "dtUVkMLr6OcF6KRS",
-    "last4": "6789",
-    "metadata": {},
-    "routing_number": "110000000",
-    "status": "verified"
-  },
+  "payment_method": "card_19yUNL2eZvKYlo2CNGsN6EWH",
   "payment_method_details": {
     "card": {
       "brand": "visa",
       "checks": {
         "address_line1_check": null,
-        "address_postal_code_check": "pass",
-        "cvc_check": "pass"
+        "address_postal_code_check": null,
+        "cvc_check": "unchecked"
       },
       "country": "US",
-      "exp_month": 9,
-      "exp_year": 2017,
-      "fingerprint": "cQEn3eGSNGyvdFnX",
+      "exp_month": 12,
+      "exp_year": 2020,
+      "fingerprint": "Xt5EWLLDS7FJjR1c",
       "funding": "credit",
       "installments": null,
       "last4": "4242",
@@ -89,13 +62,13 @@
   },
   "receipt_email": null,
   "receipt_number": null,
-  "receipt_url": "https://pay.stripe.com/receipts/acct_184AzvL91mzKIzpG/ch_18uPw8L91mzKIzpGAYTRv8jQ/rcpt_EHSGZ99v3U6NB17DvRf0Yk3sFckXQGo",
+  "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_1Gkt7f2eZvKYlo2CVzqe4sgl/rcpt_HJW9pulzmzM6XYx5Rc9PgMsESpV53FI",
   "refunded": false,
   "refunds": {
     "object": "list",
     "data": [],
     "has_more": false,
-    "url": "/v1/charges/ch_18uPw8L91mzKIzpGAYTRv8jQ/refunds"
+    "url": "/v1/charges/ch_1Gkt7f2eZvKYlo2CVzqe4sgl/refunds"
   },
   "review": null,
   "shipping": null,
@@ -103,15 +76,7 @@
   "statement_descriptor": null,
   "statement_descriptor_suffix": null,
   "status": "succeeded",
-  "transfer": "tr_18uPw8L91mzKIzpGRKSsDIjk",
-  "transfer_data": {
-    "amount": null,
-    "destination": "acct_18uPPYAWmcVS821L"
-  },
-  "transfer_group": "group_ch_18uPw8L91mzKIzpGAYTRv8jQ"
+  "transfer_data": null,
+  "transfer_group": null,
+  "source": "tok_mastercard"
 }
-
-
-
-
-

@@ -1,0 +1,24 @@
+{
+  "object": "list",
+  "url": "/v1/accounts/acct_1032D82eZvKYlo2C/capabilities",
+  "has_more": false,
+  "data": [
+    {
+      "id": "card_payments",
+      "object": "capability",
+      "account": "acct_1032D82eZvKYlo2C",
+      "requested": true,
+      "requested_at": 1589995295,
+      "requirements": {
+        "current_deadline": null,
+        "currently_due": [],
+        "disabled_reason": null,
+        "errors": [],
+        "eventually_due": [],
+        "past_due": [],
+        "pending_verification": []
+      },
+      "status": "inactive"
+    }
+  ]
+}

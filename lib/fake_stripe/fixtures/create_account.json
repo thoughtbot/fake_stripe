@@ -1,112 +1,98 @@
 {
   "id": "acct_1032D82eZvKYlo2C",
-  "email": "bob@example.com",
-  "statement_descriptor": null,
-  "display_name": "Stripe.com",
-  "timezone": "US/Pacific",
-  "details_submitted": false,
-  "charges_enabled": false,
-  "transfers_enabled": false,
-  "currencies_supported": [
-    "usd",
-    "aed",
-    "afn",
-    "..."
-  ],
-  "default_currency": "usd",
-  "country": "US",
   "object": "account",
-  "business_name": "Stripe.com",
-  "business_url": null,
-  "support_phone": null,
-  "business_logo": null,
-  "managed": false,
-  "product_description": null,
-  "debit_negative_balances": true,
+  "business_profile": {
+    "mcc": null,
+    "name": "Stripe.com",
+    "product_description": null,
+    "support_address": null,
+    "support_email": null,
+    "support_phone": null,
+    "support_url": null,
+    "url": null
+  },
+  "business_type": null,
+  "capabilities": {
+    "card_payments": "active",
+    "transfers": "active"
+  },
+  "charges_enabled": false,
+  "country": "US",
+  "created": 1385798567,
+  "default_currency": "usd",
+  "details_submitted": false,
+  "email": "jenny.rosen@example.com",
   "external_accounts": {
     "object": "list",
-    "data": [
-      {
-        "id":"ba_16ndClBdETbGCbQrGski5zps",
-        "object": "bank_account",
-        "account":"acct_28ndDlB5ETbGCaQr",
-        "bank_name": "STRIPE TEST BANK",
-        "country": "US",
-        "currency": "usd",
-        "default_for_currency": true,
-        "fingerprint":"axCsvGRahxD6fvu0",
-        "last4": "1234",
-        "metadata": {},
-        "routing_number": "110000000",
-        "status": "new"
-      }
-    ],
+    "data": [],
     "has_more": false,
-    "total_count": 1,
     "url": "/v1/accounts/acct_1032D82eZvKYlo2C/external_accounts"
   },
-  "verification": {
-    "fields_needed": [
-      "external_account",
+  "metadata": {},
+  "payouts_enabled": false,
+  "requirements": {
+    "current_deadline": null,
+    "currently_due": [
       "business_url",
+      "external_account",
       "product_description",
       "support_phone",
       "tos_acceptance.date",
       "tos_acceptance.ip"
     ],
-    "due_by": null,
-    "disabled_reason": "fields_needed"
+    "disabled_reason": "requirements.past_due",
+    "errors": [],
+    "eventually_due": [
+      "business_url",
+      "external_account",
+      "product_description",
+      "support_phone",
+      "tos_acceptance.date",
+      "tos_acceptance.ip"
+    ],
+    "past_due": [],
+    "pending_verification": []
   },
-  "transfer_schedule": {
-    "delay_days": 7,
-    "interval": "daily"
-  },
-  "decline_charge_on": {
-    "cvc_failure": false,
-    "avs_failure": false
+  "settings": {
+    "branding": {
+      "icon": null,
+      "logo": null,
+      "primary_color": null,
+      "secondary_color": null
+    },
+    "card_payments": {
+      "decline_on": {
+        "avs_failure": true,
+        "cvc_failure": false
+      },
+      "statement_descriptor_prefix": null
+    },
+    "dashboard": {
+      "display_name": "Stripe.com",
+      "timezone": "US/Pacific"
+    },
+    "payments": {
+      "statement_descriptor": "",
+      "statement_descriptor_kana": null,
+      "statement_descriptor_kanji": null
+    },
+    "payouts": {
+      "debit_negative_balances": true,
+      "schedule": {
+        "delay_days": 7,
+        "interval": "daily"
+      },
+      "statement_descriptor": null
+    }
   },
   "tos_acceptance": {
-    "ip": null,
     "date": null,
+    "ip": null,
     "user_agent": null
   },
-  "legal_entity": {
-    "type": null,
-    "business_name": null,
-    "address": {
-      "line1": null,
-      "line2": null,
-      "city": null,
-      "state": null,
-      "postal_code": null,
-      "country": "US"
-    },
-    "first_name": null,
-    "last_name": null,
-    "personal_address": {
-      "line1": null,
-      "line2": null,
-      "city": null,
-      "state": null,
-      "postal_code": null,
-      "country": null
-    },
-    "dob": {
-      "day": null,
-      "month": null,
-      "year": null
-    },
-    "additional_owners": null,
-    "verification": {
-      "status": "unverified",
-      "document": null,
-      "details": null
-    },
-    "personal_id_number_provided": false,
-    "ssn_last_4_provided": false
-  },
-  "keys": {
-    "secret": "sk_test_sZNZe3vkCcTaOHv5fcZKzqdj",
-    "publishable": "pk_test_ahej4zmobxbm5NAH3tD3fCjM"
-  }
+  "type": "custom",
+  "requested_capabilities": [
+    "card_payments",
+    "transfers"
+  ]
 }

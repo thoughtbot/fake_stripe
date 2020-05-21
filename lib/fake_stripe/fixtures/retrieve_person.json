@@ -1,0 +1,48 @@
+{
+  "id": "person_HJYjFUCuSOfCO9",
+  "object": "person",
+  "account": "acct_1032D82eZvKYlo2C",
+  "created": 1589995295,
+  "dob": {
+    "day": null,
+    "month": null,
+    "year": null
+  },
+  "first_name": null,
+  "id_number_provided": false,
+  "last_name": null,
+  "metadata": {},
+  "relationship": {
+    "director": false,
+    "executive": false,
+    "owner": false,
+    "percent_ownership": null,
+    "representative": false,
+    "title": null
+  },
+  "requirements": {
+    "currently_due": [],
+    "errors": [],
+    "eventually_due": [],
+    "past_due": [],
+    "pending_verification": []
+  },
+  "ssn_last_4_provided": false,
+  "verification": {
+    "additional_document": {
+      "back": null,
+      "details": null,
+      "details_code": null,
+      "front": null
+    },
+    "details": null,
+    "details_code": null,
+    "document": {
+      "back": null,
+      "details": null,
+      "details_code": null,
+      "front": null
+    },
+    "status": "unverified"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "acap_1Gkvbn2eZvKYlo2CeXp65xhu",
+  "object": "capability",
+  "account": "acct_1032D82eZvKYlo2C",
+  "requested": true,
+  "requested_at": 1589995295,
+  "requirements": {
+    "current_deadline": null,
+    "currently_due": [],
+    "disabled_reason": null,
+    "errors": [],
+    "eventually_due": [],
+    "past_due": [],
+    "pending_verification": []
+  },
+  "status": "inactive"
+}

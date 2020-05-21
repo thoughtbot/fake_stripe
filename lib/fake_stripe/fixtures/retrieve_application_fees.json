@@ -1,0 +1,32 @@
+{
+  "id": "fee_1B73DOKbnvuxQXGuhY8Aw0TN",
+  "object": "application_fee",
+  "account": "acct_164wxjKbnvuxQXGu",
+  "amount": 105,
+  "amount_refunded": 105,
+  "application": "ca_32D88BD1qLklliziD7gYQvctJIhWBSQ7",
+  "balance_transaction": "txn_19XJJ02eZvKYlo2ClwuJ1rbA",
+  "charge": "ch_1B73DOKbnvuxQXGurbwPqzsu",
+  "created": 1506609734,
+  "currency": "gbp",
+  "livemode": false,
+  "originating_transaction": null,
+  "refunded": true,
+  "refunds": {
+    "object": "list",
+    "data": [
+      {
+        "id": "fr_D0s7fGBKB40Twy",
+        "object": "fee_refund",
+        "amount": 138,
+        "balance_transaction": "txn_1CaqNg2eZvKYlo2C75cA3Euk",
+        "created": 1528486576,
+        "currency": "usd",
+        "fee": "fee_1B73DOKbnvuxQXGuhY8Aw0TN",
+        "metadata": {}
+      }
+    ],
+    "has_more": false,
+    "url": "/v1/application_fees/fee_1B73DOKbnvuxQXGuhY8Aw0TN/refunds"
+  }
+}

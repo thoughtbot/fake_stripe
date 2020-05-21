@@ -1,0 +1,29 @@
+{
+  "id": "cs_test_g2GtisA9Pjr9Ra0JE5LTPJD2Y3GYYN0JDYhMw23w7ntupk6lTtU0lGGT",
+  "object": "checkout.session",
+  "billing_address_collection": null,
+  "cancel_url": "https://example.com/cancel",
+  "client_reference_id": null,
+  "customer": null,
+  "customer_email": null,
+  "livemode": false,
+  "locale": null,
+  "metadata": {},
+  "mode": "payment",
+  "payment_intent": "pi_1DeODs2eZvKYlo2CO32HnTV3",
+  "payment_method_types": [
+    "card"
+  ],
+  "setup_intent": null,
+  "shipping": null,
+  "shipping_address_collection": null,
+  "submit_type": null,
+  "subscription": null,
+  "success_url": "https://example.com/success",
+  "line_items": [
+    {
+      "price": "price_H5ggYwtDq4fbrJ",
+      "quantity": 2
+    }
+  ]
+}

@@ -1,17 +1,17 @@
 {
-  "id": "25OFF",
-  "created": 1391687276,
-  "percent_off": 25,
-  "amount_off": null,
-  "currency": "usd",
+  "id": "co_1Gkt7i2eZvKYlo2CWLS0Z2ad",
   "object": "coupon",
-  "livemode": false,
+  "amount_off": null,
+  "created": 1589985742,
+  "currency": "usd",
   "duration": "repeating",
-  "redeem_by": null,
-  "max_redemptions": null,
-  "times_redeemed": 0,
   "duration_in_months": 3,
-  "valid": true,
-  "metadata": {
-  }
+  "livemode": false,
+  "max_redemptions": null,
+  "metadata": {},
+  "name": "25.5% off",
+  "percent_off": 25,
+  "redeem_by": null,
+  "times_redeemed": 0,
+  "valid": true
 }

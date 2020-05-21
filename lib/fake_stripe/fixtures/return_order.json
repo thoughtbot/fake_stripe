@@ -1,0 +1,39 @@
+{
+  "id": "orret_1Ce6vt2eZvKYlo2CrgzPqxaz",
+  "object": "order_return",
+  "amount": 1500,
+  "created": 1529265185,
+  "currency": "usd",
+  "items": [
+    {
+      "object": "order_item",
+      "amount": 1500,
+      "currency": "usd",
+      "description": "T-shirt",
+      "parent": "sku_D4FQNsVhWyFoPq",
+      "quantity": 1,
+      "type": "sku"
+    },
+    {
+      "object": "order_item",
+      "amount": 0,
+      "currency": "usd",
+      "description": "Taxes (included)",
+      "parent": null,
+      "quantity": null,
+      "type": "tax"
+    },
+    {
+      "object": "order_item",
+      "amount": 0,
+      "currency": "usd",
+      "description": "Free shipping",
+      "parent": "ship_free-shipping",
+      "quantity": null,
+      "type": "shipping"
+    }
+  ],
+  "livemode": false,
+  "order": "or_1Ce6vg2eZvKYlo2CcQtHtXdu",
+  "refund": null
+}

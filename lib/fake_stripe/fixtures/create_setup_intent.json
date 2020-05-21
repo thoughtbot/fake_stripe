@@ -1,22 +1,24 @@
 {
-  "id": "seti_123456789",
+  "id": "seti_1Gksfq2eZvKYlo2CFDNDeQTa",
   "object": "setup_intent",
   "application": null,
   "cancellation_reason": null,
-  "client_secret": null,
-  "created": 123456789,
-  "customer": null,
+  "client_secret": "seti_1Gksfq2eZvKYlo2CFDNDeQTa_secret_HJVhm5YBWKhilvGTdC4jVFnuaD9SMUJ",
+  "created": 1589984014,
+  "customer": "cus_HJVhpVBHUSF0vY",
   "description": null,
   "last_setup_error": null,
   "livemode": false,
   "mandate": null,
-  "metadata": {
-    "user_id": "guest"
-  },
+  "metadata": {},
   "next_action": null,
   "on_behalf_of": null,
   "payment_method": null,
-  "payment_method_options": {},
+  "payment_method_options": {
+    "card": {
+      "request_three_d_secure": "automatic"
+    }
+  },
   "payment_method_types": [
     "card"
   ],
