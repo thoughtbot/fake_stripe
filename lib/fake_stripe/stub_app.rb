@@ -85,7 +85,7 @@ module FakeStripe
     # Charges
     post '/v1/charges' do
       FakeStripe.charge_count += 1
-      if params[:source].include?("ba_")
+      if params[:source]&.include?("ba_")
         json_response 201, fixture('create_charge_with_bank')
       else
         json_response 201, fixture('create_charge')
@@ -911,7 +911,7 @@ module FakeStripe
     get '/v1/checkout/sessions/:id/line_items' do
       json_response 200, fixture('retrieve_session_line_items')
     end
-  
+
     private
     def fixture(file_name)
       file_path = File.join(FakeStripe.fixture_path, "#{file_name}.json")
