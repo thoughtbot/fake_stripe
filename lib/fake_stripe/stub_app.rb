@@ -827,8 +827,12 @@ module FakeStripe
 
     # Payment Intents
     post '/v1/payment_intents' do
-      FakeStripe.payment_intent_count += 1      
-      json_response 200, fixture("create_payment_intent")
+      FakeStripe.payment_intent_count += 1
+      if params[:confirm]
+        json_response 200, fixture("confirm_payment_intent")
+      else
+        json_response 200, fixture("create_payment_intent")
+      end
     end
 
     post '/v1/payment_intents/:payment_intent_id' do
@@ -845,19 +849,27 @@ module FakeStripe
 
     # Setup Intents
     post '/v1/setup_intents' do
-      json_response 200, fixture("create_setup_intent")
+      if params[:payment_method].present?
+        # succeeded with attached payment_method and customer
+        json_response 200, fixture('retrieve_setup_intent')
+      else
+        json_response 200, fixture("create_setup_intent")
+      end
     end
 
     get '/v1/setup_intents/:id' do
+      # succeeded with attached payment_method and customer
       json_response 200, fixture("retrieve_setup_intent")
     end
 
     post '/v1/setup_intents/:id' do
+      # succeeded with attached payment_method and customer + user_id
       json_response 200, fixture('update_setup_intent')
     end
 
     post '/v1/setup_intents/:id/confirm' do
-      json_response 200, fixture('update_setup_intent')
+      # succeeded with attached payment_method and customer
+      json_response 200, fixture('retrieve_setup_intent')
     end
 
     post '/v1/setup_intents/:id/cancel' do
