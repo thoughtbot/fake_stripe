@@ -7,7 +7,7 @@ module FakeStripe
     # Connection tokens
     post '/v1/terminal/connection_tokens' do
       FakeStripe.connection_token_count += 1
-      json_response 200, fixture("create_connection_token")
+      json_response 201, fixture("create_connection_token")
     end
 
     # Locations
@@ -16,7 +16,7 @@ module FakeStripe
     end
 
     get '/v1/terminal/locations/:id' do
-      json_response 201, fixture('retrieve_location')
+      json_response 200, fixture('retrieve_location')
     end
 
     post '/v1/terminal/locations/:id' do
@@ -24,11 +24,11 @@ module FakeStripe
     end
 
     delete '/v1/terminal/locations/:id' do
-      json_response 201, fixture('delete_location')
+      json_response 200, fixture('delete_location')
     end
 
     get '/v1/terminal/locations' do
-      json_response 201, fixture('list_locations')
+      json_response 200, fixture('list_locations')
     end
 
     # Readers
@@ -37,19 +37,19 @@ module FakeStripe
     end
 
     get '/v1/terminal/readers/:id' do
-      json_response 201, fixture('retrieve_reader')
+      json_response 200, fixture('retrieve_reader')
     end
 
     post '/v1/terminal/readers/:id' do
-      json_response 201, fixture('update_reader')
+      json_response 200, fixture('update_reader')
     end
 
     delete '/v1/terminal/readers/:id' do
-      json_response 201, fixture('delete_reader')
+      json_response 200, fixture('delete_reader')
     end
 
     get '/v1/terminal/readers' do
-      json_response 201, fixture('list_readers')
+      json_response 200, fixture('list_readers')
     end
 
     # ----------------------------------------------------------------------#
@@ -57,7 +57,7 @@ module FakeStripe
 
     # Orders
     post '/v1/orders' do
-      json_response 200, fixture('create_order')
+      json_response 201, fixture('create_order')
     end
 
     get '/v1/orders/:id' do
@@ -85,7 +85,11 @@ module FakeStripe
     # Charges
     post '/v1/charges' do
       FakeStripe.charge_count += 1
-      json_response 201, fixture('create_charge')
+      if params[:source].include?("ba_")
+        json_response 201, fixture('create_charge_with_bank')
+      else
+        json_response 201, fixture('create_charge')
+      end
     end
 
     get '/v1/charges/:charge_id' do
@@ -143,7 +147,7 @@ module FakeStripe
 
     # Products
     post 'v1/products' do
-      json_response 200, fixture('create_product')
+      json_response 201, fixture('create_product')
     end
 
     get 'v1/products/:id' do
@@ -164,7 +168,7 @@ module FakeStripe
 
     # Prices
     post 'v1/prices' do
-      json_response 200, fixture('create_price')
+      json_response 201, fixture('create_price')
     end
 
     get 'v1/prices/:id' do
@@ -182,7 +186,7 @@ module FakeStripe
     # Customers
     post '/v1/customers' do
       FakeStripe.customer_count += 1
-      json_response 200, fixture('create_customer')
+      json_response 201, fixture('create_customer')
     end
 
     get '/v1/customers/:id' do
@@ -204,7 +208,7 @@ module FakeStripe
     # Pyment Methods
     post '/v1/payment_methods' do
       FakeStripe.payment_method_count += 1
-      json_response 200, fixture('create_payment_method')
+      json_response 201, fixture('create_payment_method')
     end
 
     get '/v1/payment_methods/:payment_method_id' do
@@ -271,7 +275,7 @@ module FakeStripe
 
     # Source (payment method)
     post '/v1/sources' do
-      json_response 200, fixture('create_source')
+      json_response 201, fixture('create_source')
     end
 
     get '/v1/sources/:source_id' do
@@ -297,7 +301,7 @@ module FakeStripe
     ].each do |path|
       post path do
         FakeStripe.subscription_count += 1
-        json_response 200, fixture('create_subscription')
+        json_response 201, fixture('create_subscription')
       end
     end
 
@@ -351,7 +355,7 @@ module FakeStripe
 
     # Susbscription Items
     post '/v1/subscription_items' do
-      json_response 200, fixture('create_subscription_item')
+      json_response 201, fixture('create_subscription_item')
     end
 
     get '/v1/subscription_items/:id' do
@@ -372,7 +376,7 @@ module FakeStripe
 
     # Susbscription Schedules
     post '/v1/subscription_schedules' do
-      json_response 200, fixture('create_subscription_schedule')
+      json_response 201, fixture('create_subscription_schedule')
     end
 
     get '/v1/subscription_schedules/:id' do
@@ -398,7 +402,7 @@ module FakeStripe
     # Plans
     post '/v1/plans' do
       FakeStripe.plan_count += 1
-      json_response 200, fixture('create_plan')
+      json_response 201, fixture('create_plan')
     end
 
     get '/v1/plans/:plan_id' do
@@ -420,7 +424,7 @@ module FakeStripe
     # Coupons
     post '/v1/coupons' do
       FakeStripe.coupon_count += 1
-      json_response 200, fixture('create_coupon')
+      json_response 201, fixture('create_coupon')
     end
 
     get '/v1/coupons/:coupon_id' do
@@ -437,7 +441,7 @@ module FakeStripe
 
     # Credit Notes
     post '/v1/credit_notes' do
-      json_response 200, fixture('create_credit_note')
+      json_response 201, fixture('create_credit_note')
     end
 
     get '/v1/credit_notes/:id' do
@@ -458,7 +462,7 @@ module FakeStripe
 
     # Balance Transactions
     post '/v1/customers/:customer_id/balance_transactions' do
-      json_response 200, fixture('create_customer_balance_transaction')
+      json_response 201, fixture('create_customer_balance_transaction')
     end
 
     get '/v1/customers/:customer_id/balance_transactions/:balance_transaction_id' do
@@ -475,7 +479,7 @@ module FakeStripe
 
     # Tax IDs
     post '/v1/customers/:customer_id/tax_ids' do
-      json_response 200, fixture('create_tax_id')
+      json_response 201, fixture('create_tax_id')
     end
 
     get '/v1/customers/:customer_id/tax_ids/:tax_id' do
@@ -492,7 +496,7 @@ module FakeStripe
 
     # Tax Rates
     post '/v1/tax_rates' do
-      json_response 200, fixture('create_tax_rate')
+      json_response 201, fixture('create_tax_rate')
     end
 
     get '/v1/tax_rates/:id' do
@@ -519,7 +523,7 @@ module FakeStripe
     # Invoices
     post '/v1/invoices' do
       FakeStripe.invoice_count += 1
-      json_response 200, fixture('create_invoice')
+      json_response 201, fixture('create_invoice')
     end
 
     get '/v1/invoices/:invoice_id' do
@@ -565,7 +569,7 @@ module FakeStripe
     # Invoice Items
     post '/v1/invoiceitems' do
       FakeStripe.invoiceitem_count += 1
-      json_response 200, fixture('create_invoiceitem')
+      json_response 201, fixture('create_invoiceitem')
     end
 
     get '/v1/invoiceitems/:invoiceitem_id' do
@@ -612,7 +616,7 @@ module FakeStripe
     # Transfers
     post '/v1/transfers' do
       FakeStripe.transfer_count += 1
-      json_response 200, fixture('create_transfer')
+      json_response 201, fixture('create_transfer')
     end
 
     get '/v1/transfers/:transfer_id' do
@@ -634,7 +638,7 @@ module FakeStripe
     # Recipients
     post '/v1/recipients' do
       FakeStripe.recipient_count += 1
-      json_response 200, fixture('create_recipient')
+      json_response 201, fixture('create_recipient')
     end
 
     get '/v1/recipients/:recipient_id' do
@@ -682,9 +686,9 @@ module FakeStripe
     # External Bank/Card Accounts
     post '/v1/accounts/:account_id/external_accounts' do
       if params[:external_account]&.include?("btok")
-        json_response 200, fixture('create_external_bank_account')
+        json_response 201, fixture('create_external_bank_account')
       else
-        json_response 200, fixture('create_external_card_account')
+        json_response 201, fixture('create_external_card_account')
       end
     end
 
@@ -749,29 +753,29 @@ module FakeStripe
     end
 
     post "/v1/accounts/:account_id" do
-      json_response 201, fixture("update_account")
+      json_response 200, fixture("update_account")
     end
 
     delete "/v1/accounts/:account_id" do
-      json_response 201, fixture("delete_account")
+      json_response 200, fixture("delete_account")
     end
 
     post "/v1/accounts/:account_id/reject" do
-      json_response 201, fixture("reject_account")
+      json_response 200, fixture("reject_account")
     end
 
     get "/v1/accounts" do
-      json_response 201, fixture("list_accounts")
+      json_response 200, fixture("list_accounts")
     end
 
     # Login Link
     get '/v1/login_links' do
-      json_response 200, fixture('create_login_link')
+      json_response 201, fixture('create_login_link')
     end
 
     # Account Link
     get '/v1/account_links' do
-      json_response 200, fixture('create_account_link')
+      json_response 201, fixture('create_account_link')
     end
 
     # Application Fees
@@ -819,9 +823,9 @@ module FakeStripe
     post '/v1/payment_intents' do
       FakeStripe.payment_intent_count += 1
       if params[:confirm]
-        json_response 200, fixture("retrieve_payment_intent")
+        json_response 201, fixture("retrieve_payment_intent")
       else
-        json_response 200, fixture("create_payment_intent")
+        json_response 201, fixture("create_payment_intent")
       end
     end
 
@@ -841,9 +845,9 @@ module FakeStripe
     post '/v1/setup_intents' do
       if params[:payment_method].present?
         # succeeded with attached payment_method and customer
-        json_response 200, fixture('retrieve_setup_intent')
+        json_response 201, fixture('retrieve_setup_intent')
       else
-        json_response 200, fixture("create_setup_intent")
+        json_response 201, fixture("create_setup_intent")
       end
     end
 
@@ -872,7 +876,7 @@ module FakeStripe
 
     # Payout
     post '/v1/payouts' do
-      json_response 200, fixture("create_payout")
+      json_response 201, fixture("create_payout")
     end
 
     get '/v1/payouts/:id' do
@@ -893,7 +897,7 @@ module FakeStripe
 
     # Session (checkout)
     post '/v1/checkout/sessions' do
-      json_response 200, fixture("create_session")
+      json_response 201, fixture("create_session")
     end
 
     get '/v1/sessions/:id' do
