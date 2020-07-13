@@ -1,0 +1,157 @@
+{
+  "id": "pi_1EXKucL91mzKIzpGhQXIUV0z",
+  "object": "payment_intent",
+  "amount": 500,
+  "amount_capturable": 500,
+  "amount_received": 0,
+  "application": null,
+  "application_fee_amount": null,
+  "canceled_at": null,
+  "cancellation_reason": null,
+  "capture_method": "manual",
+  "charges": {
+    "object": "list",
+    "data": [
+      {
+        "id": "ch_1EXKufL91mzKIzpGdODQaRj0",
+        "object": "charge",
+        "amount": 500,
+        "amount_refunded": 0,
+        "application": null,
+        "application_fee": null,
+        "application_fee_amount": null,
+        "authorization_code": "123456",
+        "balance_transaction": null,
+        "billing_details": {
+          "address": {
+            "city": null,
+            "country": null,
+            "line1": null,
+            "line2": null,
+            "postal_code": null,
+            "state": null
+          },
+          "email": null,
+          "name": null,
+          "phone": null
+        },
+        "captured": false,
+        "created": 1557203301,
+        "currency": "usd",
+        "customer": null,
+        "description": null,
+        "destination": "acct_1A1xvnHNvvp0Twf9",
+        "dispute": null,
+        "failure_code": null,
+        "failure_message": null,
+        "fraud_details": {
+        },
+        "invoice": null,
+        "livemode": false,
+        "metadata": {
+          "category_id": "2335",
+          "contribution_id": "31904",
+          "project_id": "820",
+          "payer_name": "Carl Weis",
+          "payer_email": "carl@aol.com"
+        },
+        "on_behalf_of": "acct_1A1xvnHNvvp0Twf9",
+        "order": null,
+        "outcome": {
+          "network_status": "approved_by_network",
+          "reason": null,
+          "risk_level": "normal",
+          "risk_score": 47,
+          "seller_message": "Payment complete.",
+          "type": "authorized"
+        },
+        "paid": true,
+        "payment_intent": "pi_1EXKucL91mzKIzpGhQXIUV0z",
+        "payment_method": "pm_1EXKufL91mzKIzpGnA0jwgxx",
+        "payment_method_details": {
+          "card_present": {
+            "brand": "visa",
+            "country": "US",
+            "emv_auth_data": "8A023030",
+            "exp_month": 12,
+            "exp_year": 2022,
+            "fingerprint": "sachZ6QnomtJVtLF",
+            "funding": "credit",
+            "generated_card": null,
+            "last4": "9969",
+            "read_method": "contactless_emv",
+            "receipt": {
+              "application_cryptogram": "20F347F31DE177D4",
+              "application_preferred_name": "Stripe Credit",
+              "authorization_code": null,
+              "authorization_response_code": "3030",
+              "cardholder_verification_method": "approval",
+              "dedicated_file_name": "A0000000031010",
+              "terminal_verification_results": "0000000000",
+              "transaction_status_information": "0000"
+            }
+          },
+          "type": "card_present"
+        },
+        "receipt_email": null,
+        "receipt_number": null,
+        "receipt_url": "https://pay.stripe.com/receipts/acct_184AzvL91mzKIzpG/ch_1EXKufL91mzKIzpGdODQaRj0/rcpt_F1NgsYG7huBkJ4OEvSQrc1TpSFdBXHE",
+        "refunded": false,
+        "refunds": {
+          "object": "list",
+          "data": [
+          ],
+          "has_more": false,
+          "total_count": 0,
+          "url": "/v1/charges/ch_1EXKufL91mzKIzpGdODQaRj0/refunds"
+        },
+        "review": null,
+        "shipping": null,
+        "source": null,
+        "source_transfer": null,
+        "statement_descriptor": "Demo University",
+        "status": "succeeded",
+        "transfer_data": {
+          "amount": null,
+          "destination": "acct_1A1xvnHNvvp0Twf9"
+        },
+        "transfer_group": "group_pi_1EXKucL91mzKIzpGhQXIUV0z"
+      }
+    ],
+    "has_more": false,
+    "total_count": 1,
+    "url": "/v1/charges?payment_intent=pi_1EXKucL91mzKIzpGhQXIUV0z"
+  },
+  "client_secret": "pi_1EXKucL91mzKIzpGhQXIUV0z_secret_r3HPWmU4XIeEx6JSfwVLcdWMA",
+  "confirmation_method": "automatic",
+  "created": 1557203298,
+  "currency": "usd",
+  "customer": null,
+  "description": null,
+  "invoice": null,
+  "last_payment_error": null,
+  "livemode": false,
+  "metadata": {
+    "category_id": "2335",
+    "contribution_id": "31904",
+    "project_id": "820",
+    "payer_name": "Carl Weis",
+    "payer_email": "carl@aol.com"
+  },
+  "next_action": null,
+  "on_behalf_of": "acct_1A1xvnHNvvp0Twf9",
+  "payment_method": "pm_1EXKufL91mzKIzpGnA0jwgxx",
+  "payment_method_types": [
+    "card_present"
+  ],
+  "receipt_email": null,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "statement_descriptor": "Demo University",
+  "status": "requires_capture",
+  "transfer_data": {
+    "destination": "acct_1A1xvnHNvvp0Twf9"
+  },
+  "transfer_group": "group_pi_1EXKucL91mzKIzpGhQXIUV0z"
+}
