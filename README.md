@@ -75,6 +75,16 @@ RSpec.configure do |config|
 end
 ```
 
+When working on Rails 6.0 or newer and running tests in parallel, you'll need
+to set an environment variable so that Capybara can properly boot a server for
+each worker. To do so, add the following to your `test/test_helper.rb` file:
+
+```ruby
+parallelize_setup do |worker|
+  ENV['TEST_ENV_NUMBER'] = worker.to_s
+end
+```
+
 ## Contributing
 
 Please see [CONTRIBUTING.md][1] for more details.
