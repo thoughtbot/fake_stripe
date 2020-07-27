@@ -635,6 +635,10 @@ module FakeStripe
       json_response 200, fixture('list_transfers')
     end
 
+    post '/v1/transfers/:id/reversals' do
+      json_response 200, fixture('create_transfer_reversal')
+    end
+
     # Recipients
     post '/v1/recipients' do
       FakeStripe.recipient_count += 1

@@ -111,6 +111,7 @@ describe 'Stub app' do
     'POST transfers/:transfer_id/cancel' =>
        { route: '/v1/transfers/1/cancel', method: :post },
     'GET transfers' => { route: '/v1/transfers', method: :get },
+    'POST transfers/:id/reversals' => { route: '/v1/transfers/:id/reversals', method: :post },
     # Recipients
     'POST recipients' => { route: '/v1/recipients', method: :post },
     'GET recipients/:recipient_id' =>
