@@ -39,7 +39,7 @@ describe 'Stub app' do
     'POST payment_methods/:payment_method_id' =>
        { route: '/v1/payment_methods/:payment_method_id', method: :post },
     'GET payment_methods' =>
-       { route: '/v1/payment_methods/:customer_id/:type', method: :get },
+       { route: '/v1/payment_methods', method: :get },
     'POST payment_methods/attach' =>
        { route: '/v1/payment_methods/attach', method: :post },
     'POST payment_methods/dettach' =>
