@@ -168,7 +168,6 @@
   "customer": null,
   "description": null,
   "invoice": null,
-  "last_payment_error": null,
   "livemode": false,
   "metadata": {},
   "next_action": null,

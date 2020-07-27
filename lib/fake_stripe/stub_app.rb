@@ -833,16 +833,24 @@ module FakeStripe
       end
     end
 
-    post '/v1/payment_intents/:payment_intent_id' do
+    post '/v1/payment_intents/:id' do
       json_response 200, fixture("retrieve_payment_intent")
     end
 
-    post '/v1/payment_intents/:payment_intent_id/confirm' do
+    post '/v1/payment_intents/:id/confirm' do
       json_response 200, fixture("confirm_payment_intent")
     end
 
-    post '/v1/payment_intents/:payment_intent_id/capture' do
+    post '/v1/payment_intents/:id/capture' do
       json_response 200, fixture("capture_payment_intent")
+    end
+
+    get '/v1/payment_intents/:id' do
+      json_response 200, fixture("retrieve_payment_intent")
+    end
+
+    get '/v1/payment_intents' do
+      json_response 200, fixture("list_payment_intents")
     end
 
     # Setup Intents

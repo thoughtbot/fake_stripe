@@ -137,10 +137,10 @@ describe 'Stub app' do
     # Payment Intents
     'POST payment_intents' => { route: '/v1/payment_intents', method: :post },
     'GET payment_intents' => { route: '/v1/payment_intents', method: :get },
-    'GET payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K', method: :get },
-    'POST payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K', method: :post },
-    'POST payment_intents/:payment_intent_id/confirm' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K/capture', method: :post },
-    'POST payment_intents/:payment_intent_id/capture' => { route: '/v1/payment_intents/pi_1EXXWCL91mzKIzpGtqrOHA7K/capture', method: :post },
+    'GET payment_intents/:id' => { route: '/v1/payment_intents/pi_1GLrZO2eZvKYlo2CfMpq8zT8', method: :get },
+    'POST payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/:id', method: :post },
+    'POST payment_intents/:payment_intent_id/confirm' => { route: '/v1/payment_intents/:id/capture', method: :post },
+    'POST payment_intents/:payment_intent_id/capture' => { route: '/v1/payment_intents/:id/capture', method: :post },
     # Events
     'GET events/:event_id' => { route: '/v1/events/1', method: :get },
     'GET events' => { route: '/v1/events', method: :get },
