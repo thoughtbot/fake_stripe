@@ -4,7 +4,10 @@
   "amount": 1000,
   "amount_refunded": 0,
   "application_fee": null,
-  "balance_transaction": "txn_17bBUd2eZvKYlo2CAv3mOn7F",
+  "balance_transaction": {
+    "id": "txn_103cQg2eZvKYlo2CYKVlR2nh",
+    "fee": 59
+  },
   "captured": true,
   "created": 1456245794,
   "currency": "usd",
