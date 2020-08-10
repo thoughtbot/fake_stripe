@@ -246,7 +246,11 @@ module FakeStripe
     end
 
     get '/v1/customers/:customer_id/sources/:id' do
-      json_response 200, fixture('retrieve_card')
+      if params[:id].include?("ba_")
+        json_response 200, fixture('retrieve_bank_account')
+      else
+        json_response 200, fixture('retrieve_card')
+      end
     end
 
     # There is no way to distinguish card vs. bank with FakeStripe gem
