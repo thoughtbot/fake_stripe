@@ -1,7 +1,7 @@
 {
   "object": "list",
   "url": "/v1/application_fees",
-  "count": 3,
+  "total_count": 3,
   "data": [
     {
     "id": "fee_3ewdpQuL9AggWF",

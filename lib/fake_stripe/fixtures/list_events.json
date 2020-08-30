@@ -1,7 +1,7 @@
 {
   "object": "list",
   "url": "/v1/events",
-  "count": 3,
+  "total_count": 3,
   "data": [
     {
     "id": "evt_103ewb2eZvKYlo2Cz0MZagvE",

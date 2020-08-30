@@ -1,7 +1,7 @@
 {
   "object": "list",
   "url": "/v1/plans",
-  "count": 3,
+  "total_count": 3,
   "data": [
     {
     "interval": "month",

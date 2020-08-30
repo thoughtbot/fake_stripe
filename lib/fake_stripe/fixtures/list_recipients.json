@@ -1,7 +1,7 @@
 {
   "object": "list",
   "url": "v1/recipients",
-  "count": 3,
+  "total_count": 3,
   "data": [
     {
     "id": "rp_103WyK2eZvKYlo2CXgqlepdQ",

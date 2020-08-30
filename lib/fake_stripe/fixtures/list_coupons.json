@@ -1,7 +1,7 @@
 {
   "object": "list",
   "url": "/v1/coupons",
-  "count": 3,
+  "total_count": 3,
   "data": [
     {
     "id": "25OFF",
