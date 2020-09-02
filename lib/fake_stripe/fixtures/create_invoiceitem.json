@@ -3,7 +3,7 @@
   "object": "invoiceitem",
   "amount": 2500,
   "currency": "usd",
-  "customer": "cus_HJW8pCbjxjcjb4",
+  "customer": "cus_HJYfEnsfVLxB3C",
   "date": 1589410855,
   "description": "One-time setup fee",
   "discountable": true,

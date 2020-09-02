@@ -1,6 +1,6 @@
 {
   "object": "list",
-  "url": "/v1/customers/cus_HJW8pCbjxjcjb4/sources",
+  "url": "/v1/customers/cus_HJYfEnsfVLxB3C/sources",
   "has_more": false,
   "data": [
     {
@@ -11,7 +11,7 @@
       "bank_name": "STRIPE TEST BANK",
       "country": "US",
       "currency": "usd",
-      "customer": "cus_HJW8pCbjxjcjb4",
+      "customer": "cus_HJYfEnsfVLxB3C",
       "fingerprint": "1JWtPxqbdX5Gamtc",
       "last4": "6789",
       "metadata": {},
