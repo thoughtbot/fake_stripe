@@ -270,11 +270,7 @@ module FakeStripe
     end
 
     get '/v1/customers/:customer_id/sources' do
-      if params[:object] == "bank_account"
-        json_response 200, fixture('list_bank_accounts')
-      else
-        json_response 200, fixture('list_cards')
-      end
+      json_response 200, fixture('list_bank_accounts')
     end
 
     # Source (payment method)
