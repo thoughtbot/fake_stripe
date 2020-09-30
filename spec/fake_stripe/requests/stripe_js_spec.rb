@@ -55,5 +55,15 @@ describe "Stub Stripe JS" do
         expect(response).to include custom_token
       end
     end
+
+    it "returns field validation errors" do
+      url = URI.parse(STRIPE_JS_HOST)
+      url.path = "/v3/"
+      errors = "resolve({ error: { message: errorMessage() } })"
+
+      response = Net::HTTP.get(url)
+
+      expect(response).to include errors
+    end
   end
 end
