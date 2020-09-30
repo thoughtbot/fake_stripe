@@ -52,12 +52,4 @@ describe "Stub Stripe JS" do
       end
     end
   end
-
-  def http_post(uri, json)
-    header = {"Content-Type": "text/json"}
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Post.new(uri.request_uri, header)
-    request.body = json
-    http.request(request)
-  end
 end

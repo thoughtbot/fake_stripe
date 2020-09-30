@@ -28,15 +28,11 @@ module FakeStripe
       content_type "text/javascript"
       status 200
       js = IO.read(file_path)
-      if defined?(@@token)
-        js.gsub(/tok_123/, @@token)
+      if defined?(FakeStripe.js_v3_token)
+        js.gsub(/tok_123/, FakeStripe.js_v3_token)
       else
         js
       end
-    end
-
-    post "/v3/" do
-      @@token = JSON.load(request.body).dig("token", "id")
     end
   end
 end
