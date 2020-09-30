@@ -34,17 +34,26 @@ describe "Stub Stripe JS" do
       expect(response).to include "class Element"
     end
 
-    it "sets the token in requests" do
-      custom_token = "abc123"
-      FakeStripe.configure do |config|
-        config.js_v3_token = custom_token
+    context "when a js_v3_token is set" do
+      let!(:previous_js_v3_token) { FakeStripe.js_v3_token }
+      after do
+        FakeStripe.configure do |config|
+          config.js_v3_token = previous_js_v3_token
+        end
       end
-      url = URI.parse(STRIPE_JS_HOST)
-      url.path = "/v3/"
 
-      response = Net::HTTP.get(url)
+      it "sets the token in requests" do
+        custom_token = "abc123"
+        FakeStripe.configure do |config|
+          config.js_v3_token = custom_token
+        end
+        url = URI.parse(STRIPE_JS_HOST)
+        url.path = "/v3/"
 
-      expect(response).to include custom_token
+        response = Net::HTTP.get(url)
+
+        expect(response).to include custom_token
+      end
     end
   end
 end
