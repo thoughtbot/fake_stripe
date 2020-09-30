@@ -34,22 +34,17 @@ describe "Stub Stripe JS" do
       expect(response).to include "class Element"
     end
 
-    context "POST v3" do
-      it "sets the token in requests" do
-        token = "tok_abc123"
-        url = URI.parse(STRIPE_JS_HOST)
-        url.path = "/v3/"
-
-        params = {
-          token: {
-            id: token,
-          }
-        }.to_json
-        http_post(url, params)
-
-        response = Net::HTTP.get(url)
-        expect(response).to include token
+    it "sets the token in requests" do
+      custom_token = "abc123"
+      FakeStripe.configure do |config|
+        config.js_v3_token = custom_token
       end
+      url = URI.parse(STRIPE_JS_HOST)
+      url.path = "/v3/"
+
+      response = Net::HTTP.get(url)
+
+      expect(response).to include custom_token
     end
   end
 end

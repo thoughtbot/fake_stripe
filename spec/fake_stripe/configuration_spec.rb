@@ -23,25 +23,25 @@ describe FakeStripe::Configuration, '#fixture_path' do
   end
 
   context 'when setting the stripe token' do
-    let!(:new_stripe_token) { 'abc123' }
-    let!(:previous_stripe_token) { FakeStripe.stripe_token }
+    let!(:new_js_v3_token) { 'abc123' }
+    let!(:previous_js_v3_token) { FakeStripe.js_v3_token }
 
     after do
       FakeStripe.configure do |config|
-        config.stripe_token = previous_stripe_token
+        config.js_v3_token = previous_js_v3_token
       end
     end
 
     it 'returns the config stripe token' do
       FakeStripe.configure do |config|
-        config.stripe_token = new_stripe_token
+        config.js_v3_token = new_js_v3_token
       end
 
-      expect(FakeStripe.stripe_token).to eq new_stripe_token
+      expect(FakeStripe.js_v3_token).to eq new_js_v3_token
     end
 
     it 'returns a default token' do
-      expect(FakeStripe.stripe_token).to eq 'tok_123'
+      expect(FakeStripe.js_v3_token).to eq 'tok_123'
     end
   end
 end
