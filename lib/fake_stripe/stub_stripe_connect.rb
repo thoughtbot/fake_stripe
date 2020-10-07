@@ -33,5 +33,11 @@ module FakeStripe
       uri.query = URI.encode_www_form(state: params[:state], code: CODE)
       redirect uri
     end
+
+    get "/oauth/authorize" do
+      uri = URI(params[:redirect_uri])
+      uri.query = URI.encode_www_form(state: params[:state], code: CODE)
+      redirect uri
+    end
   end
 end
