@@ -75,6 +75,39 @@ RSpec.configure do |config|
 end
 ```
 
+By default response fixtures can be found in the `lib/fake_stripe/fixtures`
+directory of this gem. If you want to use your own fixtures, you can do:
+```ruby
+FakeStripe.configure do |config|
+  config.fixture_path = "test/fixtures/stripe"
+end
+```
+
+If you want to mix in your own fixtures but fallback to fake_stripes fixtures:
+```ruby
+FakeStripe.configure do |config|
+  config.fixture_paths = [
+    "test/fixtures",
+    FakeStripe::Configuration::DEFAULT_FIXTURE_PATH
+  ]
+end
+```
+
+Finally, if you want to override a fixture to use on a specific endpoint you can
+do the following. This is especially useful if you are fetching something like a
+subscription and testing against different status values.
+
+```ruby
+FakeStripe.configure do |config|
+  # Set up the fixure paths so fake_stripe can find the new fixture
+  config.fixture_paths = [
+    FakeStripe::Configuration::DEFAULT_FIXTURE_PATH
+    "test/fixtures",
+  ]
+  fake_stripe.fixture_override 'retrieve_subscription', 'subscription_retrieve_active'
+end
+```
+
 ## Contributing
 
 Please see [CONTRIBUTING.md][1] for more details.

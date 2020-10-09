@@ -361,8 +361,12 @@ module FakeStripe
     private
 
     def fixture(file_name)
-      file_path = File.join(FakeStripe.fixture_path, "#{file_name}.json")
-      File.open(file_path, 'rb').read
+      file_name = FakeStripe.fixure_mapping[file_name]
+      fixture_path = FakeStripe.fixture_paths.find do |fixture_path|
+        File.exist? File.join(fixture_path, "#{file_name}.json")
+      end
+
+      File.open(File.join(fixture_path, "#{file_name}.json"), 'rb').read
     end
 
     def json_response(response_code, response_body)
