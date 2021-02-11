@@ -2,6 +2,14 @@ require 'sinatra/base'
 
 module FakeStripe
   class StubApp < Sinatra::Base
+    # Country Specs
+    get '/v1/country_specs' do
+      json_response 201, fixture('list_country_specs')
+    end
+    get '/v1/country_specs/:id' do
+      json_response 201, fixture('retrieve_country_spec')
+    end
+
     # Terminal
 
     # Connection tokens

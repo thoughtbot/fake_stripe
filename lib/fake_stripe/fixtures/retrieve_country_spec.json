@@ -1,0 +1,133 @@
+{
+  "id": "US",
+  "object": "country_spec",
+  "default_currency": "usd",
+  "supported_bank_account_currencies": {
+    "usd": [
+      "US"
+    ]
+  },
+  "supported_payment_currencies": [
+    "usd",
+    "aed",
+    "afn",
+    "..."
+  ],
+  "supported_payment_methods": [
+    "ach",
+    "card",
+    "stripe"
+  ],
+  "supported_transfer_countries": [
+    "US",
+    "AT",
+    "AU",
+    "BE",
+    "BG",
+    "CA",
+    "CH",
+    "CY",
+    "CZ",
+    "DE",
+    "DK",
+    "EE",
+    "ES",
+    "FI",
+    "FR",
+    "GB",
+    "GR",
+    "HK",
+    "IE",
+    "IT",
+    "LT",
+    "LU",
+    "LV",
+    "MT",
+    "NL",
+    "NO",
+    "NZ",
+    "PL",
+    "PT",
+    "RO",
+    "SE",
+    "SG",
+    "SI",
+    "SK"
+  ],
+  "verification_fields": {
+    "company": {
+      "additional": [
+        "representative.verification.document"
+      ],
+      "minimum": [
+        "business_profile.mcc",
+        "business_profile.url",
+        "business_type",
+        "company.address.city",
+        "company.address.line1",
+        "company.address.postal_code",
+        "company.address.state",
+        "company.name",
+        "company.owners_provided",
+        "company.phone",
+        "company.tax_id",
+        "external_account",
+        "owners.address.city",
+        "owners.address.line1",
+        "owners.address.postal_code",
+        "owners.address.state",
+        "owners.dob.day",
+        "owners.dob.month",
+        "owners.dob.year",
+        "owners.email",
+        "owners.first_name",
+        "owners.last_name",
+        "owners.phone",
+        "owners.ssn_last_4",
+        "owners.verification.document",
+        "representative.address.city",
+        "representative.address.line1",
+        "representative.address.postal_code",
+        "representative.address.state",
+        "representative.dob.day",
+        "representative.dob.month",
+        "representative.dob.year",
+        "representative.email",
+        "representative.first_name",
+        "representative.last_name",
+        "representative.phone",
+        "representative.relationship.executive",
+        "representative.relationship.title",
+        "representative.ssn_last_4",
+        "tos_acceptance.date",
+        "tos_acceptance.ip"
+      ]
+    },
+    "individual": {
+      "additional": [
+        "individual.id_number",
+        "individual.verification.document"
+      ],
+      "minimum": [
+        "business_profile.mcc",
+        "business_profile.url",
+        "business_type",
+        "external_account",
+        "individual.address.city",
+        "individual.address.line1",
+        "individual.address.postal_code",
+        "individual.address.state",
+        "individual.dob.day",
+        "individual.dob.month",
+        "individual.dob.year",
+        "individual.email",
+        "individual.first_name",
+        "individual.last_name",
+        "individual.phone",
+        "individual.ssn_last_4",
+        "tos_acceptance.date",
+        "tos_acceptance.ip"
+      ]
+    }
+  }
+}
