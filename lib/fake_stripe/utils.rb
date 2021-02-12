@@ -7,6 +7,8 @@ module FakeStripe
     def self.find_available_port
       server = TCPServer.new(FIND_AVAILABLE_PORT)
       server.addr[1]
+    rescue Errno::EADDRINUSE
+      retry
     ensure
       server.close if server
     end
