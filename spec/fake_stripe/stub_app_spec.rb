@@ -1,6 +1,23 @@
 require 'spec_helper'
 
 describe FakeStripe::StubApp do
+  # Country Specs
+  describe "GET /v1/country_specs" do
+    it "returns a list of country specs" do
+      result = Stripe::CountrySpec.list({limit: 100})
+
+      expect(result.data.first.object).to eq("country_spec")
+    end
+  end
+  describe "GET /v1/country_specs/:id" do
+    it "returns a list of country specs" do
+      result = Stripe::CountrySpec.retrieve("US")
+
+      expect(result.object).to eq("country_spec")
+      expect(result.id).to eq("US")
+    end
+  end
+
   # Accounts
   describe "POST /v1/accounts" do
     it "returns an account response" do

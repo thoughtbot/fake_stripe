@@ -4,6 +4,10 @@ describe 'Stub app' do
   include Rack::Test::Methods
 
   TESTS = {
+    # Country Specs
+    'GET /country_specs' => { route: '/v1/country_specs', method: :get},
+    'GET /country_specs/:id' => { route: '/v1/country_specs/:id', method: :get},
+
     # Charges
     'POST charges' => { route: '/v1/charges', method: :post },
     'GET charges/:charge_id' => { route: '/v1/charges/1', method: :get },
