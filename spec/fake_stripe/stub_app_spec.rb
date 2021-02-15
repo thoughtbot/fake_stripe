@@ -1,6 +1,20 @@
 require 'spec_helper'
 
 describe FakeStripe::StubApp do
+  # AccountLinks
+  describe "POST /v1/account_links" do
+    it "returns a new account link" do
+      result = Stripe::AccountLink.create({
+        account: 'acct_184AzvL91mzKIzpG',
+        refresh_url: 'https://example.com/reauth',
+        return_url: 'https://example.com/return',
+        type: 'account_onboarding'
+      })
+
+      expect(result.object).to eq("account_link")
+    end
+  end
+
   # Country Specs
   describe "GET /v1/country_specs" do
     it "returns a list of country specs" do

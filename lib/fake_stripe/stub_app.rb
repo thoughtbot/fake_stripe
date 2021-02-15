@@ -2,6 +2,11 @@ require 'sinatra/base'
 
 module FakeStripe
   class StubApp < Sinatra::Base
+    # AccountLinks
+    post '/v1/account_links' do
+      json_response 201, fixture('create_account_link')
+    end
+
     # Country Specs
     get '/v1/country_specs' do
       json_response 201, fixture('list_country_specs')
