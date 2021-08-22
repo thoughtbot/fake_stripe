@@ -1,0 +1,96 @@
+{
+  "id": "acct_1032D82eZvKYlo2C",
+  "object": "account",
+  "business_profile": {
+    "mcc": null,
+    "name": "Stripe.com",
+    "product_description": null,
+    "support_address": null,
+    "support_email": null,
+    "support_phone": null,
+    "support_url": null,
+    "url": null
+  },
+  "business_type": null,
+  "charges_enabled": false,
+  "country": "US",
+  "created": 1385798567,
+  "default_currency": "usd",
+  "details_submitted": false,
+  "email": "site@stripe.com",
+  "external_accounts": {
+    "object": "list",
+    "data": [],
+    "has_more": false,
+    "total_count": 0,
+    "url": "/v1/accounts/acct_1032D82eZvKYlo2C/external_accounts"
+  },
+  "metadata": {},
+  "payouts_enabled": false,
+  "requirements": {
+    "current_deadline": null,
+    "currently_due": [
+      "business_type",
+      "business_url",
+      "company.address.city",
+      "company.address.line1",
+      "company.address.postal_code",
+      "company.address.state",
+      "person_8UayFKIMRJklog.dob.day",
+      "person_8UayFKIMRJklog.dob.month",
+      "person_8UayFKIMRJklog.dob.year",
+      "person_8UayFKIMRJklog.first_name",
+      "person_8UayFKIMRJklog.last_name",
+      "product_description",
+      "support_phone",
+      "tos_acceptance.date",
+      "tos_acceptance.ip"
+    ],
+    "disabled_reason": "requirements.past_due",
+    "eventually_due": [
+      "business_url",
+      "product_description",
+      "support_phone",
+      "tos_acceptance.date",
+      "tos_acceptance.ip"
+    ],
+    "past_due": []
+  },
+  "settings": {
+    "branding": {
+      "icon": null,
+      "logo": null,
+      "primary_color": null
+    },
+    "card_payments": {
+      "decline_on": {
+        "avs_failure": true,
+        "cvc_failure": false
+      },
+      "statement_descriptor_prefix": null
+    },
+    "dashboard": {
+      "display_name": "Stripe.com",
+      "timezone": "US/Pacific"
+    },
+    "payments": {
+      "statement_descriptor": "",
+      "statement_descriptor_kana": null,
+      "statement_descriptor_kanji": null
+    },
+    "payouts": {
+      "debit_negative_balances": true,
+      "schedule": {
+        "delay_days": 7,
+        "interval": "daily"
+      },
+      "statement_descriptor": null
+    }
+  },
+  "tos_acceptance": {
+    "date": null,
+    "ip": null,
+    "user_agent": null
+  },
+  "type": "custom"
+}

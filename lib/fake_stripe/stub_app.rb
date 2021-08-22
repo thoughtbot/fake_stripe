@@ -2,6 +2,118 @@ require 'sinatra/base'
 
 module FakeStripe
   class StubApp < Sinatra::Base
+     
+    post '/v1/accounts' do
+      json_response 200, fixture('create_account_method')
+    end
+
+    get '/v1/accounts/:id' do
+      json_response 200, fixture('retrieve_account_method')
+    end
+
+    # ExternalAccounts https://stripe.com/docs/api/external_account_bank_accounts
+    post '/v1/accounts/:account_id/external_accounts' do
+      json_response 200, fixture('retrieve_external_account')
+    end
+
+    get '/v1/accounts/:account_id/external_accounts/:external_account_id' do
+      json_response 200, fixture('retrieve_external_account')
+    end
+
+    post '/v1/accounts/:account_id/external_accounts/:external_account_id' do
+      json_response 200, fixture('retrieve_external_account')
+    end
+
+    delete '/v1/accounts/:account_id/external_accounts/:external_account_id' do
+      json_response 200, fixture('delete_external_account')
+    end
+
+    get '/v1/accounts/:account_id/external_accounts' do
+      if params[:object] == 'bank_account'
+        json_response 200, fixture('list_bank_external_accounts')
+      elsif params[:object] == 'card'
+        json_response 200, fixture('list_card_external_accounts')
+      end
+    end
+
+    # PaymentMethods https://stripe.com/docs/api/payment_methods
+    post '/v1/payment_methods' do
+      json_response 200, fixture('attach_payment_method')
+    end
+
+    get '/v1/payment_methods/:id' do
+      json_response 200, fixture('attach_payment_method')
+    end
+
+    post '/v1/payment_methods/:id' do
+      json_response 200, fixture('attach_payment_method')
+    end
+
+    get '/v1/payment_methods' do
+      json_response 200, fixture('list_payment_methods')
+    end
+
+    post '/v1/payment_methods/:id/attach' do
+      json_response 200, fixture('attach_payment_method')
+    end
+
+    post '/v1/payment_methods/:id/detach' do
+      json_response 200, fixture('attach_payment_method')
+    end
+
+    # SetupIntents https://stripe.com/docs/api/setup_intents
+    post '/v1/setup_intents' do
+      json_response 200, fixture('create_setup_intent')
+    end
+
+    get '/v1/setup_intents/:id' do
+      json_response 200, fixture('retrieve_setup_intent')
+    end
+
+    post '/v1/setup_intents/:id' do
+      json_response 200, fixture('update_setup_intent')
+    end
+
+    post '/v1/setup_intents/:id/confirm' do
+      json_response 200, fixture('confirm_setup_intent')
+    end
+
+    post '/v1/setup_intents/:id/cancel' do
+      json_response 200, fixture('cancel_setup_intent')
+    end
+
+    get '/v1/setup_intents' do
+      json_response 200, fixture('list_setup_intents')
+    end
+
+    # PaymentIntents https://stripe.com/docs/api/payment_intents
+    post '/v1/payment_intents' do
+      json_response 200, fixture('create_payment_intent')
+    end
+
+    get '/v1/payment_intents/:id' do
+      json_response 200, fixture('retrieve_payment_intent')
+    end
+
+    post '/v1/payment_intents/:id' do
+      json_response 200, fixture('update_payment_intent')
+    end
+
+    post '/v1/payment_intents/:id/confirm' do
+      json_response 200, fixture('confirm_payment_intent')
+    end
+
+    post '/v1/payment_intents/:id/capture' do
+      json_response 200, fixture('capture_payment_intent')
+    end
+
+    post '/v1/payment_intents/:id/cancel' do
+      json_response 200, fixture('cancel_payment_intent')
+    end
+
+    get '/v1/payment_intents' do
+      json_response 200, fixture('list_payment_intents')
+    end
 
     # Charges
     post '/v1/charges' do
@@ -356,6 +468,11 @@ module FakeStripe
 
     get '/v1/tokens/:token_id' do
       json_response 200, fixture('retrieve_token')
+    end
+
+    # Ephemeral Keys
+    post '/v1/ephemeral_keys' do
+      json_response 201, fixture('create_ephemeral_key')
     end
 
     private

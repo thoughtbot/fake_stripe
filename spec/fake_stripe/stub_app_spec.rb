@@ -200,4 +200,12 @@ describe FakeStripe::StubApp do
       end
     end
   end
+
+  describe "POST /v1/ephemeral_keys" do
+    it "returns an ephemeral_key response" do
+      result = Stripe::EphemeralKey.create({customer: '123'}, stripe_version: '123')
+
+      expect(result.object).to eq("ephemeral_key")
+    end
+  end
 end

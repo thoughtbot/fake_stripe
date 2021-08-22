@@ -1,0 +1,11 @@
+ {
+  "id": "ephkey_abcdefghijklmop",
+  "object": "ephemeral_key",
+  "associated_objects": [
+    {"id":"cus_abcdefghijklmnop","type":"customer"}
+  ],
+  "created": 1509726002,
+  "expires": 1509729602,
+  "livemode": false,
+  "secret": "ek_test_abcdefghijklmnop"
+}

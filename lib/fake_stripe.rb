@@ -8,8 +8,8 @@ module FakeStripe
   extend Configuration
 
   VALID_CARD_NUMBER = '4242424242424242'
-  STRIPE_OBJECTS = %w{card charge coupon customer invoice invoiceitem plan
-    recipient refund subscription token transfer}.freeze
+  STRIPE_OBJECTS = %w{card charge coupon customer invoice invoiceitem payment_method plan
+    recipient refund setup_intent payment_intent subscription token transfer}.freeze
   CARD_OBJECT_TYPE = "card"
   BANK_ACCOUNT_OBJECT_TYPE = "bank_account"
 
