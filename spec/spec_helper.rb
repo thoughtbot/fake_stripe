@@ -14,6 +14,7 @@ RSpec.configure do |config|
   end
 
   config.before :each do
+    Stripe.api_key = "FAKE_STRIPE_API_KEY"
     FakeStripe.stub_stripe
   end
 
