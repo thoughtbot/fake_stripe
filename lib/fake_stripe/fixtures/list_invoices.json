@@ -29,7 +29,7 @@
       "customer_shipping": null,
       "customer_tax_exempt": "none",
       "customer_tax_ids": [],
-      "default_payment_method": null,
+      "default_payment_method": "pm_1FzVb62eZvKYlo2CKPwNF9Bz",
       "default_source": null,
       "default_tax_rates": [],
       "description": null,

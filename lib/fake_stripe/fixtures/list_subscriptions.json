@@ -18,7 +18,7 @@
       "current_period_start": 1589995292,
       "customer": "cus_HJYfEnsfVLxB3C",
       "days_until_due": null,
-      "default_payment_method": null,
+      "default_payment_method": "pm_1FzVb62eZvKYlo2CKPwNF9Bz",
       "default_source": null,
       "default_tax_rates": [],
       "discount": null,

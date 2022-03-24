@@ -22,7 +22,7 @@
       "billing_thresholds": null,
       "collection_method": null,
       "coupon": null,
-      "default_payment_method": null,
+      "default_payment_method": "pm_1FzVb62eZvKYlo2CKPwNF9Bz",
       "default_tax_rates": [],
       "end_date": 1616014562,
       "invoice_settings": null,
