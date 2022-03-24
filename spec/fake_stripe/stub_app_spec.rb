@@ -306,6 +306,14 @@ describe FakeStripe::StubApp do
       expect(customer.invoice_settings.default_payment_method).to eq(payment_method.id)
       expect(customer.id).to eq(payment_method.customer)
     end
+    it "retrieves a customer with a default payment method" do
+      customer = Stripe::Customer.retrieve("cus_HJYfEnsfVLxB3C")
+      payment_method = Stripe::PaymentMethod.create
+
+      expect(customer.invoice_settings.default_payment_method).to eq(payment_method.id)
+      expect(customer.id).to eq(payment_method.customer)
+
+    end
     it "increments the customer counter" do
       expect do
         Stripe::Customer.create

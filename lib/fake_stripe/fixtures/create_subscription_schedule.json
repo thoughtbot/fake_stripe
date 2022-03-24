@@ -12,7 +12,7 @@
   "default_settings": {
     "billing_thresholds": null,
     "collection_method": "charge_automatically",
-    "default_payment_method": null,
+    "default_payment_method": "pm_1FzVb62eZvKYlo2CKPwNF9Bz",
     "invoice_settings": null
   },
   "end_behavior": "release",
