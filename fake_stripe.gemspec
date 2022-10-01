@@ -14,10 +14,10 @@ Gem::Specification.new do |s|
   s.files = Dir["{lib}/**/*"] + ['CONTRIBUTING.md', 'LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'capybara'
-  s.add_dependency 'sinatra'
+  s.add_dependency 'sinatra', '2.1.0'
   s.add_dependency 'webmock'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'puma'
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'stripe'
+  s.add_development_dependency 'stripe', '5.55.0'
 end
