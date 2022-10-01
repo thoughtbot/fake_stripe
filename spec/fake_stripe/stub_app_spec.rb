@@ -83,14 +83,14 @@ describe FakeStripe::StubApp do
 
   describe 'POST /v1/charges/:charge_id/refund' do
     it 'returns a fake refund response' do
-      result = Stripe::Charge.retrieve('ABC123').refund
+      result = Stripe::Refund.create(charge: 'ABC123')
 
       expect(result.refunded).to eq true
     end
 
     it 'increments the refund counter' do
       expect do
-        Stripe::Charge.retrieve('ABC123').refund
+        result = Stripe::Refund.create(charge: 'ABC123')
       end.to change(FakeStripe, :refund_count).by(1)
     end
   end
