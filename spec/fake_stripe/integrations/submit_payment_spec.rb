@@ -10,7 +10,7 @@ RSpec.describe 'Stripe payment form', type: :feature, js: true do
     Capybara.default_max_wait_time = 30
   end
 
-  it 'allows the  user to complete a payment' do
+  it 'allows the user to complete a payment' do
     visit '/pay'
     fill_in 'cardnumber', with: '4242424242424242'
     fill_in 'exp-date', with: '12/25'
