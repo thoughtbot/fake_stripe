@@ -44,4 +44,67 @@ describe FakeStripe::Configuration, '#fixture_path' do
       expect(FakeStripe.js_v3_token).to eq 'tok_123'
     end
   end
+
+  context 'when setting the api_key' do
+    let!(:new_api_key) { 'sk_1234' }
+    let!(:previous_api_key) { FakeStripe.api_key }
+
+    before do
+      FakeStripe.configure do |config|
+        config.api_key = new_api_key
+      end
+    end
+
+    after do
+      FakeStripe.configure do |config|
+        config.api_key = previous_api_key
+      end
+    end
+
+    it 'returns the api key' do
+      expect(FakeStripe.api_key).to eq new_api_key
+    end
+  end
+
+  context 'when setting the stripe_account' do
+    let!(:new_stripe_account) { 'acct_1234' }
+    let!(:previous_stripe_account) { FakeStripe.stripe_account }
+
+    before do
+      FakeStripe.configure do |config|
+        config.stripe_account = new_stripe_account
+      end
+    end
+
+    after do
+      FakeStripe.configure do |config|
+        config.stripe_account = previous_stripe_account
+      end
+    end
+
+    it 'returns the api key' do
+      expect(FakeStripe.stripe_account).to eq new_stripe_account
+    end
+  end
+
+  context 'when setting the api_host' do
+    let!(:new_api_host) { 'http://localhost:32984' }
+    let!(:previous_api_host) { 'api.stripe.com' }
+
+    before do
+      FakeStripe.configure do |config|
+        config.api_host= new_api_host
+      end
+    end
+
+    after do
+      FakeStripe.configure do |config|
+        config.api_host= previous_api_host
+      end
+    end
+
+    it 'returns the api_host' do
+      expect(FakeStripe.api_host).to eq new_api_host
+    end
+  end
 end

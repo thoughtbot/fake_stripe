@@ -9,7 +9,7 @@ module FakeStripe
 
   VALID_CARD_NUMBER = '4242424242424242'
   STRIPE_OBJECTS = %w{card charge coupon customer invoice invoiceitem plan
-    recipient refund subscription token transfer}.freeze
+    payment_intent recipient refund subscription token transfer}.freeze
   CARD_OBJECT_TYPE = "card"
   BANK_ACCOUNT_OBJECT_TYPE = "bank_account"
 
@@ -34,6 +34,7 @@ module FakeStripe
     FakeStripe.reset
     FakeStripe::StubStripeJS.boot_once
     FakeStripe::StubStripeConnect.boot_once
+    FakeStripe::StubApp.boot_once
     stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::StubApp)
   end
 end

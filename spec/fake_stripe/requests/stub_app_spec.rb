@@ -14,6 +14,11 @@ describe 'Stub app' do
     'POST charges/:charge_id/capture' =>
       { route: '/v1/charges/1/capture', method: :post },
     'GET charges' => { route: '/v1/charges', method: :get },
+    # PaymentIntents
+    'POST payment_intents' => { route: '/v1/payment_intents', method: :post },
+    'GET payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/1', method: :get },
+    'POST payment_intents/:payment_intent_id' => { route: '/v1/payment_intents/1', method: :post },
+    'POST payment_intents/:payment_intent_id/confirm' => { route: '/v1/payment_intents/1/confirm', method: :post },
     # Customers
     'POST customers' => { route: '/v1/customers', method: :post },
     'GET customers/:customer_id' => { route: '/v1/customers/1', method: :get },

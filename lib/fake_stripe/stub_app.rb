@@ -1,7 +1,9 @@
 require 'sinatra/base'
+require 'fake_stripe/bootable'
 
 module FakeStripe
   class StubApp < Sinatra::Base
+    extend Bootable
 
     # Charges
     post '/v1/charges' do
@@ -38,6 +40,25 @@ module FakeStripe
     get '/v1/charges' do
       json_response 200, fixture('list_charges')
     end
+
+    # PaymentIntents
+    post '/v1/payment_intents' do
+      FakeStripe.payment_intent_count += 1
+      json_response 200, fixture('create_payment_intent')
+    end
+
+    post '/v1/payment_intents/:payment_intent_id/confirm' do
+      json_response 200, fixture('confirm_payment_intent')
+    end
+
+    get '/v1/payment_intents/:payment_intent_id' do
+      json_response 200, fixture('retrieve_payment_intent')
+    end
+
+    post '/v1/payment_intents/:payment_intent_id' do
+      json_response 200, fixture('update_payment_intent')
+    end
+
 
     # Customers
     post '/v1/customers' do

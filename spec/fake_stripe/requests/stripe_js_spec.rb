@@ -31,7 +31,7 @@ describe "Stub Stripe JS" do
 
       response = Net::HTTP.get(url)
 
-      expect(response).to include "class Element"
+      expect(response).to include "class StripeElement"
     end
 
     context "when a js_v3_token is set" do
