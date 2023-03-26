@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'capybara'
   s.add_dependency 'sinatra'
   s.add_dependency 'webmock'
+  s.add_dependency 'sinatra-cors'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'puma'
   s.add_development_dependency 'rspec'
@@ -24,4 +25,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'cuprite'
+  s.add_development_dependency 'sinatra-cors'
 end

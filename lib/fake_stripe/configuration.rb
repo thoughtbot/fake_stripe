@@ -10,7 +10,7 @@ module FakeStripe
     DEFAULT_TOKEN = "tok_123".freeze
     DEFAULT_API_KEY = "sk_1234"
     DEFAULT_STRIPE_ACCOUNT = "acct_123"
-    DEFAULT_API_HOST = "api.stripe.com"
+    DEFAULT_API_HOST = "https://api.stripe.com"
 
     def fixture_path
       @fixture_path or DEFAULT_FIXTURE_PATH
@@ -29,7 +29,7 @@ module FakeStripe
     end
 
     def api_host
-      @api_host || DEFFAULT_API_HOST
+      @api_host || DEFAULT_API_HOST
     end
 
     def configure

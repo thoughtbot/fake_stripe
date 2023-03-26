@@ -39,5 +39,6 @@ module FakeStripe
   end
 end
 
+STRIPE_API_HOST = "http://localhost:#{FakeStripe::StubApp.server_port}"
 STRIPE_JS_HOST = "http://localhost:#{FakeStripe::StubStripeJS.server_port}"
 STRIPE_CONNECT_HOST = "http://localhost:#{FakeStripe::StubStripeConnect.server_port}"

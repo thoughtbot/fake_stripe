@@ -1,9 +1,17 @@
 require 'sinatra/base'
 require 'fake_stripe/bootable'
+require 'sinatra/cors'
 
 module FakeStripe
   class StubApp < Sinatra::Base
     extend Bootable
+
+    register Sinatra::Cors
+    set :allow_origin, ".*"
+    set :allow_methods, "GET,HEAD,POST"
+    set :allow_headers, "content-type,if-modified-since"
+    set :expose_headers, "location,link"
+    set :protection, :except => [:frame_options, :json_csrf]
 
     # Charges
     post '/v1/charges' do
@@ -48,6 +56,7 @@ module FakeStripe
     end
 
     post '/v1/payment_intents/:payment_intent_id/confirm' do
+      FakeStripe.charge_count += 1
       json_response 200, fixture('confirm_payment_intent')
     end
 

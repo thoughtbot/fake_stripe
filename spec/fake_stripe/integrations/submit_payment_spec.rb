@@ -8,6 +8,9 @@ RSpec.describe 'Stripe payment form', type: :feature, js: true do
     Capybara.app = FakeSite::App
     Capybara.current_driver = :apparition
     Capybara.default_max_wait_time = 30
+    FakeStripe.configure do |config|
+      config.api_host = STRIPE_API_HOST
+    end
   end
 
   it 'allows the user to complete a payment' do
@@ -18,5 +21,7 @@ RSpec.describe 'Stripe payment form', type: :feature, js: true do
     click_button 'Pay'
 
     expect(page).to have_content 'Payment succeeded'
+    expect(FakeStripe.payment_intent_count).to eq(1)
+    expect(FakeStripe.charge_count).to eq(1)
   end
 end

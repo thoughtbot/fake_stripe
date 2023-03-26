@@ -88,6 +88,13 @@ describe FakeStripe::StubApp do
 
       expect(result.status).to eq 'succeeded'
     end
+
+    it 'creates a charge' do
+
+      expect do
+        Stripe::PaymentIntent.confirm('pi_1234')
+      end.to change(FakeStripe, :charge_count).by(1)
+    end
   end
 
   describe 'POST /v1/refunds' do

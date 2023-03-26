@@ -18,7 +18,7 @@
       <button id="submit-button" type="submit">Pay $10</button>
     </form>
     <script>
-      var stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+      var stripe = Stripe();
       var elements = stripe.elements();
       var cardNumberElement = elements.create('cardNumber');
       var cardExpiryElement = elements.create('cardExpiry');

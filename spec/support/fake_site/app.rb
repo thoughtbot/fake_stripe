@@ -1,7 +1,9 @@
 require 'sinatra/base'
+require 'sinatra/cors'
 
 module FakeSite
   class App < Sinatra::Base
+    register Sinatra::Cors
 
     def self.url=(url)
       @@url = url
@@ -20,7 +22,11 @@ module FakeSite
         currency: 'usd'
       )
 
-      erb :pay, locals: { stripe_js_url: url, client_secret: payment_intent.client_secret }
+      erb :pay, locals: {
+        stripe_publishable_key: 'pk_test_1234',
+        stripe_js_url: url,
+        client_secret: payment_intent.client_secret
+      }
     end
 
     post "/confirmation" do
