@@ -80,6 +80,19 @@ describe "Stub Stripe JS" do
 
         expect(response).to include api_host
       end
+
+      it "sets the stripe_account" do
+        stripe_account = "acct_12345"
+        FakeStripe.configure do |config|
+          config.stripe_account = stripe_account
+        end
+        url = URI.parse(STRIPE_JS_HOST)
+        url.path = "/v3/"
+
+        response = Net::HTTP.get(url)
+
+        expect(response).to include stripe_account
+      end
     end
 
     it "returns field validation errors" do

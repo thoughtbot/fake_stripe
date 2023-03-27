@@ -37,6 +37,9 @@ module FakeStripe
       if defined?(FakeStripe.api_host)
         js.gsub!(/https:\/\/api\.stripe\.com/, FakeStripe.api_host)
       end
+      if defined?(FakeStripe.stripe_account)
+        js.gsub!(/acct_123/, FakeStripe.stripe_account)
+      end
       js
     end
   end
