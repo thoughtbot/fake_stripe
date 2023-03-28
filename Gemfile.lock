@@ -3,7 +3,7 @@ PATH
   specs:
     fake_stripe (0.3.0)
       capybara
-      sinatra (~> 3.0)
+      sinatra (>= 2.2.2)
       sinatra-cors
       webmock
 

@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{lib}/**/*"] + ['CONTRIBUTING.md', 'LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'capybara'
-  s.add_dependency 'sinatra', '~> 3.0'
+  s.add_dependency 'sinatra', '>= 2.2.2'
   s.add_dependency 'sinatra-cors'
   s.add_dependency 'webmock'
   s.add_development_dependency 'pry'
