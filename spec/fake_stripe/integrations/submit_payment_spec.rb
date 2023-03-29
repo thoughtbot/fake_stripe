@@ -39,4 +39,18 @@ RSpec.describe 'Stripe payment form', type: :feature, js: true do
       expect(FakeStripe.charge_count).to eq(0)
     end
   end
+
+  context 'when a request fails' do
+    it 'rejects the promise' do
+      visit '/rejected'
+      fill_in 'cardnumber', with: '4000000000000002'
+      fill_in 'exp-date', with: '12/25'
+      fill_in 'cvc', with: '123'
+      click_button 'Pay'
+
+      expect(page).to have_content 'Payment Intent not found'
+      expect(FakeStripe.payment_intent_count).to eq(0)
+      expect(FakeStripe.charge_count).to eq(0)
+    end
+  end
 end

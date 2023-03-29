@@ -44,6 +44,17 @@ module FakeSite
       }
     end
 
+    get "/rejected" do
+      url = URI.parse(STRIPE_JS_HOST)
+      url.path = "/v3/"
+
+      erb :pay, locals: {
+        stripe_publishable_key: 'pk_test_1234',
+        stripe_js_url: url,
+        client_secret: "pi_doesnotexist_secret"
+      }
+    end
+
     post "/confirmation" do
       payment_intent_id = params[:payment_intent_id]
       erb :confirmation, locals: {

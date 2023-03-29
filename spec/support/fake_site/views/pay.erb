@@ -48,6 +48,9 @@
             document.querySelector('[name="message"]').value = 'Payment succeeded';
           }
           document.getElementById('payment-form').submit();
+        }).catch(function(error) {
+          document.querySelector('[name="message"]').value = error.message;
+          document.getElementById('payment-form').submit();
         });
       });
     </script>
