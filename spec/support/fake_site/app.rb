@@ -29,8 +29,27 @@ module FakeSite
       }
     end
 
+    get "/declined" do
+      url = URI.parse(STRIPE_JS_HOST)
+      url.path = "/v3/"
+
+      payment_intent = Stripe::PaymentIntent.create(
+        amount: 1000,
+        currency: 'usd'
+      )
+      erb :pay, locals: {
+        stripe_publishable_key: 'pk_test_1234',
+        stripe_js_url: url,
+        client_secret: "#{payment_intent.client_secret}_declined"
+      }
+    end
+
     post "/confirmation" do
-      erb :confirmation
+      payment_intent_id = params[:payment_intent_id]
+      erb :confirmation, locals: {
+        payment_intent_id: payment_intent_id,
+        message: params[:message]
+      }
     end
   end
 end

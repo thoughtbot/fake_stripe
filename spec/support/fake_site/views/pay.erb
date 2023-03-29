@@ -14,7 +14,9 @@
       <div id="cardCvc"></div>
       <label for="postalCode">Postal Code</label>
       <div id="postalCode"></div>
-      <input type="hidden" name="payment_intent_id" value="<%= client_secret %>">
+      <input type="hidden" name="payment_intent_client_secret" value="<%= client_secret %>">
+      <input type="hidden" name="payment_intent_id">
+      <input type="hidden" name="message">
       <button id="submit-button" type="submit">Pay $10</button>
     </form>
     <script>
@@ -31,7 +33,7 @@
       cardPostalCodeElement.mount('#postalCode');
 
       var submitButton = document.getElementById('submit-button');
-      var clientSecret = document.querySelector('[name="payment_intent_id"]').value;
+      var clientSecret = document.querySelector('[name="payment_intent_client_secret"]').value;
       submitButton.addEventListener('click', function(event) {
         event.preventDefault();
         stripe.confirmCardPayment(clientSecret, {
@@ -40,10 +42,12 @@
           }
         }).then(function(result) {
           if (result.error) {
-            console.log(result.error.message);
+            document.querySelector('[name="message"]').value = result.error.message;
           } else {
-            document.getElementById('payment-form').submit();
+            document.querySelector('[name="payment_intent_id"]').value = result.paymentIntent.id;
+            document.querySelector('[name="message"]').value = 'Payment succeeded';
           }
+          document.getElementById('payment-form').submit();
         });
       });
     </script>

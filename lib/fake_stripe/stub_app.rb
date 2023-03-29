@@ -56,6 +56,9 @@ module FakeStripe
     end
 
     post '/v1/payment_intents/:payment_intent_id/confirm' do
+      if params['client_secret'] =~ /declined/
+        return json_response 402, { error: { message: "Your card was declined" } }.to_json
+      end
       FakeStripe.charge_count += 1
       json_response 200, fixture('confirm_payment_intent')
     end
