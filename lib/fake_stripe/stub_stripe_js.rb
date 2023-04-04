@@ -29,10 +29,18 @@ module FakeStripe
       status 200
       js = IO.read(file_path)
       if defined?(FakeStripe.js_v3_token)
-        js.gsub(/tok_123/, FakeStripe.js_v3_token)
-      else
-        js
+        js.gsub!(/tok_123/, FakeStripe.js_v3_token)
       end
+      if defined?(FakeStripe.api_key)
+        js.gsub!(/sk_test_key/, FakeStripe.api_key)
+      end
+      if defined?(FakeStripe.api_host)
+        js.gsub!(/https:\/\/api\.stripe\.com/, FakeStripe.api_host)
+      end
+      if defined?(FakeStripe.stripe_account)
+        js.gsub!(/acct_123/, FakeStripe.stripe_account)
+      end
+      js
     end
   end
 end

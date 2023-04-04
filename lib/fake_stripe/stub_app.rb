@@ -1,7 +1,17 @@
 require 'sinatra/base'
+require 'fake_stripe/bootable'
+require 'sinatra/cors'
 
 module FakeStripe
   class StubApp < Sinatra::Base
+    extend Bootable
+
+    register Sinatra::Cors
+    set :allow_origin, ".*"
+    set :allow_methods, "GET,HEAD,POST"
+    set :allow_headers, "content-type,if-modified-since"
+    set :expose_headers, "location,link"
+    set :protection, :except => [:frame_options, :json_csrf]
 
     # Charges
     post '/v1/charges' do
@@ -38,6 +48,31 @@ module FakeStripe
     get '/v1/charges' do
       json_response 200, fixture('list_charges')
     end
+
+    # PaymentIntents
+    post '/v1/payment_intents' do
+      FakeStripe.payment_intent_count += 1
+      json_response 200, fixture('create_payment_intent')
+    end
+
+    post '/v1/payment_intents/:payment_intent_id/confirm' do
+      if params['client_secret'] =~ /declined/
+        return json_response 402, { error: { message: "Your card was declined" } }.to_json
+      elsif params['client_secret'] =~ /doesnotexist/
+        return json_response 404, { error: { message: "Payment Intent not found" } }.to_json
+      end
+      FakeStripe.charge_count += 1
+      json_response 200, fixture('confirm_payment_intent')
+    end
+
+    get '/v1/payment_intents/:payment_intent_id' do
+      json_response 200, fixture('retrieve_payment_intent')
+    end
+
+    post '/v1/payment_intents/:payment_intent_id' do
+      json_response 200, fixture('update_payment_intent')
+    end
+
 
     # Customers
     post '/v1/customers' do

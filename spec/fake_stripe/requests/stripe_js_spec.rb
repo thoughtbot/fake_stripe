@@ -31,7 +31,7 @@ describe "Stub Stripe JS" do
 
       response = Net::HTTP.get(url)
 
-      expect(response).to include "class Element"
+      expect(response).to include "class StripeElement"
     end
 
     context "when a js_v3_token is set" do
@@ -53,6 +53,45 @@ describe "Stub Stripe JS" do
         response = Net::HTTP.get(url)
 
         expect(response).to include custom_token
+      end
+
+      it "sets the api_key in requests" do
+        api_key = "sk_test_12345"
+        FakeStripe.configure do |config|
+          config.api_key = api_key
+        end
+        url = URI.parse(STRIPE_JS_HOST)
+        url.path = "/v3/"
+
+        response = Net::HTTP.get(url)
+
+        expect(response).to include api_key
+      end
+
+      it "sets the api_host in requests" do
+        api_host = "localhost:14034"
+        FakeStripe.configure do |config|
+          config.api_host = api_host
+        end
+        url = URI.parse(STRIPE_JS_HOST)
+        url.path = "/v3/"
+
+        response = Net::HTTP.get(url)
+
+        expect(response).to include api_host
+      end
+
+      it "sets the stripe_account" do
+        stripe_account = "acct_12345"
+        FakeStripe.configure do |config|
+          config.stripe_account = stripe_account
+        end
+        url = URI.parse(STRIPE_JS_HOST)
+        url.path = "/v3/"
+
+        response = Net::HTTP.get(url)
+
+        expect(response).to include stripe_account
       end
     end
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payment Form</title>
+    <script src="<%= stripe_js_url.to_s %>"></script>
+  </head>
+  <body>
+    <form id="payment-form" action="/confirmation" method="post">
+      <label for="cardNumber">Card Number</label>
+      <div id="cardNumber"></div>
+      <label for="cardExpiry">Card Expiry</label>
+      <div id="cardExpiry"></div>
+      <label for="cardCvc">Card Cvc</label>
+      <div id="cardCvc"></div>
+      <label for="postalCode">Postal Code</label>
+      <div id="postalCode"></div>
+      <input type="hidden" name="payment_intent_client_secret" value="<%= client_secret %>">
+      <input type="hidden" name="payment_intent_id">
+      <input type="hidden" name="message">
+      <button id="submit-button" type="submit">Pay $10</button>
+    </form>
+    <script>
+      var stripe = Stripe();
+      var elements = stripe.elements();
+      var cardNumberElement = elements.create('cardNumber');
+      var cardExpiryElement = elements.create('cardExpiry');
+      var cardCvcElement = elements.create('cardCvc');
+      var cardPostalCodeElement = elements.create('postalCode');
+
+      cardNumberElement.mount('#cardNumber');
+      cardExpiryElement.mount('#cardExpiry');
+      cardCvcElement.mount('#cardCvc');
+      cardPostalCodeElement.mount('#postalCode');
+
+      var submitButton = document.getElementById('submit-button');
+      var clientSecret = document.querySelector('[name="payment_intent_client_secret"]').value;
+      submitButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        stripe.confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: cardNumberElement,
+          }
+        }).then(function(result) {
+          if (result.error) {
+            document.querySelector('[name="message"]').value = result.error.message;
+          } else {
+            document.querySelector('[name="payment_intent_id"]').value = result.paymentIntent.id;
+            document.querySelector('[name="message"]').value = 'Payment succeeded';
+          }
+          document.getElementById('payment-form').submit();
+        }).catch(function(error) {
+          document.querySelector('[name="message"]').value = error.message;
+          document.getElementById('payment-form').submit();
+        });
+      });
+    </script>
+  </body>
+</html>

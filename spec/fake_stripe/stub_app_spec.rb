@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe FakeStripe::StubApp do
+  it_behaves_like "a bootable server"
   describe "GET /v1/accounts/:account_id" do
     it "returns an account response" do
       result = Stripe::Account.retrieve("stripe-account-id")
@@ -64,6 +65,35 @@ describe FakeStripe::StubApp do
           end
         end.not_to change(FakeStripe, :charge_count)
       end
+    end
+  end
+
+  describe 'POST /v1/payment_intents/:id' do
+    it 'returns a fake payment_intent' do
+      result = Stripe::PaymentIntent.create
+
+      expect(result.status).to eq 'requires_payment_method'
+    end
+
+    it 'increments the payment_intent counter' do
+      expect do
+        Stripe::PaymentIntent.create
+      end.to change(FakeStripe, :payment_intent_count).by(1)
+    end
+  end
+
+  describe 'POST /v1/payment_intents/:id/confirm' do
+    it 'returns a fake payment_intent response' do
+      result = Stripe::PaymentIntent.confirm('pi_1234')
+
+      expect(result.status).to eq 'succeeded'
+    end
+
+    it 'creates a charge' do
+
+      expect do
+        Stripe::PaymentIntent.confirm('pi_1234')
+      end.to change(FakeStripe, :charge_count).by(1)
     end
   end
 
@@ -146,14 +176,6 @@ describe FakeStripe::StubApp do
       expect do
         Stripe::Transfer.create
       end.to change(FakeStripe, :transfer_count).by(1)
-    end
-  end
-
-  describe "POST /v1/recipients" do
-    it "increments the recipient counter" do
-      expect do
-        Stripe::Recipient.create
-      end.to change(FakeStripe, :recipient_count).by(1)
     end
   end
 

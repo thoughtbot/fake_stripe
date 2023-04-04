@@ -1,0 +1,39 @@
+{
+  "id": "pi_3MpZuECsJpRFXjHS1w3eqPyP",
+  "object": "payment_intent",
+  "amount": 500,
+  "amount_details": {
+    "tip": {}
+  },
+  "automatic_payment_methods": null,
+  "canceled_at": null,
+  "cancellation_reason": null,
+  "capture_method": "automatic",
+  "client_secret": "pi_3MpZuECsJpRFXjHS1w3eqPyP_secret_gr1SSVs7oQc5jlpVYsFVYPzdo",
+  "confirmation_method": "automatic",
+  "created": 1679761526,
+  "currency": "usd",
+  "description": "Subscription creation",
+  "last_payment_error": null,
+  "livemode": false,
+  "next_action": null,
+  "payment_method": "pm_1MpZuFCsJpRFXjHSJZ6YErKa",
+  "payment_method_options": {
+    "us_bank_account": {
+      "verification_method": "automatic"
+    }
+  },
+  "payment_method_types": [
+    "card",
+    "cashapp",
+    "link",
+    "us_bank_account"
+  ],
+  "processing": null,
+  "receipt_email": null,
+  "setup_future_usage": "off_session",
+  "shipping": null,
+  "source": null,
+  "status": "requires_payment_method"
+}
+
