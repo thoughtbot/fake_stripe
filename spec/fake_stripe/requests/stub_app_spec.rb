@@ -132,7 +132,9 @@ describe 'Stub app' do
     'GET events' => { route: '/v1/events', method: :get },
     # Tokens
     'POST tokens' => { route: '/v1/tokens', method: :post },
-    'GET tokens/:token_id' => { route: '/v1/tokens/1', method: :get }
+    'GET tokens/:token_id' => { route: '/v1/tokens/1', method: :get },
+    # Payment Methods
+    'POST payment_methods' => { route: '/v1/payment_methods', method: :post },
   }
 
   TESTS.each_pair do |name, action|
@@ -141,6 +143,16 @@ describe 'Stub app' do
         send action[:method], action[:route]
 
         expect { JSON.parse(last_response.body) }.not_to raise_error
+      end
+    end
+  end
+
+  describe 'POST payment_intents/:payment_intent_id' do
+    context 'when a paymnent_method is provided' do
+      it 'sets the status to requires_confirmation' do
+        post '/v1/payment_intents/1', { payment_method: 'pm_card_visa' }
+
+        expect(JSON.parse(last_response.body)['status']).to eq('requires_confirmation')
       end
     end
   end

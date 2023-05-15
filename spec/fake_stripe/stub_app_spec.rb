@@ -80,6 +80,22 @@ describe FakeStripe::StubApp do
         Stripe::PaymentIntent.create
       end.to change(FakeStripe, :payment_intent_count).by(1)
     end
+
+    it 'expands payment_method with card' do
+      payment_intent = Stripe::PaymentIntent.create
+      result = Stripe::PaymentIntent.update(payment_intent.id, expand: ['payment_method'])
+
+      expect(result.payment_method.card.last4).to eq '6789'
+      expect(result.payment_method.card.brand).to eq 'Visa'
+    end
+
+    it 'expands payment_method with us_bank_account' do
+      payment_intent = Stripe::PaymentIntent.create
+      result = Stripe::PaymentIntent.update(payment_intent.id,  { expand: ['payment_method'] })
+
+      expect(result.payment_method.us_bank_account.last4).to eq '8901'
+      expect(result.payment_method.us_bank_account.bank_name).to eq 'STRIPE TEST BANK'
+    end
   end
 
   describe 'POST /v1/payment_intents/:id/confirm' do
@@ -90,10 +106,15 @@ describe FakeStripe::StubApp do
     end
 
     it 'creates a charge' do
-
       expect do
         Stripe::PaymentIntent.confirm('pi_1234')
       end.to change(FakeStripe, :charge_count).by(1)
+    end
+
+    it 'can accept a payment_method' do
+      result = Stripe::PaymentIntent.confirm('pi_1234', { payment_method: 'pm_card_visa' })
+
+      expect(result.payment_method).to eq 'pm_card_visa'
     end
   end
 
@@ -206,6 +227,20 @@ describe FakeStripe::StubApp do
 
         expect(result.type).to eq FakeStripe::CARD_OBJECT_TYPE
       end
+    end
+  end
+
+  describe "POST /v1/payment_method" do
+    it "increments the token counter" do
+      expect do
+        Stripe::PaymentMethod.create(type: 'us_bank_account')
+      end.to change(FakeStripe, :token_count).by(1)
+    end
+
+    it "returns a bank account token" do
+      result = Stripe::PaymentMethod.create(type: 'us_bank_account')
+
+      expect(result.type).to eq 'us_bank_account'
     end
   end
 end

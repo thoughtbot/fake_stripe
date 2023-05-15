@@ -52,7 +52,9 @@ module FakeStripe
     # PaymentIntents
     post '/v1/payment_intents' do
       FakeStripe.payment_intent_count += 1
-      json_response 200, fixture('create_payment_intent')
+      create_fixture = JSON.parse(fixture('create_payment_intent'))
+      create_fixture.merge!(payment_method: { card: { last4: '6789', brand: 'Visa' }, us_bank_account: { last4: '8901', bank_name: 'STRIPE TEST BANK' } }) if params['expand']&.include?('payment_method') || params['expand']&.values&.include?('payment_method') 
+      json_response 200, create_fixture.to_json
     end
 
     post '/v1/payment_intents/:payment_intent_id/confirm' do
@@ -62,7 +64,10 @@ module FakeStripe
         return json_response 404, { error: { message: "Payment Intent not found" } }.to_json
       end
       FakeStripe.charge_count += 1
-      json_response 200, fixture('confirm_payment_intent')
+      confirm_fixture = JSON.parse(fixture('confirm_payment_intent'))
+      payment_method = params['payment_method']
+      confirm_fixture.merge!(payment_method: payment_method)
+      json_response 200, confirm_fixture.to_json
     end
 
     get '/v1/payment_intents/:payment_intent_id' do
@@ -70,7 +75,11 @@ module FakeStripe
     end
 
     post '/v1/payment_intents/:payment_intent_id' do
-      json_response 200, fixture('update_payment_intent')
+      resp = JSON.parse(fixture('update_payment_intent'))
+      resp["status"] = "requires_confirmation" if params["payment_method"]
+      resp['payment_method'] = { card: { last4: '6789', brand: 'Visa' }, us_bank_account: { last4: '8901', bank_name: 'STRIPE TEST BANK' } } if params['expand']&.include?('payment_method') || params['expand']&.values&.include?('payment_method') 
+
+      json_response 200, resp.to_json
     end
 
 
@@ -391,6 +400,12 @@ module FakeStripe
 
     get '/v1/tokens/:token_id' do
       json_response 200, fixture('retrieve_token')
+    end
+
+    # Payment Methods
+    post '/v1/payment_methods' do
+      FakeStripe.token_count += 1
+      json_response 200, fixture('create_bank_account_payment_method')
     end
 
     private

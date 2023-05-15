@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payment Form</title>
+    <script src="<%= stripe_js_url.to_s %>"></script>
+  </head>
+  <body>
+    <div id="payment-details">
+      <!-- Display payment method details here -->
+      <p id="payment-method-details"></p>
+    </div>
+
+    <form id="payment-form" action="/confirmation" method="post">
+      <input type="hidden" name="payment_intent_client_secret" value="<%= client_secret %>">
+      <input type="hidden" name="payment_intent_id">
+      <input type="hidden" name="message">
+      <button id="submit-button" type="submit">Pay $10</button>
+    </form>
+
+    <script>
+      var stripe = Stripe();
+      var submitButton = document.getElementById('submit-button');
+      var clientSecret = document.querySelector('[name="payment_intent_client_secret"]').value;
+
+      submitButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        stripe.collectBankAccountForPayment({
+          clientSecret: clientSecret,
+          params: {
+            payment_method_type: 'us_bank_account',
+            payment_method_data: {
+              billing_details: {
+                name: 'Mike Menne',
+                email: 'mike@humanagency.com',
+              },
+            },
+          },
+          expand: ['payment_method'],
+        }).then(({paymentIntent, error}) => {
+          // Display payment method details
+          const paymentMethod = paymentIntent.payment_method;
+          var paymentMethodDetails = 'Last 4: ' + paymentMethod.us_bank_account.last4 + ', Bank: ' + paymentMethod.us_bank_account.bank_name;
+          document.getElementById('payment-method-details').innerText = paymentMethodDetails;
+
+          // Enable the confirm button
+          submitButton.disabled = false;
+
+          // Confirm the payment intent when the button is clicked
+          submitButton.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            stripe.confirmUsBankAccountPayment(clientSecret).then(({paymentIntent, error}) => {
+              if (error) {
+                document.querySelector('[name="message"]').value = error.message;
+              } else {
+                document.querySelector('[name="payment_intent_id"]').value = paymentIntent.id;
+                document.querySelector('[name="message"]').value = 'Payment succeeded';
+              }
+              document.getElementById('payment-form').submit();
+            }).catch(function(error) {
+              document.querySelector('[name="message"]').value = error.message;
+              document.getElementById('payment-form').submit();
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
