@@ -5,6 +5,9 @@
     <script src="<%= stripe_js_url.to_s %>"></script>
   </head>
   <body>
+    <h1>Payment Summary</h1>
+    <div id="summaryCardNumber"></div>
+    <h1>Payment Method</h1>
     <form id="payment-form" action="/confirmation" method="post">
       <label for="cardNumber">Card Number</label>
       <div id="cardNumber"></div>
@@ -14,6 +17,8 @@
       <div id="cardCvc"></div>
       <label for="postalCode">Postal Code</label>
       <div id="postalCode"></div>
+      <label for="funding">Funding</label>
+      <div id="funding"></div>
       <input type="hidden" name="payment_intent_client_secret" value="<%= client_secret %>">
       <input type="hidden" name="payment_intent_id">
       <input type="hidden" name="message">
@@ -31,6 +36,48 @@
       cardExpiryElement.mount('#cardExpiry');
       cardCvcElement.mount('#cardCvc');
       cardPostalCodeElement.mount('#postalCode');
+
+      var cardNumberComplete = false;
+      var cardExpiryComplete = false;
+      var cardCvcComplete = false;
+
+
+      function createPaymentMethod() {
+        if (cardNumberComplete && cardExpiryComplete && cardCvcComplete) {
+          stripe.createPaymentMethod({
+            type: 'card',
+            card: cardNumberElement,
+          }).then(function(result) {
+            if (result.error) {
+              document.querySelector('[name="message"]').value = result.error.message;
+            } else {
+              document.getElementById('funding').textContent = result.paymentMethod.card.funding;
+            }
+          });
+        }
+      }
+
+      function updateCard(type) {
+        element = elements.getElement(type);
+        document.getElementById('summaryCardNumber').innerHTML = `${type}: ${element.element.value}`;
+      }
+
+      cardNumberElement.on('change', function(event) {
+        cardNumberComplete = event.complete;
+        createPaymentMethod();
+        updateCard('cardNumber')
+      });
+
+      cardExpiryElement.on('change', function(event) {
+        cardExpiryComplete = event.complete;
+        createPaymentMethod();
+      });
+
+      cardCvcElement.on('change', function(event) {
+        cardCvcComplete = event.complete;
+        createPaymentMethod();
+      });
+
 
       var submitButton = document.getElementById('submit-button');
       var clientSecret = document.querySelector('[name="payment_intent_client_secret"]').value;
