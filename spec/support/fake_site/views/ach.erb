@@ -55,7 +55,7 @@
                 document.querySelector('[name="message"]').value = error.message;
               } else {
                 document.querySelector('[name="payment_intent_id"]').value = paymentIntent.id;
-                document.querySelector('[name="message"]').value = 'Payment succeeded';
+                document.querySelector('[name="message"]').value = `Payment ${paymentIntent.status}`;
               }
               document.getElementById('payment-form').submit();
             }).catch(function(error) {

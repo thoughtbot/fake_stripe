@@ -66,7 +66,9 @@ module FakeStripe
       FakeStripe.charge_count += 1
       confirm_fixture = JSON.parse(fixture('confirm_payment_intent'))
       payment_method = params['payment_method']
-      confirm_fixture.merge!(payment_method: payment_method)
+      status = payment_method == 'pm_usBankAccount_success' ? 'processing' : 'succeeded'
+
+      confirm_fixture.merge!(payment_method: payment_method, status: status)
       json_response 200, confirm_fixture.to_json
     end
 
@@ -405,7 +407,7 @@ module FakeStripe
     # Payment Methods
     post '/v1/payment_methods' do
       FakeStripe.token_count += 1
-      json_response 200, fixture('create_bank_account_payment_method')
+      json_response 200, fixture(payment_method_name)
     end
 
     private
@@ -419,6 +421,14 @@ module FakeStripe
       content_type :json
       status response_code
       response_body
+    end
+
+    def payment_method_name
+      if params[:type] == FakeStripe::BANK_ACCOUNT_PAYMENT_METHOD_TYPE
+        "create_payment_method_bank_account"
+      else
+        "create_payment_method_credit_card"
+      end
     end
 
     def token_fixture_name

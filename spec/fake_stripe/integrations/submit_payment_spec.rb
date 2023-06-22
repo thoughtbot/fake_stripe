@@ -63,7 +63,7 @@ RSpec.describe 'Stripe payment form', type: :feature, js: true do
       expect(page).to have_content 'STRIPE TEST BANK'
       click_button 'Pay $10'
 
-      expect(page).to have_content 'Payment succeeded'
+      expect(page).to have_content 'Payment processing'
       expect(page).to have_content 'pi_'
       expect(FakeStripe.payment_intent_count).to eq(1)
       expect(FakeStripe.charge_count).to eq(1)

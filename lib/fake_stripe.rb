@@ -12,6 +12,7 @@ module FakeStripe
     payment_intent recipient refund subscription token transfer}.freeze
   CARD_OBJECT_TYPE = "card"
   BANK_ACCOUNT_OBJECT_TYPE = "bank_account"
+  BANK_ACCOUNT_PAYMENT_METHOD_TYPE = "us_bank_account"
 
 
   STRIPE_OBJECTS.each do |object|
