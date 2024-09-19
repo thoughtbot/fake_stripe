@@ -1,3 +1,7 @@
+## Deprecated as of September 19, 2024
+
+fake_stripe has been deprecated in favor of [stripe-ruby-mock](https://github.com/stripe-ruby-mock/stripe-ruby-mock).
+
 # fake\_stripe, a Stripe fake
 
 This library is a way to test [Stripe](http://www.stripe.com/) code without hitting Stripe's
